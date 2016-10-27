@@ -24,6 +24,9 @@ public class PathMeasure extends View {
     private Matrix matrix;
     private float contentValue;
 
+    float[] pos = new float[2];
+    float[] tan = new float[2];
+
     public PathMeasure(Context context) {
         this(context,null);
     }
@@ -42,7 +45,7 @@ public class PathMeasure extends View {
         mPaint.setColor(Color.BLUE);
         mPaint.setStyle(Paint.Style.STROKE);
         BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 2;
+        options.inSampleSize = 5;
         mBitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.jiantou,options);
         matrix = new Matrix();
     }
@@ -64,18 +67,17 @@ public class PathMeasure extends View {
         path.addCircle(0,0,200, Path.Direction.CW);
 
         //计算当前位置距离远点 比例
-        contentValue += 0.05;
+        contentValue += 0.01;
         if(contentValue > 1){
             contentValue = 0;
         }
 
         android.graphics.PathMeasure pathMeasure = new android.graphics.PathMeasure();
         pathMeasure.setPath(path,false);
-        float[] pos = new float[2];
-        float[] tan = new float[2];
         //计算当前位置坐标和正切值
         pathMeasure.getPosTan(pathMeasure.getLength() * contentValue,pos,tan);
 
+        matrix.reset();
         //根据正切值算出箭头旋转角度
         float degress = (float) (Math.atan2(tan[1],tan[0]) * 180 / Math.PI);
         //矩阵旋转角度

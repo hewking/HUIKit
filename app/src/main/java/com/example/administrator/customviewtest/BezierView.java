@@ -60,6 +60,10 @@ public class BezierView extends View {
         mPaint = new Paint();
         mPaint.setColor(Color.GRAY);
         mPaint.setStyle(Paint.Style.STROKE);
+
+        start = new PointF();
+        control = new PointF();
+        end = new PointF();
     }
 
 

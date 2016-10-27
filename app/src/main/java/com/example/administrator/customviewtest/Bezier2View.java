@@ -62,6 +62,11 @@ public class Bezier2View extends View {
         mPaint = new Paint();
         mPaint.setColor(Color.GRAY);
         mPaint.setStyle(Paint.Style.STROKE);
+
+        start = new PointF();
+        control1 = new PointF();
+        control2 = new PointF();
+        end = new PointF();
     }
 
 
