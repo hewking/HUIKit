@@ -64,6 +64,7 @@ public class SearchView extends View {
 
     public void startAnim(){
         currentStatus = 0;
+        mHandler.sendEmptyMessage(0);
     }
 
     @Override
