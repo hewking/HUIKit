@@ -52,7 +52,6 @@ public class PictureView extends View{
 
     @Override
     protected void onDraw(Canvas canvas) {
-
         canvas.drawPicture(mPicture,new RectF(0,0,mPicture.getWidth(),200));
 
     }

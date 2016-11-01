@@ -1,7 +1,9 @@
-package com.example.administrator.customviewtest;
+package com.example.administrator.customviewtest.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.administrator.customviewtest.R;
 
 public class MainActivity extends AppCompatActivity {
 

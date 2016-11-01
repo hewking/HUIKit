@@ -64,6 +64,7 @@ public class SearchView extends View {
 
     public void startAnim(){
         currentStatus = 0;
+        mHandler.sendEmptyMessage(0);
     }
 
     @Override
@@ -118,9 +119,10 @@ public class SearchView extends View {
                     case STATUS_SEARCHING:
                         if(!isOver){
                             count ++;
-                            if(count > 3){
+                            if(count > 2){
                                 isOver = true;
                                 currentStatus = 3;
+                                searchTranslatonAnimator.start();
                             }else{
                                 circleTranslationAnimator.start();
                             }
