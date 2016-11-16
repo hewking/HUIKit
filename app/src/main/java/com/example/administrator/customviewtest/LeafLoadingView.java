@@ -1,8 +1,11 @@
 package com.example.administrator.customviewtest;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
@@ -29,7 +32,7 @@ public class LeafLoadingView extends View {
     private int progressRectLen;
     private int mArcRadius;
 
-
+    private Bitmap fengshanBitmap;
 
     public LeafLoadingView(Context context) {
         this(context,null);
@@ -46,6 +49,11 @@ public class LeafLoadingView extends View {
 
     private void init() {
         initPaint();
+        initBitmap();
+    }
+
+    private void initBitmap() {
+        fengshanBitmap = BitmapFactory.decodeResource(getResources(),R.drawable.fengshan);
     }
 
     private void initPaint() {
@@ -81,35 +89,55 @@ public class LeafLoadingView extends View {
     protected void onDraw(Canvas canvas) {
         //画布移动到view 中心
         canvas.translate(width / 2,height / 2);
+        drawProgress(canvas);
+        drawFengShan(canvas);
+    }
+
+    private void drawFengShan(Canvas canvas) {
+//        Rect src = new Rect(0,0, fengshanBitmap.getWidth(),fengshanBitmap.getHeight());
+//        Rect dest = new Rect(300 - fengshanBitmap.getWidth() / 2,-50,300+fengshanBitmap.getWidth(),50);
+//        canvas.drawBitmap(fengshanBitmap,src,dest,boundPaint);
+
+        Matrix matrix = new Matrix();
+        matrix.postTranslate(300 - fengshanBitmap.getWidth() / 2,0 - fengshanBitmap.getHeight() / 2);
+        matrix.postRotate(30 * currentProgress,300,0);
+        canvas.drawBitmap(fengshanBitmap,matrix,boundPaint);
+    }
+
+    private void drawProgress(Canvas canvas) {
         if(progressRectLen  < -300){
             boundPaint.setStyle(Paint.Style.FILL);
-            progressRectLen += currentProgress * 6;
-            float cosAngle = 50 - 6 * currentProgress)/50;
-            int angle = (int) Math.toDegrees(Math.acos(());
-            Log.e(TAG,"ondraw angle : " + angle + "currentProgress : " + currentProgress);
+            progressRectLen += 6.5f;
+            float cosAngle = (50 - 6.5f * currentProgress)/50f;
+            int angle = (int) Math.toDegrees(Math.acos(cosAngle));
+            Log.e(TAG,"ondraw angle : " + angle + "currentProgress : " + currentProgress + "progressRectLen : " + progressRectLen);
             int startAngle = 180 - angle;
             int swipeAngle = 2 * angle;
             canvas.drawArc(new RectF(-300 - mArcRadius,- mArcRadius,-300 + mArcRadius , mArcRadius),startAngle,swipeAngle,false,boundPaint);
             boundPaint.setStyle(Paint.Style.STROKE);
             canvas.drawArc(new RectF(-300 - mArcRadius,- mArcRadius,-300 + mArcRadius , mArcRadius),90,180,false,boundPaint);
-            drawProgress(canvas);
+//            drawRectProgress(canvas);
+            boundPaint.setStyle(Paint.Style.STROKE);
+            RectF round = new RectF(-300,-50,300,50);
+            canvas.drawRect(round,boundPaint);
+            postDelayed(updateRunnable,1000);
         }else{
             boundPaint.setStyle(Paint.Style.FILL);
-            drawProgress(canvas);
+            drawRectProgress(canvas);
             canvas.drawArc(new RectF(-300 - mArcRadius,- mArcRadius,-300 + mArcRadius , mArcRadius),90,180,false,boundPaint);
         }
     }
 
-    private void drawProgress(Canvas canvas) {
+    private void drawRectProgress(Canvas canvas) {
         boundPaint.setStyle(Paint.Style.STROKE);
         RectF round = new RectF(-300,-50,300,50);
         canvas.drawRect(round,boundPaint);
 
         boundPaint.setStyle(Paint.Style.FILL);
-        RectF progressRectf = new RectF(-300,-50,-300 - 50 + 7 * currentProgress,50);
+        RectF progressRectf = new RectF(-300,-50,-300 + 6.5f * currentProgress -50,50);
         canvas.drawRect(progressRectf,boundPaint);
         postDelayed(updateRunnable,1000);
-        Log.e(TAG,"ondraw currentprogress : " + (-300 + 6 * currentProgress));
+        Log.e(TAG,"ondraw currentprogress : " + (-300 + 6.5f * currentProgress  -50));
 
     }
 }
