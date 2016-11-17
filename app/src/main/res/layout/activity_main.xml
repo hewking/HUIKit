@@ -38,32 +38,29 @@
         <!--android:layout_width="300dp"-->
         <!--android:layout_height="300dp"-->
         <!--/>-->
-<<<<<<< HEAD
     <!--<Button-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content" />-->
-=======
     <!--<com.example.administrator.customviewtest.SearchView-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content" />-->
 
-    <android.support.design.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <!--<android.support.design.widget.CoordinatorLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="hello"
-            app:layout_behavior = "com.example.administrator.customviewtest.coordinatorlayout.FollowFingerBehavior"
-            />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="hello"-->
+            <!--app:layout_behavior = "com.example.administrator.customviewtest.coordinatorlayout.FollowFingerBehavior"-->
+            <!--/>-->
 
-        <com.example.administrator.customviewtest.coordinatorlayout.FollowTcouchMoveView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </android.support.design.widget.CoordinatorLayout>
+        <!--<com.example.administrator.customviewtest.coordinatorlayout.FollowTcouchMoveView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+    <!--</android.support.design.widget.CoordinatorLayout>-->
 
->>>>>>> f265736705892a09a2cce678bfe27e48ce28d67c
     <!--<Button-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content" />-->
@@ -79,12 +76,9 @@
     <!--<Button-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content" />-->
-<<<<<<< HEAD
 
     <com.example.administrator.customviewtest.LeafLoadingView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
-=======
->>>>>>> f265736705892a09a2cce678bfe27e48ce28d67c
 </RelativeLayout>
