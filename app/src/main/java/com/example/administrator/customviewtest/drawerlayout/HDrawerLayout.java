@@ -77,6 +77,9 @@ public class HDrawerLayout extends ViewGroup {
                 int dx = (int) (ev.getX() - point.x);
                 int disX = getScrollX() + -dx;
                 point.x = (int) ev.getX();
+                if(disX > 0){
+                    return false;
+                }
                 if(disX < -150){
 
                     return false;
@@ -84,10 +87,18 @@ public class HDrawerLayout extends ViewGroup {
                     scrollBy(-dx,0);
                 }
 
+//                getChildAt(1).setScaleX(1 - Math.abs(disX) / 300f);
+                getChildAt(1).setScaleY(1 - Math.abs(disX) / 300f);
                 break;
             case MotionEvent.ACTION_UP:
+                if(getScrollX() < -75){
+                    scrollTo(-150,0);
+                    getChildAt(1).setScaleY(0.5f);
+                }else if(getScrollX() >-75){
+                    scrollTo(0,0);
+                    getChildAt(1).setScaleY(1);
+                }
                 point.x = 0;
-                scrollTo(0,0);
 
                 break;
         }
