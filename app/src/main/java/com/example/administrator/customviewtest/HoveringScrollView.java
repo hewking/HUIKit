@@ -2,7 +2,6 @@ package com.example.administrator.customviewtest;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ScrollView;
@@ -18,7 +17,7 @@ public class HoveringScrollView extends FrameLayout{
     private ViewGroup hoverView;
 
     //伴随滚动的view
-    private View contentView;
+    private ViewGroup contentView;
 
     //悬停超过多少高度不悬停
     private int mTopHeight;
@@ -45,13 +44,18 @@ public class HoveringScrollView extends FrameLayout{
     }
 
     public void setTopView(int id){
-        hoverView = (ViewGroup) findViewById(id);
+        hoverView = (ViewGroup) contentView.findViewById(id);
         mTopHeight = hoverView.getMeasuredHeight();
+        mTopHeight = 150;
     }
 
     private void onScroll(int scrollY) {
-        if(scrollY > mTopHeight){
-
+        if(scrollY > mTopHeight && hoverView.getParent() == contentView){
+            contentView.removeView(hoverView);
+            addView(hoverView,0);
+        }else if(scrollY < mTopHeight && hoverView.getParent() != contentView){
+            removeView(hoverView);
+            contentView.addView(hoverView,0);
         }
     }
 
