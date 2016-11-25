@@ -65,13 +65,11 @@ public class PathMeasure extends View {
         Path path = new Path();
         //往path中添加一个圆
         path.addCircle(0,0,200, Path.Direction.CW);
-
         //计算当前位置距离远点 比例
         contentValue += 0.01;
         if(contentValue > 1){
             contentValue = 0;
         }
-
         android.graphics.PathMeasure pathMeasure = new android.graphics.PathMeasure();
         pathMeasure.setPath(path,false);
         //计算当前位置坐标和正切值

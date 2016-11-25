@@ -5,6 +5,8 @@ import android.graphics.Point;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.Scroller;
 
 /**
  * Created by Administrator on 2016/11/21.
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
 public class HDrawerLayout extends ViewGroup {
 
     private int count;
+    private Scroller  mScroller;
 
     public HDrawerLayout(Context context) {
         this(context, null);
@@ -29,7 +32,7 @@ public class HDrawerLayout extends ViewGroup {
     }
 
     private void init() {
-
+        mScroller = new Scroller(getContext(),new AccelerateDecelerateInterpolator());
     }
 
     @Override
@@ -44,7 +47,7 @@ public class HDrawerLayout extends ViewGroup {
         if (count > 2) {
             throw new IllegalArgumentException();
         }
-        int left = -150;
+        int left = -250;
         getChildAt(0).layout(left, t, 0, b);
         getChildAt(1).layout(l, t, r, b);
     }
@@ -80,7 +83,7 @@ public class HDrawerLayout extends ViewGroup {
                 if(disX > 0){
                     return false;
                 }
-                if(disX < -150){
+                if(disX < -250){
 
                     return false;
                 }else{
@@ -88,14 +91,14 @@ public class HDrawerLayout extends ViewGroup {
                 }
 
 //                getChildAt(1).setScaleX(1 - Math.abs(disX) / 300f);
-                getChildAt(1).setScaleY(1 - Math.abs(disX) / 300f);
+                getChildAt(1).setScaleY(1 - Math.abs(disX) / 500f);
                 break;
             case MotionEvent.ACTION_UP:
-                if(getScrollX() < -75){
-                    scrollTo(-150,0);
+                if(getScrollX() < -125){
+                    smoothTo(-250,0);
                     getChildAt(1).setScaleY(0.5f);
-                }else if(getScrollX() >-75){
-                    scrollTo(0,0);
+                }else if(getScrollX() >-125){
+                    smoothTo(0,0);
                     getChildAt(1).setScaleY(1);
                 }
                 point.x = 0;
@@ -105,5 +108,19 @@ public class HDrawerLayout extends ViewGroup {
 
         super.dispatchTouchEvent(ev);
         return true;
+    }
+
+    private void smoothTo(int dstX ,int dstY){
+        int deletaX = dstX - getScrollX();
+        mScroller.startScroll(getScrollX(),0,deletaX,0);
+        invalidate();
+    }
+
+    @Override
+    public void computeScroll() {
+        if(mScroller.computeScrollOffset()){
+            scrollTo(mScroller.getCurrX(),mScroller.getCurrY());
+            postInvalidate();
+        }
     }
 }
