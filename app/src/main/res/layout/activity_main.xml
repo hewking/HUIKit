@@ -77,7 +77,7 @@
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content" />-->
 
-    <com.example.administrator.customviewtest.LeafLoadingView
+    <com.example.administrator.customviewtest.ShareButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
