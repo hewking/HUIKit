@@ -2,8 +2,14 @@ package com.example.administrator.customviewtest;
 
 import android.content.Context;
 import android.util.AttributeSet;
+<<<<<<< HEAD
+import android.util.Log;
+import android.view.View;
+=======
+>>>>>>> af02401d8db9b1e18c3320b310b976e0130d01a9
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 /**
@@ -22,6 +28,8 @@ public class HoveringScrollView extends FrameLayout{
     //悬停超过多少高度不悬停
     private int mTopHeight;
 
+    private MyScollView myScollView;
+
     public HoveringScrollView(Context context) {
         this(context,null);
     }
@@ -32,19 +40,41 @@ public class HoveringScrollView extends FrameLayout{
 
     public HoveringScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init();
+//        init();
     }
 
-    private void init() {
-        ViewGroup contentView = (ViewGroup) getChildAt(0);
+    public void init() {
+        contentView = (ViewGroup) getChildAt(0);
         removeAllViews();
-        MyScollView myScollView = new MyScollView(getContext(),this);
+        myScollView = new MyScollView(getContext(),this);
         myScollView.addView(contentView);
         addView(myScollView);
     }
 
     public void setTopView(int id){
         hoverView = (ViewGroup) contentView.findViewById(id);
+<<<<<<< HEAD
+//        mTopHeight = hoverView.getMeasuredHeight();
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) hoverView.getLayoutParams();
+        View child = hoverView.getChildAt(0);
+        mTopHeight = child.getMeasuredHeight();
+        mTopHeight = 50;
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+    }
+
+    private void onScroll(int scrollY) {
+        if(scrollY < mTopHeight && hoverView.getParent() != contentView){
+            this.removeView(hoverView);
+            contentView.addView(hoverView,0);
+        }else if(scrollY > mTopHeight && hoverView.getParent() == contentView){
+            contentView.removeView(hoverView);
+            addView(hoverView,0);
+=======
         mTopHeight = hoverView.getMeasuredHeight();
         mTopHeight = 150;
     }
@@ -56,7 +86,9 @@ public class HoveringScrollView extends FrameLayout{
         }else if(scrollY < mTopHeight && hoverView.getParent() != contentView){
             removeView(hoverView);
             contentView.addView(hoverView,0);
+>>>>>>> af02401d8db9b1e18c3320b310b976e0130d01a9
         }
+        Log.e("onScroll","scrollY : " + scrollY + "  topheight : " + mTopHeight);
     }
 
     public static class MyScollView extends ScrollView{
