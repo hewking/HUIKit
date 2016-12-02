@@ -9,7 +9,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.RelativeLayout;
 
 import com.example.administrator.customviewtest.R;
-import com.example.administrator.customviewtest.UiUtil;
+import com.example.administrator.customviewtest.util.UiUtil;
 
 /**
  * Created by Administrator on 2016/11/17.
