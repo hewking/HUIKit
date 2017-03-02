@@ -9,7 +9,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.chichiteam.life.util.CalendarUtils;
+import com.example.administrator.customviewtest.calendar.CalendarUtils;
+
 
 /**
  * Created by ZhengHY on 2015/12/31 0031.

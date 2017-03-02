@@ -1,7 +1,9 @@
 package com.example.administrator.customviewtest.calendar;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
@@ -11,9 +13,10 @@ import android.view.View;
 
 import com.example.administrator.customviewtest.R;
 
+import java.util.Arrays;
 
 /**
- * Created by ZhengHY on 2015/12/31 0031.
+ * Created by hewking on 2016/12/11.
  */
 public class CalendarView extends View {
 
@@ -58,21 +61,36 @@ public class CalendarView extends View {
     // 日字体大小
     private int mDayTextsize = 25;
 
+    //当天
+    private int mCurrentDay = 10;
+
+    private int[] mSignUped = {8,9,14};
+
+
 
     public CalendarView(Context context) {
-        super(context);
-        init(context);
+        this(context,null);
 
     }
 
     public CalendarView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context);
+        this(context, attrs,0);
     }
 
     public CalendarView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
+        initAttributes(attrs);
+    }
+
+    private void initAttributes(AttributeSet attrs) {
+        if (attrs == null) {
+            return;
+        }
+        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.CalendarView);
+        mBeSelectedTextColor = typedArray.getColor(R.styleable.CalendarView_selected_color, Color.RED);
+        mUnBeSelectedTextColor = typedArray.getColor(R.styleable.CalendarView_unselected_color, Color.GRAY);
+        typedArray.recycle();
     }
 
     /**
@@ -87,22 +105,17 @@ public class CalendarView extends View {
     }
 
 
-    /**
-     * 得到天数数组
-     *
-     * @param numOfDay
-     * @return
-     */
-    private int[] getAllDays(int numOfDay) {
-        int[] allDays = new int[numOfDay];
-        for (int i = 0; i < numOfDay; i++) {
-            allDays[i] = i + 1;
-        }
-        return allDays;
-    }
 
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         setMeasuredDimension(measureWidth(widthMeasureSpec), measureHeight(heightMeasureSpec));
+//        super.onMeasure(widthMeasureSpec,heightMeasureSpec);
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        mViewHeight = h;
+        mViewWidth = w;
     }
 
     private int measureWidth(int widthMeasureSpec) {
@@ -162,7 +175,7 @@ public class CalendarView extends View {
         Log.e(TAG, "mViewHeight=" + mViewHeight);
         canvas.drawColor(calendarBg);
 
-        int hang_num = 8;
+        int hang_num = 3;
         int lie_num = 7;
 
         xInterval = mViewWidth / lie_num;
@@ -198,14 +211,22 @@ public class CalendarView extends View {
                 x = j * xInterval - xInterval / 2;
                 // 因为绘制在第一行
                 y = i * yInterval - yInterval / 2;
-                drawDayText(x, y, str, mNormalTextColor, canvas, offset);
+                drawDayText(x, y, str, mNormalTextColor,isCurrentDay(day),isSignUped(day), canvas, offset);
             }
         }
 
     }
 
+    private boolean isSignUped(int day) {
+        return Arrays.binarySearch(mSignUped,day) >= 0 ;
+    }
 
-    private void drawDayText(float x, float y, String text, int textColor, Canvas canvas, float offset) {
+    private boolean isCurrentDay(int day) {
+        return mCurrentDay == day;
+    }
+
+
+    private void drawDayText(float x, float y, String text, int textColor, boolean isToday,boolean isSignup,Canvas canvas, float offset) {
         mPaint.reset();
         mPaint.setTextSize(mDayTextsize);
         mPaint.setAntiAlias(true);
@@ -219,38 +240,36 @@ public class CalendarView extends View {
         // 获取text所在rect 的宽高
         mPaint.getTextBounds(text,0,text.length(),lRect);
 
-        drawDayBg(x, y, false, canvas, offset,lRect.height() / 2);
+        drawDayBg(x, y, isToday,isSignup, canvas, offset,lRect.height() / 2);
 
 
         mPaint.setColor(textColor);
         mPaint.setAntiAlias(true);
+        if(isToday){
+            mPaint.setColor(mBeSelectedTextColor);
+        }
         canvas.drawText(text, x - offset / 2, y, mPaint);
     }
 
-    private void drawDayBg(float x, float y, boolean isOverdue, Canvas canvas, float offset,int yOffset) {
+    private void drawDayBg(float x, float y, boolean isToday,boolean isSignUp, Canvas canvas, float offset,int yOffset) {
         // TODO Auto-generated method stub
         mPaint.setStyle(Paint.Style.FILL);
-        if (isOverdue) {
-            mPaint.setColor(mUnBeSelectedTextBgColor);
-        } else {
+        if (isToday) {
             mPaint.setColor(getResources().getColor(R.color.colorAccent));
+            canvas.drawCircle(x , y - yOffset , mBgRadius, mPaint);
+            return;
         }
 
-        canvas.drawCircle(x , y - yOffset , mBgRadius, mPaint);
-        mPaint.setColor(getResources().getColor(R.color.colorPrimaryDark));
+        if(isSignUp){
+
+        }else{
+            mPaint.setColor(mUnBeSelectedTextColor);
+        }
         canvas.drawCircle(x , y + mBgRadius - yOffset , mBgRadius / 5, mPaint);
-//        canvas.drawCircle(x + mBgRadius / 2 - offset * 5 / 12, y, 2, mPaint);
-//        if (!isOverdue) {
-//            mPaint.setColor(0xffeaeaea);
-//            mPaint.setStyle(Paint.Style.STROKE);
-//            canvas.drawCircle(x + mBgRadius / 2 - offset * 5 / 12, y - mBgRadius / 4 - offset / 6, mBgRadius + 1,
-//                    mPaint);
-//        }
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        event.getAction();
         // 获取事件的位置
         float touchX = event.getX();
         float touchY = event.getY();
@@ -259,16 +278,13 @@ public class CalendarView extends View {
 
             case MotionEvent.ACTION_DOWN:
 
-                if (touchY > yInterval) {
-
                     // 以下是对日历的事件处理
                     int theX = (int) ((touchX) / xInterval);// 获取第几列
                     int theY = (int) ((touchY - yInterval / 4) / yInterval);// 获取第几行
-                    Log.d("click ds", "第" + theX + "列");
-                    Log.d("click ds", "第" + theY + "行");
-                    if (theY < 1) {
-                        theY = 1;
-                    }
+                    Log.e("click ds", "第" + theX + "列");
+                    Log.e("click ds", "第" + theY + "行");
+                    int theDay = theY * 7 + theX + 1;
+                Log.e("click ds", theDay + " : the day ");
 //                    // 得到是哪一天
 //                    int num = (theY - 1) * 7 + theX - weekOfFirstDay;
 //                    int day;
@@ -301,9 +317,6 @@ public class CalendarView extends View {
 //                    }
 
                 }
-
-
-        }
         return true;
     }
 

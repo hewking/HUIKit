@@ -83,6 +83,6 @@
         <!--/>-->
 
     <com.example.administrator.customviewtest.calendar.CalendarView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="300dp"
+        android:layout_height="250dp" />
 </RelativeLayout>
