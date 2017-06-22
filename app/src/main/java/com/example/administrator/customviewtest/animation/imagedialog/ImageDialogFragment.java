@@ -1,4 +1,4 @@
-package com.example.administrator.customviewtest.animation;
+package com.example.administrator.customviewtest.animation.imagedialog;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
