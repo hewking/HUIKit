@@ -1,4 +1,4 @@
-package com.example.administrator.customviewtest.util;
+package com.hewking.customviewtest.util;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

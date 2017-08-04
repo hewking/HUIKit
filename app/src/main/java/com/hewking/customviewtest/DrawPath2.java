@@ -1,4 +1,4 @@
-package com.example.administrator.customviewtest;
+package com.hewking.customviewtest;
 
 import android.content.Context;
 import android.graphics.Canvas;

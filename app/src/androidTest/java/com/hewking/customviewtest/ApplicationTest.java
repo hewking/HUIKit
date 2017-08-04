@@ -1,4 +1,4 @@
-package com.example.administrator.customviewtest;
+package com.hewking.customviewtest;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

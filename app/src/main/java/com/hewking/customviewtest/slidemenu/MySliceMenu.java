@@ -1,4 +1,4 @@
-package com.example.administrator.customviewtest.slidemenu;
+package com.hewking.customviewtest.slidemenu;
 
 import android.content.Context;
 import android.graphics.Point;

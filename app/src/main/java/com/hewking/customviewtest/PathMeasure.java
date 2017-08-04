@@ -11,6 +11,8 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.hewking.customviewtest.R;
+
 /**
  * Created by hewking on 2016/10/22.
  */
@@ -46,7 +48,7 @@ public class PathMeasure extends View {
         mPaint.setStyle(Paint.Style.STROKE);
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 5;
-        mBitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.jiantou,options);
+        mBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.jiantou,options);
         matrix = new Matrix();
     }
 

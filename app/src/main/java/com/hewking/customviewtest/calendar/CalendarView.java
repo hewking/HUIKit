@@ -11,7 +11,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.administrator.customviewtest.R;
+
+import com.hewking.customviewtest.R;
 
 import java.util.Arrays;
 

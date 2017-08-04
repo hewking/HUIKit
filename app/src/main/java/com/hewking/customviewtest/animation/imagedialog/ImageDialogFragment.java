@@ -1,4 +1,4 @@
-package com.example.administrator.customviewtest.animation.imagedialog;
+package com.hewking.customviewtest.animation.imagedialog;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
@@ -14,7 +14,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.example.administrator.customviewtest.R;
+import com.hewking.customviewtest.R;
+
 
 /**
  * Created by Administrator on 2016/12/1.

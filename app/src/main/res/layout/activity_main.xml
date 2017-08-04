@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.example.administrator.customviewtest.activity.MainActivity">
+    tools:context="com.hewking.customviewtest.activity.MainActivity">
 
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
@@ -17,31 +17,31 @@
         <!--android:layout_height="wrap_content"-->
         <!--android:text="Hello World!" />-->
 
-    <!--<com.example.administrator.customviewtest.StorageView-->
+    <!--<com.hewking.customviewtest.StorageView-->
         <!--android:visibility="gone"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content" />-->
 
-    <!--<com.example.administrator.customviewtest.SimpleLineChart-->
+    <!--<com.hewking.customviewtest.SimpleLineChart-->
         <!--android:visibility="gone"-->
         <!--android:layout_width="400dp"-->
         <!--android:layout_height="400dp" />-->
-    <!--<com.example.administrator.customviewtest.PaneView-->
+    <!--<com.hewking.customviewtest.PaneView-->
         <!--android:visibility="gone"-->
         <!--android:layout_width="300dp"-->
         <!--android:layout_height="300dp" />-->
-    <!--<com.example.administrator.customviewtest.StartView-->
+    <!--<com.hewking.customviewtest.StartView-->
         <!--android:layout_width="200dp"-->
         <!--android:layout_height="200dp"-->
         <!--/>-->
-    <!--<com.example.administrator.customviewtest.TanTanPaneView-->
+    <!--<com.hewking.customviewtest.TanTanPaneView-->
         <!--android:layout_width="300dp"-->
         <!--android:layout_height="300dp"-->
         <!--/>-->
     <!--<Button-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content" />-->
-    <!--<com.example.administrator.customviewtest.SearchView-->
+    <!--<com.hewking.customviewtest.SearchView-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content" />-->
 
@@ -53,10 +53,10 @@
             <!--android:layout_width="wrap_content"-->
             <!--android:layout_height="wrap_content"-->
             <!--android:text="hello"-->
-            <!--app:layout_behavior = "com.example.administrator.customviewtest.coordinatorlayout.FollowFingerBehavior"-->
+            <!--app:layout_behavior = "com.hewking.customviewtest.coordinatorlayout.FollowFingerBehavior"-->
             <!--/>-->
 
-        <!--<com.example.administrator.customviewtest.coordinatorlayout.FollowTcouchMoveView-->
+        <!--<com.hewking.customviewtest.coordinatorlayout.FollowTcouchMoveView-->
             <!--android:layout_width="wrap_content"-->
             <!--android:layout_height="wrap_content" />-->
     <!--</android.support.design.widget.CoordinatorLayout>-->
@@ -77,12 +77,12 @@
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content" />-->
 
-    <!--<com.example.administrator.customviewtest.ShareButton-->
+    <!--<com.hewking.customviewtest.ShareButton-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
         <!--/>-->
 
-    <com.example.administrator.customviewtest.calendar.CalendarView
+    <com.hewking.customviewtest.calendar.CalendarView
         android:layout_width="300dp"
         android:layout_height="250dp" />
 </RelativeLayout>

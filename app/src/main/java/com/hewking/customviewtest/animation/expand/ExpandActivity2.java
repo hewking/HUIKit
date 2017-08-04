@@ -1,24 +1,18 @@
-package com.example.administrator.customviewtest.animation.expand;
+package com.hewking.customviewtest.animation.expand;
 
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatCheckBox;
-import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 
-import com.example.administrator.customviewtest.R;
-import com.example.administrator.customviewtest.notestick.NoteStickActivity;
-import com.example.administrator.customviewtest.util.UiUtil;
+import com.hewking.customviewtest.R;
+import com.hewking.customviewtest.util.UiUtil;
 
-import java.util.ArrayList;
 
 public class ExpandActivity2 extends AppCompatActivity {
 

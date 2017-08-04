@@ -1,10 +1,11 @@
-package com.example.administrator.customviewtest.activity;
+package com.hewking.customviewtest.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.administrator.customviewtest.HoveringScrollView;
-import com.example.administrator.customviewtest.R;
+import com.hewking.customviewtest.R;
+
 
 public class HoveringscrollActivity extends AppCompatActivity {
 

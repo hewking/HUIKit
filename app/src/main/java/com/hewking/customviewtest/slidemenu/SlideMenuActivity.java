@@ -1,9 +1,10 @@
-package com.example.administrator.customviewtest.slidemenu;
+package com.hewking.customviewtest.slidemenu;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.example.administrator.customviewtest.R;
+import com.hewking.customviewtest.R;
+
 
 /**
  * Created by hewking on 2016/11/23.

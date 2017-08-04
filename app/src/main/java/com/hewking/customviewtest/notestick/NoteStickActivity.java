@@ -1,4 +1,4 @@
-package com.example.administrator.customviewtest.notestick;
+package com.hewking.customviewtest.notestick;
 
 import android.animation.ObjectAnimator;
 import android.app.Activity;
@@ -8,8 +8,9 @@ import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.RelativeLayout;
 
-import com.example.administrator.customviewtest.R;
-import com.example.administrator.customviewtest.util.UiUtil;
+import com.hewking.customviewtest.R;
+import com.hewking.customviewtest.util.UiUtil;
+
 
 /**
  * Created by Administrator on 2016/11/17.

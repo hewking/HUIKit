@@ -1,4 +1,4 @@
-package com.example.administrator.customviewtest.weixinaudiorecorder;
+package com.hewking.customviewtest.weixinaudiorecorder;
 
 import android.graphics.RectF;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 
-import com.example.administrator.customviewtest.R;
+import com.hewking.customviewtest.R;
 
 public class AudiorecorderActivity extends AppCompatActivity {
 

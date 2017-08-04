@@ -1,4 +1,4 @@
-package com.example.administrator.customviewtest.coordinatorlayout;
+package com.hewking.customviewtest.coordinatorlayout;
 
 import android.content.Context;
 import android.graphics.Canvas;

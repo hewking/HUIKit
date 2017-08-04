@@ -1,4 +1,4 @@
-package com.example.administrator.customviewtest.drawerlayout;
+package com.hewking.customviewtest.drawerlayout;
 
 import android.content.Context;
 import android.graphics.Point;
