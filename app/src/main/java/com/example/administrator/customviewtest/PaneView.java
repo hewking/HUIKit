@@ -83,8 +83,6 @@ public class PaneView  extends View {
         mSArcPaint.setStrokeWidth(strokeWidth);
         canvas.drawArc(rectF,120,300,false,mSArcPaint);
 
-
-
 //        mArcPaint.setStrokeWidth(50);
 //        new RectF(50)
     }

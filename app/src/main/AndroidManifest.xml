@@ -9,18 +9,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
-
-        </activity>
-        <activity android:name=".notestick.NoteStickActivity"></activity>
-        <activity android:name=".activity.HoveringscrollActivity"></activity>
-        <activity android:name=".slidemenu.SlideMenuActivity"></activity>
-        <activity android:name=".drawerlayout.DrawerActivity"></activity>
-        <activity android:name=".weixinaudiorecorder.AudiorecorderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".notestick.NoteStickActivity" />
+        <activity android:name=".activity.HoveringscrollActivity" />
+        <activity android:name=".slidemenu.SlideMenuActivity" />
+        <activity android:name=".drawerlayout.DrawerActivity" />
+        <activity android:name=".weixinaudiorecorder.AudiorecorderActivity">
+
+        </activity>
+        <activity android:name=".softkeyboard.KeyBoardActivity">
+
         </activity>
     </application>
 
