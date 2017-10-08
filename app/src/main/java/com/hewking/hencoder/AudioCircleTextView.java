@@ -85,6 +85,7 @@ public class AudioCircleTextView extends android.support.v7.widget.AppCompatText
                     float value = (float) animation.getAnimatedValue();
                     currentAnim = (int)(value * 4 + 1);
                     postInvalidate();
+                    //hahah
                 }
             });
 
