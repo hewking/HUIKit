@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.administrator.customviewtest">
+    package="com.hewking.customviewtest">
 
     <application
         android:allowBackup="true"
@@ -22,7 +22,7 @@
         <activity android:name=".weixinaudiorecorder.AudiorecorderActivity">
 
         </activity>
-        <activity android:name=".softkeyboard.KeyBoardActivity">
+        <activity android:name="com.example.administrator.customviewtest.softkeyboard.KeyBoardActivity">
 
         </activity>
     </application>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.administrator.customviewtest.animation.expand.ExpandActivity2"
+    tools:showIn="@layout/activity_expand2">
+    
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/cb"
+        android:layout_centerHorizontal="true"
+        android:button="@drawable/message_announcement_selector"
+        android:text="显示"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_below="@id/cb"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@color/white"
+            android:text="android.support.v7.widgeandroid.support.v7.widget.AppCompatCheckBoxt.AppComandroid.support.v7.widget.AppCompatCheckBoxpatCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
