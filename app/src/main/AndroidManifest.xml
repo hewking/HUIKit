@@ -22,7 +22,7 @@
         <activity android:name=".weixinaudiorecorder.AudiorecorderActivity">
 
         </activity>
-        <activity android:name="com.example.administrator.customviewtest.softkeyboard.KeyBoardActivity">
+        <activity android:name=".softkeyboard.KeyBoardActivity">
 
         </activity>
     </application>

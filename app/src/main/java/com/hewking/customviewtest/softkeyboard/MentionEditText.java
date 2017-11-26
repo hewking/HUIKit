@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.administrator.customviewtest.softkeyboard;
+package com.hewking.customviewtest.softkeyboard;
 
 import android.content.Context;
 import android.graphics.Color;

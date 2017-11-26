@@ -1,4 +1,4 @@
-package com.example.administrator.customviewtest.tinderstack;
+package com.hewking.customviewtest.tinderstack;
 
 import android.content.Context;
 import android.support.v4.widget.ViewDragHelper;
