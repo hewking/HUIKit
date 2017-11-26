@@ -3,6 +3,7 @@ package com.hewking.hencoder;
 import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -10,6 +11,8 @@ import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.animation.LinearInterpolator;
+
+import com.hewking.customviewtest.R;
 
 /**
  * Created by test on 2017/10/8.
@@ -46,6 +49,9 @@ public class AudioCircleTextView extends android.support.v7.widget.AppCompatText
     public AudioCircleTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.AudioCircleTextView);
+        array.getBoolean(R.styleable.AudioCircleTextView_animMode,false);
+        array.recycle();
     }
 
     private void init() {

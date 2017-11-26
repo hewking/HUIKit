@@ -94,10 +94,24 @@
         <!--android:layout_width="300dp"-->
         <!--android:layout_height="250dp" />-->
 
-    <com.hewking.hencoder.AudioCircleTextView
-        android:padding="10dp"
-        android:gravity="center"
+    <!--<com.hewking.hencoder.AudioCircleTextView-->
+        <!--android:padding="10dp"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <!--<com.hewking.hencoder.HenCoderRulerView-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <!--<com.hewking.hencoder.layout.StickImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <com.hewking.hencoder.HaloProgressView
         android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="300dp"
+        android:layout_height="200dp" />
 </RelativeLayout>
