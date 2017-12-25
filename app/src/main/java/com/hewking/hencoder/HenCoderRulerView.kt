@@ -78,7 +78,7 @@ class HenCoderRulerView(context: Context?, attrs: AttributeSet?) : View(context,
                 var dx = event.x - lastX
                 lastX = event.x
 //                scrollBy(- dx.toInt() ,0)
-                mScroller?.startScroll(event.x.toInt(),event.y.toInt(),- dx.toInt(),100)
+                mScroller?.startScroll(event.x.toInt(),event.y.toInt(),- dx.toInt(),0)
                 invalidate()
             }
 
@@ -97,7 +97,7 @@ class HenCoderRulerView(context: Context?, attrs: AttributeSet?) : View(context,
     override fun computeScroll() {
         super.computeScroll()
         if (mScroller?.computeScrollOffset()!!) {
-            scrollTo(mScroller?.currX!!,mScroller?.currX!!)
+            scrollTo(- mScroller?.currX!!,0)
             invalidate()
         }
     }
