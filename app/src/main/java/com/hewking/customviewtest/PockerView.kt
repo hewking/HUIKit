@@ -33,6 +33,10 @@ class PockerView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 //        currentRes?.set(1,res[random.nextInt(4)])
 //        currentRes?.set(2,res[random.nextInt(4)])
 
+//        val typeArray = context.obtainStyledAttributes(attrs,R.styleable.PockerView)
+//        typeArray.getDimension(R.styleable.PockerView_p_windth,60f)
+//        typeArray.recycle()
+
         currentRes?.set(0,res[0])
         currentRes?.set(1,res[1])
         currentRes?.set(2,res[2])

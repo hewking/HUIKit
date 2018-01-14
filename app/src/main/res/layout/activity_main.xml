@@ -115,9 +115,120 @@
         <!--android:layout_width="300dp"-->
         <!--android:layout_height="200dp" />-->
 
-    <com.hewking.customviewtest.PockerView
-        android:layout_centerInParent="true"
+    <!--<com.hewking.customviewtest.PockerView-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <!--<com.hewking.customviewtest.stickytop.StickyTopLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+
+
+    <!--</com.hewking.customviewtest.stickytop.StickyTopLayout>-->
+
+    <!--<com.hewking.customviewtest.gamerender.GameRenderView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <!--<com.hewking.customviewtest.floatlayout.FloatFrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--<ImageView-->
+            <!--android:src="@drawable/pocker_0x01"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+    <!--</com.hewking.customviewtest.floatlayout.FloatFrameLayout>-->
+
+    <Button
+        android:text="expand"
+        android:id="@+id/btn_sure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <com.hewking.customviewtest.stickytop.StickyTopLayout
+        android:id="@+id/sticktop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.hewking.customviewtest.gallerylayout.GalleryLayout2
+            android:layout_centerInParent="true"
+            android:layout_width="300dp"
+            android:layout_height="300dp">
+
+            <ImageView
+                android:src="@mipmap/nice_girl"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:src="@mipmap/nice_girl"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:src="@mipmap/nice_girl"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:src="@mipmap/nice_girl"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.hewking.customviewtest.gallerylayout.GalleryLayout2>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:src="@mipmap/nice_girl"
+                    android:scaleType="centerCrop"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"/>
+                <ImageView
+                    android:src="@mipmap/nice_girl"
+                    android:scaleType="centerCrop"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp" />
+                <ImageView
+                    android:src="@mipmap/nice_girl"
+                    android:scaleType="centerCrop"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"/>
+                <ImageView
+                    android:src="@mipmap/nice_girl"
+                    android:scaleType="centerCrop"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp" />
+                <ImageView
+                    android:src="@mipmap/nice_girl"
+                    android:scaleType="centerCrop"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp" />
+                <ImageView
+                    android:src="@mipmap/nice_girl"
+                    android:scaleType="centerCrop"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp" />
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </com.hewking.customviewtest.stickytop.StickyTopLayout>
+
+
 
 </RelativeLayout>
