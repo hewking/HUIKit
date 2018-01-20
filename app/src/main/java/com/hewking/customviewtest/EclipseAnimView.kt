@@ -46,6 +46,12 @@ class EclipseAnimView : View{
         super.onSizeChanged(w, h, oldw, oldh)
         mWidth = w
         mHeight = h
+        circleBitmap?.recycle()
+        if (measuredWidth != 0 && measuredHeight != 0) {
+            circleBitmap = Bitmap.createBitmap(measuredWidth,measuredHeight,Bitmap.Config.ARGB_8888)
+            circleCanvas = Canvas(circleBitmap)
+        }
+        Log.d("EclipseAnimView : " ,"onSizeChanged :${measuredWidth}")
     }
 
     override fun onAttachedToWindow() {
@@ -94,8 +100,11 @@ class EclipseAnimView : View{
                 })
                 start()
             }
-
         }
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
     }
 
     override fun onDetachedFromWindow() {
@@ -106,11 +115,6 @@ class EclipseAnimView : View{
 
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
         super.onLayout(changed, left, top, right, bottom)
-        circleBitmap?.recycle()
-        if (measuredWidth != 0 && measuredHeight != 0) {
-            circleBitmap = Bitmap.createBitmap(measuredWidth,measuredHeight,Bitmap.Config.ARGB_8888)
-            circleCanvas = Canvas(circleBitmap)
-        }
     }
 
     val radius = 100f
@@ -118,7 +122,7 @@ class EclipseAnimView : View{
     @SuppressLint("DrawAllocation")
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-
+        Log.d("EclipseAnimView : " ,"onDraw :${measuredWidth}")
         canvas.drawARGB(255,23,12,53)
         if (eclipseEnd) {
             canvas.save()
@@ -152,11 +156,5 @@ class EclipseAnimView : View{
                 canvas.drawBitmap(circleBitmap,0f,0f,null)
             }
         }
-
     }
-
-
-
-
-
 }
