@@ -40,8 +40,6 @@ class HenCoderRulerView(context: Context?, attrs: AttributeSet?) : View(context,
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-
-
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
     }
 
