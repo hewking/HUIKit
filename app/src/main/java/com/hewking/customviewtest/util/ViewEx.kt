@@ -17,3 +17,7 @@ fun View.dp2px(dp : Float) : Int{
 fun Paint.textHeight() : Float{
     return descent() - ascent()
 }
+
+fun Paint.textWidth(text : String) : Float{
+    return measureText(text)
+}
