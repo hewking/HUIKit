@@ -2,26 +2,35 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hewking.customviewtest">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">    <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".activity.MainActivity">
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+        </activity>
         <activity android:name=".notestick.NoteStickActivity" />
         <activity android:name=".slidemenu.SlideMenuActivity" />
         <activity android:name=".drawerlayout.DrawerActivity" />
         <activity android:name=".weixinaudiorecorder.AudiorecorderActivity" />
         <activity android:name=".softkeyboard.KeyBoardActivity" />
-        <activity android:name=".viewlifecircle.LifeCircleActivity">
+        <activity android:name=".viewlifecircle.LifeCircleActivity"></activity>
+        <activity android:name=".gesture.GestureCompatActivity" />
+        <activity android:name="com.hewking.androidview.textinput.TextInputDemoActivity">
 
         </activity>
-        <activity android:name=".gesture.GestureCompatActivity"></activity>
+        <activity android:name="com.hewking.androidview.creamepreview.CameraPraviewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
