@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:xlh="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.hewking.customviewtest.stepview.XLHStepView
+        android:id="@+id/zidingyi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        xlh:barColor="#51C6EF"
+        xlh:canDrag="true"
+        xlh:currentStep="3"
+        xlh:progressColor="#085EB3"
+        xlh:stepCount="5"
+        xlh:stepNormalColor="#76BD30"
+        xlh:stepSelectedColor="#F66936" >
+    </com.hewking.customviewtest.stepview.XLHStepView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="准备" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="开始" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="进行" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="结束" />
+    </LinearLayout>
+
+</LinearLayout>

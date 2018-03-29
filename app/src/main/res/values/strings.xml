@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">CustomViewTest</string>
+    <string name="app_name">UI库测试</string>
     <string name="title_activity_expand2">ExpandActivity2</string>
 </resources>

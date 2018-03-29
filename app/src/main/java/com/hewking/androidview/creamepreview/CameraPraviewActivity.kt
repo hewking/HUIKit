@@ -54,7 +54,7 @@ class CameraPraviewActivity : AppCompatActivity() ,SurfaceHolder.Callback{
              */
             //设置角度，此处 CameraId 我默认 为 0 （后置）
             // CameraId 也可以 通过 参考 Camera.open() 源码 方法获取
-//            setCameraDisplayOrientation(this@MainActivity, 0, camera)
+//            setCameraDisplayOrientation(this@StepViewDemoActivity, 0, camera)
             camera?.setPreviewDisplay(holder)//通过SurfaceView显示取景画面
             camera?.startPreview()//开始预览
             isPreview = true//设置是否预览参数为真

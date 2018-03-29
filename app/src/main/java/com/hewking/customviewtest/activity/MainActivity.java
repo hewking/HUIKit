@@ -8,10 +8,18 @@ import com.hewking.customviewtest.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final int NESTED_SCROLL = 0x0001;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        int type = NESTED_SCROLL;
+//        if (type == NESTED_SCROLL) {
+//            setContentView(R.layout.view_nested_view_parent);
+//        } else {
+            setContentView(R.layout.activity_main);
+//        }
+
 //        DialogFragment dialogFragment = new ImageDialogFragment();
 //        dialogFragment.show(getSupportFragmentManager(),"mainactivity");
 //        findViewById(R.id.btn_sure).setOnClickListener(new View.OnClickListener() {

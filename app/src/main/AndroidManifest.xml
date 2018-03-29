@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".notestick.NoteStickActivity" />
         <activity android:name=".slidemenu.SlideMenuActivity" />
@@ -24,13 +27,22 @@
         <activity android:name="com.hewking.androidview.textinput.TextInputDemoActivity">
 
         </activity>
-        <activity android:name="com.hewking.androidview.creamepreview.CameraPraviewActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name="com.hewking.androidview.creamepreview.CameraPraviewActivity"></activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name="com.hewking.androidview.edittext.FixSoftInputActivity">
         </activity>
+
+        <activity android:name=".constrainlayout.ConstrainActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <activity android:name=".stepview.StepViewDemoActivity">
+
+        </activity>
+
     </application>
 
 </manifest>
