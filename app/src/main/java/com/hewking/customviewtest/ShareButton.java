@@ -129,12 +129,12 @@ public class ShareButton extends View {
     private boolean isExpand;
 
     public void startAnim(){
-        ValueAnimator animator = new ValueAnimator().ofFloat(1,4);
+        ValueAnimator animator = ValueAnimator.ofFloat(1,4);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 roundbackHeight = (float)animation.getAnimatedValue() * 50;
-                invalidate();
+                postInvalidateOnAnimation();
             }
         });
         animator.setDuration(2000);

@@ -21,3 +21,25 @@ fun Paint.textHeight() : Float{
 fun Paint.textWidth(text : String) : Float{
     return measureText(text)
 }
+
+fun View.resoloveSize(size : Int , spec : Int) : Int {
+    val mode = View.MeasureSpec.getMode(spec)
+    val specSize = View.MeasureSpec.getSize(spec)
+    return when(mode) {
+        View.MeasureSpec.AT_MOST -> {
+            if (size > specSize) {
+                specSize
+            } else {
+                size
+            }
+        }
+
+        View.MeasureSpec.EXACTLY -> {
+            specSize
+        }
+
+        else -> {
+            size
+        }
+    }
+}

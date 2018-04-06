@@ -245,22 +245,35 @@
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content" />-->
 
-    <com.hewking.customviewtest.SectionStepView
+    <!--<com.hewking.customviewtest.SectionStepView-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:id="@+id/step_fee_level"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:barColor="@color/line_color"-->
+        <!--android:padding="@dimen/base_xhdpi"-->
+        <!--app:canDrag="true"-->
+        <!--app:currentStep="2"-->
+        <!--app:barHeight="@dimen/base_dpi"-->
+        <!--app:stepRadius="@dimen/base_ldpi"-->
+        <!--app:progressColor="@color/colorAccent"-->
+        <!--app:stepCount="5"-->
+        <!--app:stepNormalColor="@color/colorAccent"-->
+        <!--app:stepSelectedColor="@color/colorAccent" >-->
+    <!--</com.hewking.customviewtest.SectionStepView>-->
+
+    <!--<com.hewking.customviewtest.CircleView-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_width="300dp"-->
+        <!--app:color="@color/app_color_blue"-->
+        <!--app:raduis="@dimen/base_50dpi"-->
+        <!---->
+        <!--android:layout_height="300dp" />-->
+
+    <com.hewking.customviewtest.SectionSeekBar
         android:layout_centerInParent="true"
-        android:id="@+id/step_fee_level"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:barColor="@color/line_color"
-        android:padding="@dimen/base_xhdpi"
-        app:canDrag="true"
-        app:currentStep="2"
-        app:barHeight="@dimen/base_dpi"
-        app:stepRadius="@dimen/base_ldpi"
-        app:progressColor="@color/colorAccent"
-        app:stepCount="5"
-        app:stepNormalColor="@color/colorAccent"
-        app:stepSelectedColor="@color/colorAccent" >
-    </com.hewking.customviewtest.SectionStepView>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>
