@@ -3,7 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#841e56</color>
     <color name="background">#d2cdcd</color>
-    <color name="colorAccent">#cc202c</color>
+    <color name="colorAccent">#b61924</color>
     <color name="white">#ffffffff</color>
     <!-- common -->
     <color name="app_color_blue">#00A8E1</color>
@@ -14,7 +14,7 @@
     <color name="app_color_blue_2_disabled">#7F31BDF3</color>
     <color name="app_color_blue_2_pressed">#7F31BDF3</color>
 
-    <color name="app_color_theme_1">#EF5362</color> <!-- Grapefruit -->
+    <color name="app_color_theme_1">#af1c2a</color> <!-- Grapefruit -->
     <color name="app_color_theme_2">#FE6D4B</color> <!-- Bittersweet -->
     <color name="app_color_theme_3">#FFCF47</color> <!-- Sunflower -->
     <color name="app_color_theme_4">#9FD661</color> <!-- Grass -->

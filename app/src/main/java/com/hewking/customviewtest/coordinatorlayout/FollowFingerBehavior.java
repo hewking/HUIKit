@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.Button;
 
 /**
+ * @author cjh
  * Created by hewking on 2016/11/6.
  */
-
 public class FollowFingerBehavior extends CoordinatorLayout.Behavior<Button> {
 
     private int width;

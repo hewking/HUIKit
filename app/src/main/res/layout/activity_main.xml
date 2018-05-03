@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.hewking.customviewtest.activity.MainActivity">
+    tools:context="com.hewking.customviewtest.com.hewking.demo.MainActivity">
 
     <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
@@ -271,9 +271,16 @@
         <!---->
         <!--android:layout_height="300dp" />-->
 
-    <com.hewking.customviewtest.SectionSeekBar
+    <!--<com.hewking.customviewtest.SectionSeekBar-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <com.hewking.customviewtest.chart.DepthView
         android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        app:bg_color="#b61924"
+        android:layout_width="300dp"
+        android:layout_height="250dp" />
+
 
 </RelativeLayout>

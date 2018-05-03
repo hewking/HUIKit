@@ -170,11 +170,11 @@ class SectionSeekBar(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
     private fun calcDstX(x: Float): Float {
         val maxX = width - paddingRight - mSelectRadius
         val minX = paddingLeft + mSelectRadius
-        val targetX = Math.max(minX,Math.min(mLastX,maxX))
+        val targetX = Math.max(minX,Math.min(x,maxX))
         val sectionWidth = (width - paddingLeft - paddingRight - 2 * mSelectRadius) / (sectionCount - 1)
-
-        val sectionRound = Math.round(targetX / sectionWidth)
-        val calcX = Math.min(sectionWidth * sectionRound + paddingLeft + mSelectRadius,maxX)
+        val sectionRound = Math.round((targetX - minX) / sectionWidth)
+        Log.d(SectionSeekBar::class.java.simpleName,"sectionRound : ${sectionRound} sectionWidth : ${sectionWidth} targetX : ${targetX}")
+        val calcX = Math.min(sectionWidth * sectionRound + minX,maxX)
         val oldPos = mCurPosition
         // 判断是否当前section选中改变
         mCurPosition = (calcX / sectionWidth).toInt()
