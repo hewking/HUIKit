@@ -8,7 +8,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Scroller
-import com.hewking.customviewtest.util.UiUtil
+import com.hewking.custom.util.UiUtil
 
 /**
  * Created by test on 2017/10/26.

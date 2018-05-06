@@ -12,7 +12,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.animation.LinearInterpolator;
 
-import com.hewking.customviewtest.R;
+import com.hewking.custom.R;
 
 /**
  * Created by test on 2017/10/8.

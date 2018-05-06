@@ -10,7 +10,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
-import com.hewking.customviewtest.R
+import com.hewking.custom.R
 
 
 class MainActivity : AppCompatActivity() {
@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity() {
     fun createItems() : MutableList<Item>{
         val list = mutableListOf<Item>()
         list.add(Item(0,"首页测试",DemoListFragment::class.java))
+        list.add(Item(1,"HTextView测试",HTextViewFragment::class.java))
         return list
     }
 

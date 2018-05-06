@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.SurfaceHolder
 import android.view.SurfaceView
-import com.hewking.customviewtest.R
-import com.hewking.customviewtest.util.v
+import com.hewking.custom.R
+import com.hewking.custom.util.v
 import java.io.IOException
 
 

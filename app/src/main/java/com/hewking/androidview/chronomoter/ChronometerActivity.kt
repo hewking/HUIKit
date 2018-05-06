@@ -8,7 +8,7 @@ import android.os.SystemClock
 import android.util.Log
 import android.widget.Chronometer
 
-import com.hewking.customviewtest.R
+import com.hewking.custom.R
 
 class ChronometerActivity : AppCompatActivity() {
 

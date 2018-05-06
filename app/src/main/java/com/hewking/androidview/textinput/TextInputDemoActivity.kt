@@ -2,7 +2,7 @@ package com.hewking.androidview.textinput
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.hewking.customviewtest.R
+import com.hewking.custom.R
 
 class TextInputDemoActivity : AppCompatActivity() {
 

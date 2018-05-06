@@ -6,7 +6,7 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
-import com.hewking.customviewtest.util.UiUtil
+import com.hewking.custom.util.UiUtil
 
 /**
  * Created by test on 2017/11/26.

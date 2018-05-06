@@ -2,7 +2,7 @@ package com.hewking.androidview.edittext
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.hewking.customviewtest.R
+import com.hewking.custom.R
 
 /**
  * 类的描述：

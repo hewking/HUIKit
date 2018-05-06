@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.hewking.customviewtest.viewlifecircle.LifeCircleActivity">
+    tools:context="com.hewking.custom.viewlifecircle.LifeCircleActivity">
 
     <Button
         android:id="@+id/btn"
@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.hewking.customviewtest.viewlifecircle.LifeCircleView
+    <com.hewking.custom.viewlifecircle.LifeCircleView
         android:id="@+id/tv_lifecircle"
         android:text="LifeCircle"
         app:layout_constraintTop_toTopOf="parent"
