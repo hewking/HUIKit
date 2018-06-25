@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">UI库测试</string>
+    <string name="title_activity_expand2">ExpandActivity2</string>
+    <string name="text_home">HOME TEST</string>
+    <string name="text_htextview">HTextView TEST</string>
+    <string name="text_stickytop">StickyTop TEST</string>
+    <string name="text_language_switch">LANGUAGE SWITCH</string>
+
+</resources>

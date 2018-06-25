@@ -3,7 +3,6 @@ package com.hewking.demo
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -11,9 +10,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import com.hewking.custom.R
+import com.hewking.custom.stickytop.LagouTopFragment
+import com.hewking.custom.stickytop.StickTopFragment
+import com.hewking.language.LangageSwitchFragment
+import com.hewking.language.LanguageActivity
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : LanguageActivity() {
 
     internal var expand = false
 
@@ -59,36 +62,41 @@ class MainActivity : AppCompatActivity() {
 
     fun createItems() : MutableList<Item>{
         val list = mutableListOf<Item>()
-        list.add(Item(0,"首页测试",DemoListFragment::class.java))
-        list.add(Item(1,"HTextView测试",HTextViewFragment::class.java))
+        list.add(Item(0,getString(R.string.text_home),DemoListFragment::class.java))
+        list.add(Item(1,getString(R.string.text_htextview),HTextViewFragment::class.java))
+        list.add(Item(2,getString(R.string.text_stickytop),StickTopFragment::class.java))
+        list.add(Item(3,getString(R.string.text_language_switch),LangageSwitchFragment::class.java))
+        list.add(Item(4,"拉钩主页", LagouTopFragment::class.java))
         return list
     }
 
-    val mAdapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+    val mAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> by lazy {
+        object : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
-        val datas = createItems()
+            val datas = createItems()
 
-        override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
-            val itemView = LayoutInflater.from(parent?.context).inflate(R.layout.item_text,parent,false)
-            val vh = object : RecyclerView.ViewHolder(itemView){
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+                val itemView = LayoutInflater.from(parent?.context).inflate(R.layout.item_text,parent,false)
+                val vh = object : RecyclerView.ViewHolder(itemView){
+                }
+                return vh
             }
-            return vh
-        }
 
-        override fun getItemCount(): Int {
-            return datas.size
-        }
-
-        override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
-            val itemView = holder?.itemView
-            itemView?.v<TextView>(R.id.tv_text)?.text = datas[position].info
-            itemView?.setOnClickListener {
-                val intent = Intent(this@MainActivity,DemoFragmentActivity::class.java)
-                intent.putExtra(DemoFragmentActivity.FRAGMENT,datas[position].clazz.name)
-                this@MainActivity.startActivity(intent)
+            override fun getItemCount(): Int {
+                return datas.size
             }
-        }
 
+            override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+                val itemView = holder?.itemView
+                itemView?.v<TextView>(R.id.tv_text)?.text = datas[position].info
+                itemView?.setOnClickListener {
+                    val intent = Intent(this@MainActivity,DemoFragmentActivity::class.java)
+                    intent.putExtra(DemoFragmentActivity.FRAGMENT,datas[position].clazz.name)
+                    this@MainActivity.startActivity(intent)
+                }
+            }
+
+        }
     }
 
 

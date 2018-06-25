@@ -36,18 +36,18 @@ class NestedViewParent(ctx : Context,attrs : AttributeSet) : LinearLayout(ctx,at
      * 当nestedchild 想要滑动时 会调用nestedparent onStartnestedScroll 方法，
      * 是否支持嵌套滑动
      */
-    override fun onStartNestedScroll(child: View?, target: View?, nestedScrollAxes: Int): Boolean {
+    override fun onStartNestedScroll(child: View, target: View, nestedScrollAxes: Int): Boolean {
         return nestedScrollAxes.equals(ViewCompat.SCROLL_AXIS_VERTICAL)
     }
 
-    override fun onNestedScroll(target: View?, dxConsumed: Int, dyConsumed: Int, dxUnconsumed: Int, dyUnconsumed: Int) {
+    override fun onNestedScroll(target: View, dxConsumed: Int, dyConsumed: Int, dxUnconsumed: Int, dyUnconsumed: Int) {
         super.onNestedScroll(target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed)
     }
 
     /**
      * 当nestedchild 要真正要滑动时候会调用nestedparent 方法，判断nestedparent 是否消耗
      */
-    override fun onNestedPreScroll(target: View?, dx: Int, dy: Int, consumed: IntArray?) {
+    override fun onNestedPreScroll(target: View, dx: Int, dy: Int, consumed: IntArray) {
         if (dy < 0 && scrollY > 0 || dy > 0 && scrollY < mTopView?.measuredHeight?:0) {
             consumed!![1] = dy
             scrollBy(dx,dy)

@@ -36,7 +36,7 @@ class DesignActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
-            override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
                 return VH(layoutInflater.inflate(R.layout.layout_recycler_item,null,false))
             }
 
@@ -44,7 +44,7 @@ class DesignActivity : AppCompatActivity() {
                 return 200
             }
 
-            override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
+            override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
             }
         }
 
