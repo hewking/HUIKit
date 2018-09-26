@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
+import com.hewking.androidview.cardview.CardViewFragment
+import com.hewking.androidview.dialog.DialogProgressFragment
 import com.hewking.custom.R
 import com.hewking.custom.stickytop.LagouTopFragment
 import com.hewking.custom.stickytop.StickTopFragment
@@ -67,6 +69,10 @@ class MainActivity : LanguageActivity() {
         list.add(Item(2,getString(R.string.text_stickytop),StickTopFragment::class.java))
         list.add(Item(3,getString(R.string.text_language_switch),LangageSwitchFragment::class.java))
         list.add(Item(4,"拉钩主页", LagouTopFragment::class.java))
+        list.add(Item(5,"自定义view Demo", CustomViewFragment::class.java))
+        list.add(Item(6,"EditText Demo",EditTextTestFragment::class.java))
+        list.add(Item(7,"CardView shadow Demo",CardViewFragment::class.java))
+        list.add(Item(8,"ProgressDialog Demo",DialogProgressFragment::class.java))
         return list
     }
 

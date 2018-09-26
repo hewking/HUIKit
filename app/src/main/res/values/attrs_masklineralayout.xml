@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MaskLinearLayout">
+        <attr name="mask_showmask" format="boolean"/>
+        <attr name="mask_drawable" format="reference"/>
+    </declare-styleable>
+</resources>
