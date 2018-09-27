@@ -12,6 +12,7 @@ import android.widget.TextView
 import com.hewking.androidview.cardview.CardViewFragment
 import com.hewking.androidview.dialog.DialogProgressFragment
 import com.hewking.custom.R
+import com.hewking.custom.gesture.GestureDetectorDemoFragment
 import com.hewking.custom.stickytop.LagouTopFragment
 import com.hewking.custom.stickytop.StickTopFragment
 import com.hewking.language.LangageSwitchFragment
@@ -73,6 +74,7 @@ class MainActivity : LanguageActivity() {
         list.add(Item(6,"EditText Demo",EditTextTestFragment::class.java))
         list.add(Item(7,"CardView shadow Demo",CardViewFragment::class.java))
         list.add(Item(8,"ProgressDialog Demo",DialogProgressFragment::class.java))
+        list.add(Item(9,"GestureDetector Demo",GestureDetectorDemoFragment::class.java))
         return list
     }
 
