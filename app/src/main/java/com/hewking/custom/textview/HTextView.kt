@@ -6,7 +6,10 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.support.v7.widget.AppCompatTextView
+import android.text.SpannableString
+import android.text.style.ClickableSpan
 import android.util.AttributeSet
+import android.view.MotionEvent
 import com.hewking.custom.BuildConfig
 import com.hewking.custom.R
 import com.hewking.custom.util.dp2px
@@ -105,6 +108,17 @@ class HTextView(ctx : Context,attrs : AttributeSet) : AppCompatTextView(ctx,attr
         }
 //        canvas?.drawCircle(width / 2f,height / 2f,dotRadis * 1f,circlePaint)
 
+    }
+
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        val consume = super.onTouchEvent(event)
+        val span = SpannableString(text)
+        val spans = span.getSpans(selectionStart, selectionEnd, ClickableSpan::class.java)
+        return if (!spans.isEmpty()) {
+            true
+        } else {
+            consume
+        }
     }
 
 

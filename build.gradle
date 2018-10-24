@@ -25,6 +25,10 @@ allprojects {
     }
 }
 
+ext {
+    glide_v = '4.7.1'
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.Layout.Alignment;
@@ -17,6 +18,7 @@ import android.text.style.AlignmentSpan;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.BulletSpan;
 import android.text.style.ClickableSpan;
+import android.text.style.DynamicDrawableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
 import android.text.style.LeadingMarginSpan;
@@ -31,6 +33,9 @@ import android.text.style.SuperscriptSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
 import static android.graphics.BlurMaskFilter.Blur;
 
@@ -57,6 +62,10 @@ public class SpannableStringUtils {
     public static Builder getBuilder(@NonNull CharSequence text) {
         return new Builder(text);
     }
+
+    @IntDef({DynamicDrawableSpan.ALIGN_BASELINE,DynamicDrawableSpan.ALIGN_BOTTOM})
+    @Retention(RetentionPolicy.SOURCE)
+    public static @interface ImageSpanAlign{}
 
     public static class Builder {
 
@@ -100,6 +109,8 @@ public class SpannableStringUtils {
         private boolean imageIsResourceId;
         @DrawableRes
         private int resourceId;
+        @ImageSpanAlign
+        private int imageSpanAlign;
 
         private ClickableSpan clickSpan;
         private String url;
@@ -370,6 +381,13 @@ public class SpannableStringUtils {
         public Builder setResourceId(@DrawableRes int resourceId) {
             this.resourceId = resourceId;
             imageIsResourceId = true;
+            imageSpanAlign = DynamicDrawableSpan.ALIGN_BOTTOM;
+            return this;
+        }
+
+        public Builder setResourceId(@DrawableRes int resourceId,@ImageSpanAlign int align) {
+            setResourceId(resourceId);
+            this.imageSpanAlign = align;
             return this;
         }
 
@@ -537,7 +555,7 @@ public class SpannableStringUtils {
                     uri = null;
                     imageIsUri = false;
                 } else {
-                    mBuilder.setSpan(new ImageSpan(DemoApplication.Companion.getContext(), resourceId), start, end, flag);
+                    mBuilder.setSpan(new ImageSpan(DemoApplication.Companion.getContext(), resourceId,imageSpanAlign), start, end, flag);
                     resourceId = 0;
                     imageIsResourceId = false;
                 }

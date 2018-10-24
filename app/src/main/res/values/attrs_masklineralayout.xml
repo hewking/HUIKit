@@ -2,6 +2,7 @@
 <resources>
     <declare-styleable name="MaskLinearLayout">
         <attr name="mask_showmask" format="boolean"/>
-        <attr name="mask_drawable" format="reference"/>
+        <attr name="mask_drawable" format="reference">
+        </attr>
     </declare-styleable>
 </resources>
