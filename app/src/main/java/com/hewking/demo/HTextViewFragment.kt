@@ -3,11 +3,11 @@ package com.hewking.demo
 import android.app.Activity
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.text.Layout
-import android.text.Spannable
-import android.text.Spanned
+import android.support.v4.widget.TextViewCompat
+import android.text.*
 import android.text.style.DynamicDrawableSpan
 import android.text.style.URLSpan
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -56,6 +56,21 @@ class HTextViewFragment : Fragment() {
 
         tv_text_span.setOnClickListener({
             L.d("HTextViewFragment","onclick")
+        })
+
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(tv_auto_size,TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM)
+        TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(tv_auto_size,14,100,10,TypedValue.COMPLEX_UNIT_SP)
+        et_text.addTextChangedListener(object : TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+                tv_auto_size.text = s?.toString()
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
         })
 
         val spannable = tv_text_span.text as Spannable
