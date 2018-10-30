@@ -6,6 +6,7 @@ import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log.v
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
@@ -15,6 +16,18 @@ import com.hewking.custom.stickytop.StickTopFragment
 import com.hewking.language.LangageSwitchFragment
 import com.hewking.language.LanguageActivity
 
+/**
+ *              DecorView
+ *                  |
+ *                  |
+ *             FrameLayout
+ *                  |
+ *                  |
+ *              LinearLayout
+ *              |          |
+ *              |           |
+ *          FrameLayout     FrameLayout(content)
+ */
 
 class MainActivity : LanguageActivity() {
 
@@ -67,6 +80,7 @@ class MainActivity : LanguageActivity() {
         list.add(Item(2,getString(R.string.text_stickytop),StickTopFragment::class.java))
         list.add(Item(3,getString(R.string.text_language_switch),LangageSwitchFragment::class.java))
         list.add(Item(4,"拉钩主页", LagouTopFragment::class.java))
+        list.add(Item(5,"抖音录制View", DYRecordFragment::class.java))
         return list
     }
 

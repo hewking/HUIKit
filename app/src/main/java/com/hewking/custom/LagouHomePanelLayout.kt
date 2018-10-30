@@ -59,8 +59,8 @@ class LagouHomePanelLayout(ctx: Context, attrs: AttributeSet) : ViewGroup(ctx, a
 
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
         ensureTargetView()
-        mTopView?.layout(l,t,r,mTopHeight)
-        mContentView?.layout(l,mTopHeight,r,mTopHeight + mContentView?.measuredHeight!!)
+        mTopView?.layout(l,t,r,t + mTopHeight)
+        mContentView?.layout(l,t + mTopHeight,r,mTopHeight + mContentView?.measuredHeight!!)
     }
 
     private val mGestenerDetector : GestureDetectorCompat = GestureDetectorCompat(context,object : GestureDetector.SimpleOnGestureListener() {
@@ -94,7 +94,7 @@ class LagouHomePanelLayout(ctx: Context, attrs: AttributeSet) : ViewGroup(ctx, a
 
             mTopView?.layout(l,topT,r,topT + mTopHeight)
 
-            mContentView?.layout(l,topLimit,r,t + mTopHeight + mContentView?.measuredHeight!!)
+            mContentView?.layout(l,topLimit,r,topLimit + mTopHeight + mContentView?.measuredHeight!!)
         }
     }
 
