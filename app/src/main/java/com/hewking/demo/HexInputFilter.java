@@ -103,7 +103,7 @@ public class HexInputFilter implements TextWatcher {
             if (mid >= 48 && mid <= 57) {
                 /* 1-9. */
             } else if (mid >= 65 && mid <= 70) {
-                /* A-F. */
+                /* LoadAdapter-F. */
             } else if (mid >= 97 && mid <= 102) {
                 /* a-f. */
             } else {

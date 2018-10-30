@@ -21,3 +21,11 @@ fun <T : View> Activity.v(@IdRes resId : Int) : T{
 fun <T : View> View.v(@IdRes resId : Int) : T{
     return findViewById(resId) as T
 }
+
+fun View.dp2px(dp : Float) : Int{
+    return (context.resources.displayMetrics.density * dp + 0.5).toInt()
+}
+
+fun View.px2dp(px : Int) : Int{
+    return (px.div(context.resources.displayMetrics.density) + 0.5).toInt()
+}
