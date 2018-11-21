@@ -23,7 +23,9 @@ import com.hewking.demo.dp2px
  * 修改备注：
  * Version: 1.0.0
  */
-class LoadingView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
+open class LoadingView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
+
+    private val TAG = "LoadingView"
 
     var color = Color.BLACK
 
@@ -42,7 +44,7 @@ class LoadingView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
 
     init {
         val typedArray = ctx.obtainStyledAttributes(attrs, R.styleable.LoadingView)
-
+        color = typedArray.getColor(R.styleable.LoadingView_h_color,color)
         typedArray.recycle()
 
     }
@@ -79,6 +81,7 @@ class LoadingView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        L.d(TAG,"onMeasure")
         val wMode = MeasureSpec.getMode(widthMeasureSpec)
         var width = MeasureSpec.getSize(widthMeasureSpec)
 
@@ -98,6 +101,7 @@ class LoadingView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
     }
 
     override fun onDraw(canvas: Canvas?) {
+        L.d(TAG,"onDraw")
         if (canvas == null) return
         var radius = size / 2
         var cy = height / 2

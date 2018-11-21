@@ -52,12 +52,23 @@
         android:layout_height="wrap_content" />
 
     <com.hewking.custom.LoadingView
+        android:id="@+id/loading"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rectview"/>
+
+    <com.hewking.custom.TextLoadView
+        android:id="@+id/tv_loading"
+        android:layout_marginTop="20dp"
+        app:h_color="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
 </android.support.constraint.ConstraintLayout>
