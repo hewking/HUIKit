@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import android.support.v4.content.ContextCompat.getColor
 import android.util.AttributeSet
+import android.view.Gravity
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.ProgressBar
@@ -28,6 +29,7 @@ class LoadView(val ctx : Context) : LinearLayout(ctx) {
 
     private fun setUpView() {
         orientation = HORIZONTAL
+        gravity = Gravity.CENTER
         addView(TextView(ctx).apply {
             setPadding(dp2px(10f),dp2px(10f),dp2px(10f),dp2px(10f))
             text = "Loading"

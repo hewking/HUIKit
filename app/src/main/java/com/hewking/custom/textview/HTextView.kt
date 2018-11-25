@@ -6,10 +6,13 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.support.v7.widget.AppCompatTextView
+import android.text.InputFilter
 import android.text.SpannableString
+import android.text.TextUtils
 import android.text.style.ClickableSpan
 import android.util.AttributeSet
 import android.view.MotionEvent
+import android.widget.TextView
 import com.hewking.custom.BuildConfig
 import com.hewking.custom.R
 import com.hewking.custom.util.dp2px
@@ -122,5 +125,63 @@ class HTextView(ctx : Context,attrs : AttributeSet) : AppCompatTextView(ctx,attr
     }
 
 
+    override fun setText(text: CharSequence, type: TextView.BufferType) {
+        setTextEx(text, type)
+    }
+
+    /**
+     * 系统的省略号, 有时不会显示, 采用Span手动处理
+     */
+    private fun setTextEx(text: CharSequence, type: TextView.BufferType) {
+        var text = text
+        if (TextUtils.isEmpty(text)) {
+            setSuperText(text, type)
+            return
+        }
+
+        if (/*maxLines == 1 &&*/ ellipsize == TextUtils.TruncateAt.END) {
+            var maxLength = Integer.MAX_VALUE
+            val filters = filters
+            for (filter in filters) {
+                if (filter is InputFilter.LengthFilter) {
+                    maxLength = getMember(InputFilter.LengthFilter::class.java, filter, "mMax") as Int
+                }
+            }
+
+            /*请在设置 InputLengthFilter的时候, 预加上3个字符*/
+            val more = getMoreString()
+            val offset = more.length
+            val lastIndex = maxLength - offset
+            if (lastIndex >= 0) {
+                if (text.length > lastIndex) {
+                    text = text.subSequence(0, lastIndex)
+                    text = text.toString() + getMoreString()
+                }
+            }
+        }
+
+        setSuperText(text, type)
+    }
+
+    private fun setSuperText(text: CharSequence, type: TextView.BufferType) {
+        super.setText(text, type)
+    }
+
+    private fun getMoreString(): String {
+        return "..."
+    }
+
+    fun getMember(cls: Class<*>, target: Any, member: String): Any? {
+        var result: Any? = null
+        try {
+            val memberField = cls.getDeclaredField(member)
+            memberField.isAccessible = true
+            result = memberField.get(target)
+        } catch (e: Exception) {
+            //L.i("错误:" + cls.getSimpleName() + " ->" + e.getMessage());
+        }
+
+        return result
+    }
 
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoadingView">
+        <attr name="h_color" format="color"/>
+        <attr name="h_size" format="dimension"/>
+        <attr name="h_stroke" format="dimension"/>
+        <attr name="h_count" format="integer"/>
+    </declare-styleable>
+</resources>
