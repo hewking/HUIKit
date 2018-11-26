@@ -58,6 +58,8 @@ class HTextViewFragment : Fragment() {
             L.d("HTextViewFragment","onclick")
         })
 
+        smart_tv.text = "tronbet.io sdfsd baidu.com"
+
         TextViewCompat.setAutoSizeTextTypeWithDefaults(tv_auto_size,TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM)
         TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(tv_auto_size,14,100,10,TypedValue.COMPLEX_UNIT_SP)
         et_text.addTextChangedListener(object : TextWatcher{
