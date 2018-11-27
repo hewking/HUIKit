@@ -1,5 +1,6 @@
 package com.hewking.base.recyclerview;
 
+import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +9,8 @@ import android.view.ViewGroup;
 
 import com.livestar.flowchat.wallet.ui.tron.LoadView;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -122,10 +125,13 @@ public abstract class ComnBaseAdapter<T> extends RecyclerView.Adapter<ComnViewHo
                 // 如果是normal 开始加载
                 // 加载数据
                 if (mStateChangeListener != null && mLoadState != LoadState.LOAD) {
-                    mStateChangeListener.onLoadMore();
                     holder.itemView.post(new Runnable() {
                         @Override
                         public void run() {
+                            if (mLoadState == LoadState.LOAD) {
+                                return;
+                            }
+                            mStateChangeListener.onLoadMore();
                             setState(LoadState.LOAD);
                         }
                     });
@@ -158,6 +164,7 @@ public abstract class ComnBaseAdapter<T> extends RecyclerView.Adapter<ComnViewHo
             notifyItemChanged(getLast());
         } else {
             notifyItemRemoved(getLast());
+            notifyItemChanged(getLast());
         }
     }
 
@@ -193,4 +200,5 @@ public abstract class ComnBaseAdapter<T> extends RecyclerView.Adapter<ComnViewHo
     public interface OnStateChangeListener{
         void onLoadMore();
     }
+
 }
