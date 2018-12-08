@@ -39,7 +39,7 @@ class FilterSpaceEditText(ctx : Context,attrs : AttributeSet) : FilterEmojiEditT
                         Toast.makeText(context,"不能连续空格",Toast.LENGTH_SHORT).show()
                         setText(mInputBeforeText)
                         if (text is Spannable) {
-                            Selection.setSelection(text,text.length)
+                            Selection.setSelection(text,text?.length?:0)
                         }
                     }
                 }
