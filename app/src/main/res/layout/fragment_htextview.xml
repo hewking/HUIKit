@@ -104,4 +104,12 @@
         android:text="sdfsdfhttps://www.baidu.com sdfjlskfdjsf baidu.com tronbet.io"
         />
 
+    <com.hewking.custom.textview.SmartLinkTextView
+        android:id="@+id/smart_tv"
+        android:layout_marginTop="20dp"
+        android:autoLink="web"
+        android:padding="@dimen/base_xxhdpi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
