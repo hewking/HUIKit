@@ -116,13 +116,8 @@ public class TinderStackLayout extends ViewGroup {
                         L.d(TAG, "ds : " + ds + " doffset : " + doffset + " a : " + a);
                     }
 
-                    if (rate > 0) {
-                        // 右滑动
+                    //rate > 0  右滑动 else  // 左滑动
                         changedView.setRotation(rate * DEFAULT_DEGRESS);
-                    } else {
-                        // 左滑动
-                        changedView.setRotation(rate * DEFAULT_DEGRESS);
-                    }
                 }
             }
 
