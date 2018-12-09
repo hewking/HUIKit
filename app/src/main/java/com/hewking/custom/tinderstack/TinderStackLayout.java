@@ -74,7 +74,7 @@ public class TinderStackLayout extends ViewGroup {
                 } else {
                     if (mReleasedPoint.x != 0 && mReleasedPoint.y != 0) {
                         final float sloap = mReleasedPoint.x / mReleasedPoint.y;
-                        if (mReleasedPoint.x > getMeasuredWidth() / 3 && Math.abs(sloap) > 0.15) {
+                        if (Math.abs(mReleasedPoint.x) > getMeasuredWidth() / 3 && Math.abs(sloap) > 0.15) {
                             mDragHelper.smoothSlideViewTo(releasedChild, getMeasuredWidth(), (int) (getMeasuredWidth() * sloap));
                             invalidate();
                             mReleasedPoint.x = 0;
@@ -101,17 +101,27 @@ public class TinderStackLayout extends ViewGroup {
                     // 旋转,根据现在的比例
 //                    changedView.setRotation(DEFAULT_DEGRESS * );
                     // 剩下的子view，缩放 平移,-2 未考虑只有一个view 的情况，还有visibilty= gone
-                    float a = left* 1.0f / (getMeasuredWidth() / 3) ;
+                    float rate = left * 1.0f / (getMeasuredWidth() / 3);
+                    float a = Math.min(1, Math.max(0, Math.abs(rate)));
                     int offset = ViewExKt.dp2px(TinderStackLayout.this, DEFAULT_OFFSET);
-                    for (int i = 1 ; i < getChildCount() - 1 ; i++) {
-                            View child = getChildAt(i);
-                            float ds = 1 - DEFAULT_SCALE * (getChildCount() -1 -i) + DEFAULT_SCALE * a;
-                            float doffset = (getChildCount() - i -i)  * offset - offset * a;
-                        float yOffset = child.getMeasuredHeight() * DEFAULT_SCALE * (getChildCount() -1 -i - a) / 2;
+                    for (int i = getChildCount() < 4 ? 0 : 1; i < getChildCount() - 1; i++) {
+                        View child = getChildAt(i);
+                        float ds = 1 - DEFAULT_SCALE * (getChildCount() - 1 - i) + DEFAULT_SCALE * a;
+                        float doffset = (getChildCount() - 1 - i) * offset - offset * a;
+                        float yOffset = child.getMeasuredHeight() * DEFAULT_SCALE * (getChildCount() - 1 - i - a) / 2;
                         child.setScaleY(ds);
-                            child.setScaleX(ds);
-                            child.setTranslationY(doffset + yOffset);
-                            L.d(TAG,"ds : " + ds + " doffset : " + doffset + " a : " + a);
+                        child.setScaleX(ds);
+                        child.setTranslationY(doffset + yOffset);
+
+                        L.d(TAG, "ds : " + ds + " doffset : " + doffset + " a : " + a);
+                    }
+
+                    if (rate > 0) {
+                        // 右滑动
+                        changedView.setRotation(rate * DEFAULT_DEGRESS);
+                    } else {
+                        // 左滑动
+                        changedView.setRotation(rate * DEFAULT_DEGRESS);
                     }
                 }
             }
@@ -164,10 +174,9 @@ public class TinderStackLayout extends ViewGroup {
             child.setScaleX(scaleValue);
             child.setScaleY(scaleValue);
 
-            if (i > 1) {
+            if (i > 1 || getChildCount() < 4) {
                 level++;
             }
-
         }
     }
 
