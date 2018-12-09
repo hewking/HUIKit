@@ -23,7 +23,7 @@ android {
     }
 }
 
-def S_V = "27.0.0"
+def S_V = "27.1.0"
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')

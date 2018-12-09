@@ -8,31 +8,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
+        <ImageView
+            android:gravity="center"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            android:src="@color/app_color_theme_3"
+
+            />
+
+        <ImageView
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="拖动我啊1"
-            android:layout_width="@dimen/base_100dpi"
-            android:layout_height="@dimen/base_100dpi"
-            android:background="#FF9FB2C7"/>
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:src="@color/app_color_blue"
+            />
 
-        <Button
+        <ImageView
             android:gravity="center"
-            android:text="can you drag me?"
             android:layout_gravity="center"
+            android:src="@color/app_color_theme_5"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            />
 
-            android:layout_width="@dimen/base_100dpi"
-            android:layout_height="@dimen/base_100dpi"
-            android:background="#FF9FB2C7"/>
-
-        <Button
+        <ImageView
             android:gravity="center"
-            android:text="drag me?"
-            android:layout_width="@dimen/base_100dpi"
-            android:layout_height="@dimen/base_100dpi"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
             android:layout_gravity="center"
+            android:src="@color/app_color_theme_3"
 
-            android:background="#FF9FB2C7"/>
+            />
+
+
 
     </com.hewking.custom.tinderstack.TinderStackLayout>
 
