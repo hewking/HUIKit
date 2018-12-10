@@ -11,6 +11,7 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CompoundButton
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -97,6 +98,10 @@ class HTextViewFragment : Fragment() {
                 spannable.setSpan(AutoLinkSpan(spans[i].getURL()), index
                         , end, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
             }
+        }
+
+        cb.setOnCheckedChangeListener { buttonView, isChecked ->
+            cb.text =  if (isChecked) "ischecked" else "nochecked"
         }
 
     }

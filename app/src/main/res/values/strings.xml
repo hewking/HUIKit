@@ -5,4 +5,6 @@
     <string name="text_htextview">HTextView测试</string>
     <string name="text_stickytop">StickyTop 测试</string>
     <string name="text_language_switch">多语言切换</string>
+    <string name="chat_button_readMore">Read More</string>
+    <string name="chat_button_readLess">Read Less</string>
 </resources>

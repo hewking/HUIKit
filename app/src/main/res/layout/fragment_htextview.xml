@@ -112,4 +112,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <com.hewking.custom.textview.LineTextView
+        android:layout_marginTop="20dp"
+        android:text="sfdkjsdlfjkskjfklsdfjklsdjfkdjlkfksd"
+        android:layout_width="wrap_content"
+        app:line_color="@color/colorAccent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/cb"
+        android:layout_marginTop="20dp"
+        android:text="checked"
+        android:button="@null"
+        android:background="@null"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

@@ -53,7 +53,6 @@ class SmartLinkTextView(ctx : Context,attrs : AttributeSet) : AppCompatTextView(
                     }
                 }
             } else {
-                textClassifier
                 super.setText(text, type)
             }
         } else {
