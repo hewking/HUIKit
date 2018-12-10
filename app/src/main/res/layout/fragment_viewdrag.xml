@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.hewking.custom.viewdrager.ViewDragLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="拖动我啊1"
+            android:layout_width="@dimen/base_100dpi"
+            android:layout_height="@dimen/base_100dpi"
+            android:background="#FF9FB2C7"/>
+
+        <Button
+            android:gravity="center"
+            android:text="can you drag me?"
+            android:layout_gravity="center"
+
+            android:layout_width="@dimen/base_100dpi"
+            android:layout_height="@dimen/base_100dpi"
+            android:background="#FF9FB2C7"/>
+
+        <Button
+            android:gravity="center"
+            android:text="drag me?"
+            android:layout_width="@dimen/base_100dpi"
+            android:layout_height="@dimen/base_100dpi"
+            android:layout_gravity="center"
+
+            android:background="#FF9FB2C7"/>
+
+    </com.hewking.custom.viewdrager.ViewDragLayout>
+
+</FrameLayout>

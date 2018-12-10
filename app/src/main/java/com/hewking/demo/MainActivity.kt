@@ -87,6 +87,8 @@ class MainActivity : LanguageActivity() {
         list.add(Item(12,"DispatchFragment Demo", DispatchFragment::class.java))
         list.add(Item(13,"RecyclerTestFragent Demo",LoadRecyclerFragment::class.java))
         list.add(Item(13,"WebView Demo",WebViewFragment::class.java))
+        list.add(Item(14,"ViewDragHelper Demo",ViewDragFragment::class.java))
+        list.add(Item(14,"TinderStacklayout Demo",TinderStackLayoutFragment::class.java))
         return list
     }
 
