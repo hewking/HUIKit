@@ -41,6 +41,22 @@ class TideRippleView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
         }
     }
 
+    private val backPaint by lazy {
+         Paint().apply {
+             style= Paint.Style.FILL_AND_STROKE
+             isAntiAlias = true
+             strokeWidth = dp2px(0.5f).toFloat()
+         }
+    }
+
+    private var sweepProgress = 0
+    set(value) {
+        if (value >= 360) {
+            field = 0
+        } else {
+            field = value
+        }
+    }
     private var fps: Int = 0
     private var fpsPaint = Paint().apply {
         isAntiAlias = true
@@ -60,6 +76,8 @@ class TideRippleView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
                     addUpdateListener {
                         postInvalidateOnAnimation()
                         fps++
+                        sweepProgress ++
+
                     }
                     addListener(object : AnimatorListenerAdapter() {
                         override fun onAnimationRepeat(animation: Animator?) {
@@ -83,8 +101,16 @@ class TideRippleView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
         }
     }
 
+    var backCanvas : Canvas? = null
+    var backBitmap : Bitmap? = null
+
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
+        backBitmap?.recycle()
+        if (w != 0 && h != 0){
+            backBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888)
+            backCanvas = Canvas(backBitmap)
+        }
     }
 
     override fun onDraw(canvas: Canvas?) {
@@ -98,6 +124,21 @@ class TideRippleView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
             rippleCircles[i].draw(canvas)
         }
         canvas.restore()
+        backCanvas?.let {
+            val maxRadius = Math.min(width, height).div(2).toFloat()
+            val radius = maxRadius.div(2)
+            it.save()
+//            backPaint.color = Color.WHITE
+            it.rotate(sweepProgress.toFloat(),width.div(2f),height.div(2f))
+            backPaint.setShader(SweepGradient(width.div(2).toFloat(),height.div(2).toFloat(),Color.RED,Color.GRAY))
+            it.drawCircle(width.div(2).toFloat(),height.div(2).toFloat(),radius,backPaint)
+            backPaint.setXfermode(PorterDuffXfermode(PorterDuff.Mode.SRC_OUT))
+//            backPaint.color = Color.TRANSPARENT
+            it.drawCircle(width.div(2f),height.div(2f),radius.div(3f),backPaint)
+            it.restore()
+            canvas.drawBitmap(backBitmap,0f,0f,null)
+        }
+
         if (BuildConfig.DEBUG) {
             canvas.drawText(fps.toString(), paddingStart.toFloat()
                     , height - dp2px(10f).toFloat() - paddingBottom, fpsPaint)
@@ -130,6 +171,7 @@ class TideRippleView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
         super.onDetachedFromWindow()
         // end anim
         renderAnimator.end()
+        backBitmap?.recycle()
     }
 
     inner class RippleCircle {
