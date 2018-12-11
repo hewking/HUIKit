@@ -117,7 +117,7 @@ public class TinderStackLayout extends ViewGroup {
                     }
 
                     //rate > 0  右滑动 else  // 左滑动
-                        changedView.setRotation(rate * DEFAULT_DEGRESS);
+                    changedView.setRotation(rate * DEFAULT_DEGRESS);
                 }
             }
 
