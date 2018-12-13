@@ -17,14 +17,21 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-  <!--  <style name="CommTextStyle" parent="TextAppearance.AppCompat">
-        <item name="textSize">16sp</item>
+    <style name="CommTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:padding">4dp</item>
-    </style>-->
+    </style>
 
     <declare-styleable name="AudioCircleTextView">
         <attr name="animMode" format="boolean"/>
     </declare-styleable>
+
+    <style name="TextCompatAutoSize">
+        <item name="autoSizeMaxTextSize">17sp</item>
+        <item name="autoSizeMinTextSize">4sp</item>
+        <item name="autoSizeStepGranularity">4sp</item>
+        <item name="autoSizeTextType">uniform</item>
+    </style>
 
 </resources>

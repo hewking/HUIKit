@@ -129,6 +129,9 @@ class TideRippleView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
             val radius = maxRadius.div(2)
             it.save()
 //            backPaint.color = Color.WHITE
+            backPaint.setXfermode(PorterDuffXfermode(PorterDuff.Mode.CLEAR))
+            it.drawPaint(backPaint)
+            backPaint.setXfermode(null)
             it.rotate(sweepProgress.toFloat(),width.div(2f),height.div(2f))
             backPaint.setShader(SweepGradient(width.div(2).toFloat(),height.div(2).toFloat(),Color.RED,Color.GRAY))
             it.drawCircle(width.div(2).toFloat(),height.div(2).toFloat(),radius,backPaint)
@@ -138,6 +141,7 @@ class TideRippleView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
             it.restore()
             canvas.drawBitmap(backBitmap,0f,0f,null)
         }
+
 
         if (BuildConfig.DEBUG) {
             canvas.drawText(fps.toString(), paddingStart.toFloat()

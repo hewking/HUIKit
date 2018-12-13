@@ -1,6 +1,7 @@
 package com.hewking.demo
 
 import android.app.Activity
+import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.widget.TextViewCompat
@@ -9,12 +10,10 @@ import android.text.style.DynamicDrawableSpan
 import android.text.style.URLSpan
 import android.util.TypedValue
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CompoundButton
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.hewking.androidview.chronomoter.T
 import com.hewking.base.L
 import com.hewking.custom.R
@@ -102,6 +101,25 @@ class HTextViewFragment : Fragment() {
 
         cb.setOnCheckedChangeListener { buttonView, isChecked ->
             cb.text =  if (isChecked) "ischecked" else "nochecked"
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            val magnifier = Magnifier(tv_auto_size)
+            magnifier.show(tv_auto_size.width.div(2f),tv_auto_size.height.div(2f))
+            tv_auto_size.setOnTouchListener { v, event ->
+                when(event.actionMasked){
+                    MotionEvent.ACTION_DOWN,MotionEvent.ACTION_MOVE -> {
+                        val array = IntArray(2)
+                        v.getLocationOnScreen(array)
+                        magnifier.show(event.rawX - array[0],event.rawY - array[1])
+                    }
+
+                    MotionEvent.ACTION_UP ,MotionEvent.ACTION_CANCEL -> {
+                        magnifier.dismiss()
+                    }
+                }
+                false
+            }
         }
 
     }
