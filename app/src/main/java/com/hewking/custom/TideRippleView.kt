@@ -133,7 +133,7 @@ class TideRippleView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
             it.drawPaint(backPaint)
             backPaint.setXfermode(null)
             it.rotate(sweepProgress.toFloat(),width.div(2f),height.div(2f))
-            backPaint.setShader(SweepGradient(width.div(2).toFloat(),height.div(2).toFloat(),Color.RED,Color.GRAY))
+            backPaint.setShader(SweepGradient(width.div(2).toFloat(),height.div(2).toFloat(),Color.RED,Color.WHITE))
             it.drawCircle(width.div(2).toFloat(),height.div(2).toFloat(),radius,backPaint)
             backPaint.setXfermode(PorterDuffXfermode(PorterDuff.Mode.SRC_OUT))
 //            backPaint.color = Color.TRANSPARENT

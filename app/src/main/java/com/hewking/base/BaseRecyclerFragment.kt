@@ -63,8 +63,9 @@ abstract class BaseRecyclerFragment<T> : BaseFragment()
     open fun onLoadEnd(datas : List<T>?= null) {
         if (datas?.isNotEmpty() == true) {
             mPage ++
-            mAdapter?.state = LoadState.NORMAL
+            // 一下两行代码，顺序要一致
             mAdapter?.appendData(datas)
+            mAdapter?.state = LoadState.NORMAL
         } else {
             mAdapter?.state = LoadState.NOMORE
         }

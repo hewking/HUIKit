@@ -100,7 +100,8 @@ class LagouHomePanelLayout(ctx: Context, attrs: AttributeSet) : ViewGroup(ctx, a
 
     override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
         // 需要拦截的时候返回 true
-        if (mCurOffset <= - mTopHeight) {
+        ev?:return false
+        if (mCurOffset <= - mTopHeight && ev.actionMasked != MotionEvent.ACTION_DOWN) {
 //            val downEv = MotionEvent.obtain(ev)
 //            downEv.action = MotionEvent.ACTION_DOWN
 //            mContentView?.onTouchEvent(downEv)
@@ -108,7 +109,6 @@ class LagouHomePanelLayout(ctx: Context, attrs: AttributeSet) : ViewGroup(ctx, a
         }
         return mGestenerDetector.onTouchEvent(ev)
     }
-
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         mGestenerDetector.onTouchEvent(event)

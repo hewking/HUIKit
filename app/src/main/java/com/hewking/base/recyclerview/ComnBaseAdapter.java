@@ -35,6 +35,8 @@ public abstract class ComnBaseAdapter<T> extends RecyclerView.Adapter<ComnViewHo
 
     private OnStateChangeListener mStateChangeListener;
 
+    protected boolean enableStateView = true;
+
     public ComnBaseAdapter() {
         if (mDatas == null) {
             mDatas = new ArrayList<>();
@@ -49,7 +51,7 @@ public abstract class ComnBaseAdapter<T> extends RecyclerView.Adapter<ComnViewHo
         return mDatas;
     }
 
-    public void setStateChangeListener(OnStateChangeListener listener){
+    public void setStateChangeListener(OnStateChangeListener listener) {
         this.mStateChangeListener = listener;
     }
 
@@ -77,6 +79,7 @@ public abstract class ComnBaseAdapter<T> extends RecyclerView.Adapter<ComnViewHo
         int insertedItemCount = datas.size();
         mDatas.addAll(datas);
         notifyItemRangeInserted(startPos, insertedItemCount);
+//        notifyItemRangeChanged(startPos,getItemCount());
     }
 
     public void deleteItem(T item) {
@@ -124,7 +127,7 @@ public abstract class ComnBaseAdapter<T> extends RecyclerView.Adapter<ComnViewHo
             if (mDatas.size() - 1 - position <= DEFAULT_LOAD_PREVIEW_SIZE) {
                 // 如果是normal 开始加载
                 // 加载数据
-                if (mStateChangeListener != null && mLoadState != LoadState.LOAD) {
+                if (mStateChangeListener != null && mLoadState == LoadState.NORMAL) {
                     holder.itemView.post(new Runnable() {
                         @Override
                         public void run() {
@@ -146,15 +149,24 @@ public abstract class ComnBaseAdapter<T> extends RecyclerView.Adapter<ComnViewHo
     }
 
     public void setState(LoadState state) {
-        if( mLoadState == state) {
+        if (mLoadState == state) {
             return;
         }
         LoadState oldState = mLoadState;
         this.mLoadState = state;
+
+        if (!enableStateView) {
+            return;
+        }
+
         if (oldState == LoadState.NORMAL) {
             setEnableLoadMore(true);
         } else {
-            setEnableLoadMore(false);
+            if (state == LoadState.NORMAL) {
+                setEnableLoadMore(false);
+            } else {
+                notifyItemChanged(getLast());
+            }
         }
     }
 
@@ -169,19 +181,26 @@ public abstract class ComnBaseAdapter<T> extends RecyclerView.Adapter<ComnViewHo
     }
 
     private void onBindStateView(ComnViewHolder holder, LoadState mLoadState, int position) {
+        if (mLoadState == LoadState.LOAD) {
 
+        } else if (mLoadState == LoadState.NOMORE) {
+            if (holder.itemView instanceof LoadView) {
+                ((LoadView)holder.itemView).setState(mLoadState);
+            }
+        }
     }
 
     protected abstract void onBindComnViewHolder(ComnViewHolder holder, T t, int position);
 
-    public int getLast(){
+    public int getLast() {
         return getItemCount() - 1;
     }
 
     @Override
     public int getItemCount() {
         if (mDatas != null) {
-            return mLoadState == LoadState.NORMAL ? mDatas.size() : mDatas.size() + 1;
+//            return mLoadState != LoadState.LOAD ? mDatas.size() : mDatas.size() + 1;
+            return mLoadState == LoadState.NORMAL || !enableStateView ? mDatas.size() : mDatas.size() + 1;
         }
         return 0;
     }
@@ -197,7 +216,7 @@ public abstract class ComnBaseAdapter<T> extends RecyclerView.Adapter<ComnViewHo
         }
     }
 
-    public interface OnStateChangeListener{
+    public interface OnStateChangeListener {
         void onLoadMore();
     }
 

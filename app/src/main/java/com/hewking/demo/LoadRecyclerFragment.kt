@@ -27,6 +27,11 @@ class LoadRecyclerFragment : BaseRecyclerFragment<String>() {
     }
 
     class LoadAdapter : ComnBaseAdapter<String>() {
+
+        init {
+            enableStateView = false
+        }
+
         override fun onBindComnViewHolder(holder: ComnViewHolder?, t: String?, position: Int) {
             holder?.itemView?.v<TextView>(android.R.id.text1)?.text = t
         }
@@ -46,6 +51,9 @@ class LoadRecyclerFragment : BaseRecyclerFragment<String>() {
 
     private fun createItems(): MutableList<String>? {
         val list = mutableListOf<String>()
+        if (mPage > 2) {
+            return list
+        }
         for (i in mPage * 20 until (mPage + 1) * 20) {
             list.add("text ${i}")
         }
