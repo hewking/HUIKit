@@ -1,4 +1,4 @@
-package com.example.administrator.customviewtest;
+package com.hewking.custom;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
@@ -10,6 +10,8 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+
+import com.hewking.custom.util.ViewExKt;
 
 /**
  * Created by hewking on 2016/10/22.
@@ -65,6 +67,24 @@ public class SearchView extends View {
     public void startAnim(){
         currentStatus = 0;
         mHandler.sendEmptyMessage(0);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+        int wMode = MeasureSpec.getMode(widthMeasureSpec);
+        int hMode = MeasureSpec.getMode(heightMeasureSpec);
+
+        if (wMode == MeasureSpec.AT_MOST) {
+            widthSize = ViewExKt.dp2px(this,200);
+        }
+
+        if (hMode == MeasureSpec.AT_MOST) {
+            heightSize = ViewExKt.dp2px(this,200);
+        }
+        setMeasuredDimension(widthSize,heightSize);
     }
 
     @Override
