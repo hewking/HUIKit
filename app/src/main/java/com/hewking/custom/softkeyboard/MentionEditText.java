@@ -18,7 +18,7 @@ package com.hewking.custom.softkeyboard;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.v7.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatEditText;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.Spannable;

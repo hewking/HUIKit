@@ -1,8 +1,8 @@
 package com.hewking.demo
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import com.hewking.custom.R
 
 /**
@@ -26,7 +26,7 @@ class DemoFragmentActivity : AppCompatActivity() {
         setContentView(R.layout.activity_fragment_navi)
 
         val fragmentName = intent.getStringExtra(FRAGMENT)
-        val fragment = Class.forName(fragmentName).newInstance() as Fragment
+        val fragment = Class.forName(fragmentName).newInstance() as androidx.fragment.app.Fragment
         supportFragmentManager.beginTransaction()
                 .add(R.id.container,fragment,fragmentName)
                 .commit()

@@ -2,8 +2,8 @@ package com.hewking.custom.textview
 
 import android.content.Context
 import android.os.Build
-import android.support.annotation.RequiresApi
-import android.support.v7.widget.AppCompatTextView
+import androidx.annotation.RequiresApi
+import androidx.appcompat.widget.AppCompatTextView
 import android.text.SpannableStringBuilder
 import android.util.AttributeSet
 import android.view.textclassifier.TextClassifier

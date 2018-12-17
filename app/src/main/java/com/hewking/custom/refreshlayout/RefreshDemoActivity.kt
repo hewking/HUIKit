@@ -1,7 +1,7 @@
 package com.hewking.custom.refreshlayout
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.hewking.custom.R
 
 /**

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.hewking.androidview.textinput.TextInputDemoActivity">
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_layout_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,8 +25,8 @@
             android:textColor="#333333"
             />
 
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_layout_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
             android:inputType="number"
             android:textColor="#333333"
             />
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </LinearLayout>

@@ -1,9 +1,9 @@
 package com.hewking.custom.design
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import com.hewking.custom.R
@@ -24,19 +24,19 @@ class DesignActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_design)
 
-        val recyclerView = v<RecyclerView>(R.id.recyclerview)
+        val recyclerView = v<androidx.recyclerview.widget.RecyclerView>(R.id.recyclerview)
 
-        class VH(itemview : View) : RecyclerView.ViewHolder(itemview) {
+        class VH(itemview : View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemview) {
 
             fun bindView() {
 
             }
         }
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+        recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
+        recyclerView.adapter = object : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>(){
 
-            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
                 return VH(layoutInflater.inflate(R.layout.layout_recycler_item,null,false))
             }
 
@@ -44,7 +44,7 @@ class DesignActivity : AppCompatActivity() {
                 return 200
             }
 
-            override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+            override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
             }
         }
 

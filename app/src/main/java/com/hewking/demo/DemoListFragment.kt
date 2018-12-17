@@ -1,7 +1,7 @@
 package com.hewking.demo
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +16,7 @@ import com.hewking.custom.R
  * 修改备注：
  * Version: 1.0.0
  */
-class DemoListFragment : Fragment(){
+class DemoListFragment : androidx.fragment.app.Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater?.inflate(R.layout.activity_main,container,false)
     }

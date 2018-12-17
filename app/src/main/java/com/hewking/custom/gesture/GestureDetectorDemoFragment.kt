@@ -2,14 +2,14 @@ package com.hewking.custom.gesture
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.view.GestureDetectorCompat
+import androidx.fragment.app.Fragment
+import androidx.core.view.GestureDetectorCompat
 import android.util.Log
 import android.view.*
 import com.hewking.custom.R
 import kotlinx.android.synthetic.main.fragment_gesture_detector_layout.*
 
-class GestureDetectorDemoFragment : Fragment(){
+class GestureDetectorDemoFragment : androidx.fragment.app.Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_gesture_detector_layout,container,false)

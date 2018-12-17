@@ -2,8 +2,8 @@ package com.hewking.custom.textview
 
 import android.content.Context
 import android.graphics.Region
-import android.support.v4.util.PatternsCompat
-import android.support.v7.widget.AppCompatTextView
+import androidx.core.util.PatternsCompat
+import androidx.appcompat.widget.AppCompatTextView
 import android.text.InputFilter
 import android.text.Spannable
 import android.text.SpannableStringBuilder

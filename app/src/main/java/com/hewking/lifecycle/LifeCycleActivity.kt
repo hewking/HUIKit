@@ -1,7 +1,7 @@
 package com.hewking.lifecycle
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 
 /**
  * 类的描述：
@@ -14,7 +14,7 @@ import android.support.v7.app.AppCompatActivity
  */
 class LifeCycleActivity : AppCompatActivity(){
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
     }
