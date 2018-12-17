@@ -29,7 +29,7 @@ class LoadRecyclerFragment : BaseRecyclerFragment<String>() {
     class LoadAdapter : ComnBaseAdapter<String>() {
 
         init {
-            enableStateView = false
+//            enableStateView = false
         }
 
         override fun onBindComnViewHolder(holder: ComnViewHolder?, t: String?, position: Int) {
