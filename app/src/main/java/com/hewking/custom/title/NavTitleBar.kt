@@ -124,7 +124,7 @@ class NavTitleBar @JvmOverloads constructor(@NonNull context: Context
                 }
             }
             Gravity.END -> {
-                centerContainer.removeAllViews()
+                rightContainer.removeAllViews()
                 pattern.childs.forEach {
                     rightContainer.addView(it)
                 }

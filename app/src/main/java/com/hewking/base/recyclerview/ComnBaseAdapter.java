@@ -1,8 +1,5 @@
 package com.hewking.base.recyclerview;
 
-import androidx.annotation.IntDef;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +8,9 @@ import com.livestar.flowchat.wallet.ui.tron.LoadView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * 项目名称：FlowChat
@@ -27,7 +27,7 @@ public abstract class ComnBaseAdapter<T> extends RecyclerView.Adapter<ComnViewHo
     private static final int STATE_TYPE = 0x10001;
     private static final int DEFAULT_LOAD_PREVIEW_SIZE = 4;// 默认距离最底部4个位置时候加载
 
-    private List<T> mDatas;
+    protected List<T> mDatas;
 
     private LoadState mLoadState = LoadState.NORMAL;
 
@@ -63,6 +63,22 @@ public abstract class ComnBaseAdapter<T> extends RecyclerView.Adapter<ComnViewHo
         mDatas.clear();
         mDatas.addAll(datas);
         notifyDataSetChanged();
+    }
+
+    public void addItem(T item) {
+        if (item == null) return;
+        int start = mDatas.size();
+        mDatas.add(item);
+        notifyItemRangeInserted(start, 1);
+    }
+
+    public void addItem(int pos, T item) {
+        if (pos < 0 || pos > mDatas.size() - 1) {
+            return;
+        }
+        if (item == null) return;
+        mDatas.add(pos, item);
+        notifyItemRangeInserted(pos, mDatas.size() - pos + 1);
     }
 
     public void appendData(List<T> datas) {
@@ -114,6 +130,10 @@ public abstract class ComnBaseAdapter<T> extends RecyclerView.Adapter<ComnViewHo
             throw new IllegalArgumentException("layout id error");
         }
         View itemView = inflater.inflate(getItemLayoutId(viewType), parent, false);
+        return createViewHolder(itemView);
+    }
+
+    protected ComnViewHolder createViewHolder(View itemView) {
         return new ComnViewHolder(itemView);
     }
 
