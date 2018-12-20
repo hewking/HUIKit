@@ -125,10 +125,26 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:background="@null"
+            android:padding="@dimen/base_xhdpi"
+            android:background="@drawable/shadow_115442"
             android:button="@null"
             android:text="checked" />
 
+        <TextView
+            android:layout_marginTop="20dp"
+            android:padding="@dimen/base_xhdpi"
+            android:text="我需要阴影"
+            android:elevation="2dp"
+            android:background="@drawable/shadow_rect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.hewking.custom.textview.RoundTextView
+            android:layout_marginTop="20dp"
+            android:padding="@dimen/base_xhdpi"
+            android:text="我需要阴影"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

@@ -47,7 +47,6 @@ class HaloProgressView(context: Context?, attrs: AttributeSet?) : View(context, 
         mWidth = w
         mHeight = h
 
-
         cicleBitmap?.recycle()
         if (measuredHeight != 0 && measuredWidth != 0) {
             cicleBitmap = Bitmap.createBitmap(w,h,Bitmap.Config.ARGB_8888)

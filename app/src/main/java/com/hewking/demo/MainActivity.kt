@@ -3,10 +3,6 @@ package com.hewking.demo
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.ViewGroup
@@ -93,6 +89,7 @@ class MainActivity : LanguageActivity() {
         list.add(Item(16,"TanTanPaneView Demo",TanTanPanelFragment::class.java))
         list.add(Item(17,"TideRappleView Demo",TideRappleFragment::class.java))
         list.add(Item(18,"FlexBoxLayout Demo",FlexBoxLayoutFragment::class.java))
+        list.add(Item(19, "ImageView ScaleType Demo", ImageScaleTypeFragment::class.java))
         return list
     }
 
