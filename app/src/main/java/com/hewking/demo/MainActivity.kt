@@ -3,10 +3,6 @@ package com.hewking.demo
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.ViewGroup
@@ -14,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.hewking.androidview.cardview.CardViewFragment
 import com.hewking.androidview.dialog.DialogProgressFragment
+import com.hewking.androidview.flexboxlayout.FlexBoxLayoutFragment
 import com.hewking.base.DemoActivity
 import com.hewking.base.L
 import com.hewking.custom.R
@@ -57,15 +54,15 @@ class MainActivity : LanguageActivity() {
     }
 
     private fun initView() {
-        val refreshLayout = v<SwipeRefreshLayout>(R.id.refreshlayout)
-        val recyclerView = v<RecyclerView>(R.id.recyclerview)
+        val refreshLayout = v<androidx.swiperefreshlayout.widget.SwipeRefreshLayout>(R.id.refreshlayout)
+        val recyclerView = v<androidx.recyclerview.widget.RecyclerView>(R.id.recyclerview)
 
         refreshLayout.setOnRefreshListener {
 
         }
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.itemAnimator = DefaultItemAnimator()
+        recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
+        recyclerView.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
         recyclerView.addItemDecoration(RBaseItemDecoration())
         recyclerView.adapter = mAdapter
     }
@@ -91,18 +88,19 @@ class MainActivity : LanguageActivity() {
         list.add(Item(15,"TinderStacklayout Demo",TinderStackLayoutFragment::class.java))
         list.add(Item(16,"TanTanPaneView Demo",TanTanPanelFragment::class.java))
         list.add(Item(17,"TideRappleView Demo",TideRappleFragment::class.java))
-        list.add(Item(18,"WaterRippleView Demo",WaterRippleFragment::class.java))
+        list.add(Item(18,"FlexBoxLayout Demo",FlexBoxLayoutFragment::class.java))
+        list.add(Item(19, "ImageView ScaleType Demo", ImageScaleTypeFragment::class.java))
         return list
     }
 
-    val mAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> by lazy {
-        object : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+    val mAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder> by lazy {
+        object : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>(){
 
             val datas = createItems()
 
-            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
                 val itemView = LayoutInflater.from(parent?.context).inflate(R.layout.item_text,parent,false)
-                val vh = object : RecyclerView.ViewHolder(itemView){
+                val vh = object : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView){
                 }
                 return vh
             }
@@ -111,7 +109,7 @@ class MainActivity : LanguageActivity() {
                 return datas.size
             }
 
-            override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+            override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
                 val itemView = holder?.itemView
                 itemView?.v<TextView>(R.id.tv_text)?.text = datas[position].info
                 itemView?.setOnClickListener {

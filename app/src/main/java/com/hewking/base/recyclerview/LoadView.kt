@@ -2,14 +2,16 @@ package com.livestar.flowchat.wallet.ui.tron
 
 import android.content.Context
 import android.graphics.Color
-import android.support.v4.content.ContextCompat.getColor
-import android.support.v7.widget.RecyclerView
+import androidx.core.content.ContextCompat.getColor
+import androidx.recyclerview.widget.RecyclerView
 import android.util.AttributeSet
 import android.view.Gravity
+import android.view.View
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
+import com.hewking.base.recyclerview.LoadState
 import com.hewking.demo.dp2px
 
 /**
@@ -23,6 +25,12 @@ import com.hewking.demo.dp2px
  * Version: 1.0.0
  */
 class LoadView(val ctx : Context) : LinearLayout(ctx) {
+
+    var state : LoadState = LoadState.LOAD
+        set(value) {
+            field = value
+            initStateUI(value)
+        }
 
     init {
         setUpView()
@@ -40,7 +48,30 @@ class LoadView(val ctx : Context) : LinearLayout(ctx) {
         addView(ProgressBar(ctx).apply {
             setPadding(dp2px(10f),dp2px(10f),dp2px(10f),dp2px(10f))
         })
-        layoutParams = RecyclerView.LayoutParams(-1,-2)
+        layoutParams = androidx.recyclerview.widget.RecyclerView.LayoutParams(-1,-2)
     }
+
+    private fun initStateUI(value: LoadState) {
+        when(value) {
+            LoadState.NOMORE -> {
+                getChildAt(1).visibility = View.GONE
+                (getChildAt(0) as TextView).text = "-- end --"
+            }
+            LoadState.NONET -> {
+                getChildAt(1).visibility = View.GONE
+                (getChildAt(0) as TextView).text = " no net please waitting ,then load"
+            }
+            LoadState.LOAD -> {
+                getChildAt(1).visibility = View.VISIBLE
+                (getChildAt(0) as TextView).text = " Loading"
+            }
+
+            else -> {
+
+            }
+        }
+
+    }
+
 
 }

@@ -1,6 +1,6 @@
 package com.hewking.custom;
 
-import android.support.v4.util.PatternsCompat;
+import androidx.core.util.PatternsCompat;
 
 import org.junit.Test;
 

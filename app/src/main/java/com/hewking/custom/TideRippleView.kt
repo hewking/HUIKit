@@ -6,10 +6,10 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
-import android.view.MotionEvent
 import android.view.View
 import android.view.animation.LinearInterpolator
 import com.hewking.demo.dp2px
+import java.util.*
 import java.util.concurrent.CopyOnWriteArrayList
 
 /**
@@ -29,8 +29,7 @@ class TideRippleView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
     private val rippleCircles = CopyOnWriteArrayList<RippleCircle>()
 
     init {
-        // 设置可以点击，onTouchEvent down return true从而 up事件可以获取
-        setClickable(true)
+
     }
 
     private val ripplePaint by lazy {
@@ -114,9 +113,6 @@ class TideRippleView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
         }
     }
 
-    private var gradient = SweepGradient(width.div(2).toFloat(),height.div(2).toFloat(),Color.RED,Color.GRAY)
-    private var xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_OUT)
-
     override fun onDraw(canvas: Canvas?) {
         canvas ?: return
         canvas.save()
@@ -137,9 +133,9 @@ class TideRippleView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
             it.drawPaint(backPaint)
             backPaint.setXfermode(null)
             it.rotate(sweepProgress.toFloat(),width.div(2f),height.div(2f))
-            backPaint.setShader(gradient)
+            backPaint.setShader(SweepGradient(width.div(2).toFloat(),height.div(2).toFloat(),Color.RED,Color.WHITE))
             it.drawCircle(width.div(2).toFloat(),height.div(2).toFloat(),radius,backPaint)
-            backPaint.setXfermode(xfermode)
+            backPaint.setXfermode(PorterDuffXfermode(PorterDuff.Mode.SRC_OUT))
 //            backPaint.color = Color.TRANSPARENT
             it.drawCircle(width.div(2f),height.div(2f),radius.div(3f),backPaint)
             it.restore()
@@ -151,21 +147,6 @@ class TideRippleView(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
             canvas.drawText(fps.toString(), paddingStart.toFloat()
                     , height - dp2px(10f).toFloat() - paddingBottom, fpsPaint)
         }
-    }
-
-    override fun onTouchEvent(event: MotionEvent?): Boolean {
-        when(event?.actionMasked) {
-            MotionEvent.ACTION_UP -> {
-                rippleCircles.add(RippleCircle().apply {
-                    cx = event.x
-                    cy = event.y
-                    val maxRadius = Math.min(width, height).div(2).toFloat()
-                    startRadius = maxRadius.div(2)
-                    endRadius = maxRadius
-                })
-            }
-        }
-        return super.onTouchEvent(event)
     }
 
 

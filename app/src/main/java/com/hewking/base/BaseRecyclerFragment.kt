@@ -1,8 +1,8 @@
 package com.hewking.base
 
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.widget.LinearLayout
 import com.hewking.base.recyclerview.ComnBaseAdapter
 import com.hewking.base.recyclerview.LoadState
@@ -39,9 +39,9 @@ abstract class BaseRecyclerFragment<T> : BaseFragment()
             mPage = 0
             loadData()
         }
-        recyclerview.layoutManager = LinearLayoutManager(activity)
+        recyclerview.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(activity)
         recyclerview.addItemDecoration(RBaseItemDecoration())
-        recyclerview.itemAnimator = DefaultItemAnimator()
+        recyclerview.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
         mAdapter = buildAdapter()
         mAdapter?.setStateChangeListener(this)
         recyclerview.adapter = mAdapter
@@ -63,8 +63,9 @@ abstract class BaseRecyclerFragment<T> : BaseFragment()
     open fun onLoadEnd(datas : List<T>?= null) {
         if (datas?.isNotEmpty() == true) {
             mPage ++
-            mAdapter?.state = LoadState.NORMAL
+            // 以下两行代码，顺序要一致
             mAdapter?.appendData(datas)
+            mAdapter?.state = LoadState.NORMAL
         } else {
             mAdapter?.state = LoadState.NOMORE
         }

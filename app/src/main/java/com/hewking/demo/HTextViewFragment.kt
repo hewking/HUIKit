@@ -3,8 +3,8 @@ package com.hewking.demo
 import android.app.Activity
 import android.os.Build
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.widget.TextViewCompat
+import androidx.fragment.app.Fragment
+import androidx.core.widget.TextViewCompat
 import android.text.*
 import android.text.style.DynamicDrawableSpan
 import android.text.style.URLSpan
@@ -30,7 +30,7 @@ import kotlinx.android.synthetic.main.item_text.*
  * 修改备注：
  * Version: 1.0.0
  */
-class HTextViewFragment : Fragment() {
+class HTextViewFragment : androidx.fragment.app.Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater?.inflate(R.layout.fragment_htextview,container,false)
@@ -124,7 +124,7 @@ class HTextViewFragment : Fragment() {
 
     }
 
-    fun Fragment.T(msg :String){
+    fun androidx.fragment.app.Fragment.T(msg :String){
         Toast.makeText(DemoApplication.context,msg,Toast.LENGTH_SHORT).show()
     }
 

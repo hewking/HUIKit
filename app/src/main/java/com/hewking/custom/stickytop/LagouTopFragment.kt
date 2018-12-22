@@ -2,12 +2,12 @@ package com.hewking.custom.stickytop
 
 import android.graphics.Color
 import android.os.Bundle
-import android.support.design.widget.TabLayout
-import android.support.v4.app.Fragment
-import android.support.v4.view.PagerAdapter
-import android.support.v4.view.ViewPager
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import com.google.android.material.tabs.TabLayout
+import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.PagerAdapter
+import androidx.viewpager.widget.ViewPager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +28,7 @@ import com.hewking.demo.RBaseItemDecoration
  * 修改备注：
  * Version: 1.0.0
  */
-class LagouTopFragment : Fragment(){
+class LagouTopFragment : androidx.fragment.app.Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater?.inflate(R.layout.fragment_lagou_home,container,false)
@@ -37,7 +37,7 @@ class LagouTopFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val tablayout = view.v<TabLayout>(R.id.tablayout)
-        val viewPager = view.v<ViewPager>(R.id.viewpager)
+        val viewPager = view.v<androidx.viewpager.widget.ViewPager>(R.id.viewpager)
 
         val panelLayout = view.v<LagouHomePanelLayout>(R.id.panelLayout)
 
@@ -49,7 +49,7 @@ class LagouTopFragment : Fragment(){
             panelLayout?.collapsing()
         }
 
-        viewPager?.adapter = object : PagerAdapter(){
+        viewPager?.adapter = object : androidx.viewpager.widget.PagerAdapter(){
             override fun isViewFromObject(view: View, `object`: Any): Boolean {
                 return view == `object`
             }
@@ -59,17 +59,17 @@ class LagouTopFragment : Fragment(){
             }
 
             override fun instantiateItem(container: ViewGroup, position: Int): Any {
-                val recyclerView = RecyclerView(container?.context)
+                val recyclerView = androidx.recyclerview.widget.RecyclerView(container?.context)
 //                recyclerView.layoutParams = RecyclerView.LayoutParams(400,500)
 
-                recyclerView.layoutManager = LinearLayoutManager(container?.context)
+                recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(container?.context)
                 recyclerView.addItemDecoration(RBaseItemDecoration())
-                recyclerView.adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
-                    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+                recyclerView.adapter = object : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>(){
+                    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
                         val text = TextView(parent?.context)
                         text.id = R.id.text_test
-                        text.layoutParams = RecyclerView.LayoutParams(-1,-2)
-                        return object : RecyclerView.ViewHolder(text){
+                        text.layoutParams = androidx.recyclerview.widget.RecyclerView.LayoutParams(-1,-2)
+                        return object : androidx.recyclerview.widget.RecyclerView.ViewHolder(text){
 
                         }
                     }
@@ -78,7 +78,7 @@ class LagouTopFragment : Fragment(){
                         return 20
                     }
 
-                    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+                    override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
                         val text = holder?.itemView?.v<TextView>(R.id.text_test)
                         text?.text = "text ${position}"
                         text?.setTextColor(Color.BLACK)

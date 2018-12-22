@@ -2,8 +2,8 @@ package com.hewking.custom.roundimage
 
 import android.content.Context
 import android.graphics.*
-import android.support.v4.content.ContextCompat
-import android.support.v7.widget.AppCompatImageView
+import androidx.core.content.ContextCompat
+import androidx.appcompat.widget.AppCompatImageView
 import android.util.AttributeSet
 import com.hewking.custom.R
 import com.hewking.custom.util.dp2px

@@ -8,7 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.animation.LinearInterpolator;
 
@@ -31,7 +31,7 @@ import com.hewking.custom.R;
  * 高度递减 十六分支一
  */
 
-public class AudioCircleTextView extends android.support.v7.widget.AppCompatTextView {
+public class AudioCircleTextView extends androidx.appcompat.widget.AppCompatTextView {
 
     private int mHeight;
     private int mWidth;

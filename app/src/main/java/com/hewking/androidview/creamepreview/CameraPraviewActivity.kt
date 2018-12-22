@@ -2,7 +2,7 @@ package com.hewking.androidview.creamepreview
 
 import android.hardware.Camera
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import com.hewking.custom.R

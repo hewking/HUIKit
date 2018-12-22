@@ -9,7 +9,7 @@
     tools:context="com.example.administrator.customviewtest.animation.expand.ExpandActivity2"
     tools:showIn="@layout/activity_expand2">
     
-    <android.support.v7.widget.AppCompatCheckBox
+    <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/cb"
         android:layout_centerHorizontal="true"
         android:button="@drawable/message_announcement_selector"

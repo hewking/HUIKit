@@ -37,15 +37,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <android.support.design.widget.TabLayout
+            <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tablayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></android.support.design.widget.TabLayout>
+                android:layout_height="wrap_content"></com.google.android.material.tabs.TabLayout>
 
-            <android.support.v4.view.ViewPager
+            <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewpager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+                android:layout_height="match_parent"></androidx.viewpager.widget.ViewPager>
 
         </com.hewking.custom.stickytop.StickTargetLayout>
 

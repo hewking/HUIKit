@@ -2,7 +2,7 @@ package com.hewking.custom.viewdrager
 
 import android.content.Context
 import android.graphics.Point
-import android.support.v4.widget.ViewDragHelper
+import androidx.customview.widget.ViewDragHelper
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
@@ -20,7 +20,7 @@ import android.widget.FrameLayout
 
 class ViewDragLayout(ctx : Context, attrs : AttributeSet) : FrameLayout(ctx,attrs) {
 
-    private lateinit var mDragHelper : ViewDragHelper
+    private lateinit var mDragHelper : androidx.customview.widget.ViewDragHelper
     private var mDragView : View? = null
     private var mAutoBackView : View? = null
     private var mEdgeTouchView : View? = null
@@ -28,7 +28,7 @@ class ViewDragLayout(ctx : Context, attrs : AttributeSet) : FrameLayout(ctx,attr
     private val mPoint = Point()
 
     init {
-        mDragHelper = ViewDragHelper.create(this,1.0f,object : ViewDragHelper.Callback(){
+        mDragHelper = androidx.customview.widget.ViewDragHelper.create(this,1.0f,object : androidx.customview.widget.ViewDragHelper.Callback(){
             override fun tryCaptureView(p0: View, p1: Int): Boolean {
 
                 return p0 == mDragView || p0 == mAutoBackView
@@ -70,7 +70,7 @@ class ViewDragLayout(ctx : Context, attrs : AttributeSet) : FrameLayout(ctx,attr
                 return measuredHeight - child.measuredHeight
             }
         })
-        mDragHelper.setEdgeTrackingEnabled(ViewDragHelper.EDGE_LEFT.or(ViewDragHelper.EDGE_RIGHT))
+        mDragHelper.setEdgeTrackingEnabled(androidx.customview.widget.ViewDragHelper.EDGE_LEFT.or(androidx.customview.widget.ViewDragHelper.EDGE_RIGHT))
 
     }
 

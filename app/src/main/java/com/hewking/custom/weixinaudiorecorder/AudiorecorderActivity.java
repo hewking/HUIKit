@@ -3,7 +3,7 @@ package com.hewking.custom.weixinaudiorecorder;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
