@@ -91,6 +91,7 @@ class MainActivity : LanguageActivity() {
         list.add(Item(15,"TinderStacklayout Demo",TinderStackLayoutFragment::class.java))
         list.add(Item(16,"TanTanPaneView Demo",TanTanPanelFragment::class.java))
         list.add(Item(17,"TideRappleView Demo",TideRappleFragment::class.java))
+        list.add(Item(18,"WaterRippleView Demo",WaterRippleFragment::class.java))
         return list
     }
 
