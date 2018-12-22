@@ -17,4 +17,5 @@ import android.view.View
 class XfermodeSampleView(ctx : Context, attrs : AttributeSet) : View(ctx,attrs) {
 
 
+
 }
