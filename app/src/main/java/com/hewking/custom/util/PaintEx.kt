@@ -1,7 +1,5 @@
 package com.hewking.custom.util
 
-import android.graphics.Paint
-
 /**
  * 项目名称：FlowChat
  * 类的描述：
@@ -12,7 +10,6 @@ import android.graphics.Paint
  * 修改备注：
  * Version: 1.0.0
  */
-/*
-fun Paint.textHeight() : Float{
+/*fun Paint.textHeight() : Float{
     return fontMetrics.ascent - fontMetrics.descent
 }*/
