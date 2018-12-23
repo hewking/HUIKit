@@ -2,6 +2,7 @@ package com.hewking.custom
 
 import android.content.Context
 import android.graphics.*
+import android.os.Build
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
@@ -9,7 +10,7 @@ import com.hewking.custom.util.textHeight
 import com.hewking.demo.dp2px
 
 /**
- * 类的描述：跟apidemos 里面的 Xfermodes 结果不一样，原因在于paint.darw() 不是paint.drawBitmap 导致。
+ * 类的描述：
  * 创建人员：hewking
  * 创建时间：2018/12/22
  * 修改人员：hewking
@@ -18,7 +19,7 @@ import com.hewking.demo.dp2px
  * Version: 1.0.0
  */
 
-class XfermodeSampleView(ctx: Context, attrs: AttributeSet?) : View(ctx, attrs) {
+class XfermodeSampleView2(ctx: Context, attrs: AttributeSet?) : View(ctx, attrs) {
 
     private var rectSize = dp2px(100f)
 
@@ -96,50 +97,82 @@ class XfermodeSampleView(ctx: Context, attrs: AttributeSet?) : View(ctx, attrs) 
     override fun onDraw(canvas: Canvas?) {
         canvas ?: return
         canvas.drawColor(Color.WHITE)
-        val radius = rectSize.div(3f)
 
         var posX = 0
         var posY = 0
 
         paint.isFilterBitmap = false
-//        paint.setShader(mBG)
 
         for (i in 0 until modes.size) {
 
             posX = i.rem(4)
             posY = i.div(4)
 
-            val textX = posX.times(rectSize)
-            val textY = posY.times(rectSize) + textPaint.textHeight()
+            val x = posX.times(rectSize).toFloat()
+            val y = posY.times(rectSize + textPaint.textHeight())
 
-            val cx = radius + posX.times(rectSize)
-            val cy = radius + posY.times(rectSize) + textPaint.textHeight()
+            paint.setShader(mBG)
+            // draw bg
+            canvas.drawRect(x,y, x + rectSize.toFloat() - 25,y + rectSize.toFloat(),paint)
+            paint.setShader(null)
 
-            /*canvas.drawRect(textX.toFloat(),rectSize * posY.toFloat() + textPaint.textHeight()
-                    ,rectSize * (posX + 1).toFloat(),rectSize * (posY + 1) + textPaint.textHeight(),paint)*/
+            canvas.save()
 
-            canvas.drawText(modes[i].name, textX.toFloat(), textY, textPaint)
-
-//            paint.style = Paint.Style.FILL_AND_STROKE
-
-            val sc = canvas.saveLayer(posX.toFloat() * rectSize
-                    , posY.toFloat() * rectSize
-                    , (posX.toFloat() + 1) * rectSize, (posY.toFloat() + 1) * rectSize, null,
+//            val sc = canvas.saveLayer(x
+//                    , y
+//                    ,x + rectSize.toFloat(), y + rectSize + textPaint.textHeight(), null,
+//                    Canvas.ALL_SAVE_FLAG )
+            canvas.translate(x,y)
+            val sc = canvas.saveLayer(0f
+                    , 0f
+                    ,rectSize.toFloat(), rectSize + textPaint.textHeight(), null,
                     Canvas.ALL_SAVE_FLAG )
+            canvas.drawText(modes[i].name, 0f, textPaint.textHeight(), textPaint)
+
+            canvas.translate(0f,textPaint.textHeight())
+
             // draw dst
-            paint.color = ContextCompat.getColor(context, R.color.app_color_blue_2_pressed)
-            canvas.drawCircle(cx, cy, radius, paint)
+            canvas.drawBitmap(makeDst()
+            ,0f,0f,paint)
 
             paint.xfermode = PorterDuffXfermode(modes[i])
-            paint.color = ContextCompat.getColor(context, R.color.app_color_theme_3)
             // draw src
-            canvas.drawRect(cx, cy
-                    , cx + radius.times(2), cy + radius.times(2), paint)
 
+            canvas.drawBitmap(makeSrc(),0f,0f,paint)
             paint.xfermode = null
+            canvas.restore()
             canvas.restoreToCount(sc)
+            canvas.restore()
         }
 
+    }
+
+    fun makeSrc() : Bitmap{
+        val radius = rectSize.div(3f)
+        val bitmap = Bitmap.createBitmap(rectSize
+                ,rectSize,Bitmap.Config.ARGB_8888)
+        val c = Canvas(bitmap)
+        val p = Paint().apply {
+            style = Paint.Style.FILL
+            color = ContextCompat.getColor(context, R.color.app_color_theme_3)
+        }
+        c.drawRect(radius,radius,rectSize.times(0.75f),rectSize.times(0.75f),p)
+        return bitmap
+    }
+
+    fun makeDst() : Bitmap{
+        val radius = rectSize.div(3f)
+        val bitmap = Bitmap.createBitmap(radius.times(2).toInt()
+                ,radius.times(2).toInt(),Bitmap.Config.ARGB_8888)
+        val c = Canvas(bitmap)
+        val p = Paint().apply {
+            style = Paint.Style.FILL
+            color = ContextCompat.getColor(context, R.color.app_color_blue_2_pressed)
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            c.drawOval(0f,0f,radius.times(2),radius.times(2),p)
+        }
+        return bitmap
     }
 
 }
