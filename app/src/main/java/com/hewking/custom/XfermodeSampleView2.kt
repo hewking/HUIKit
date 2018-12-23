@@ -140,7 +140,6 @@ class XfermodeSampleView2(ctx: Context, attrs: AttributeSet?) : View(ctx, attrs)
 
             canvas.drawBitmap(makeSrc(),0f,0f,paint)
             paint.xfermode = null
-            canvas.restore()
             canvas.restoreToCount(sc)
             canvas.restore()
         }
