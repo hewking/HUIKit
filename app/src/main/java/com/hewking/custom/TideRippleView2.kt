@@ -8,6 +8,7 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.LinearInterpolator
+import com.hewking.custom.util.getColor
 import com.hewking.demo.dp2px
 import java.util.concurrent.CopyOnWriteArrayList
 
@@ -35,7 +36,7 @@ class TideRippleView2(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
         Paint().apply {
             style = Paint.Style.STROKE
             strokeWidth = dp2px(0.5f).toFloat()
-            color = Color.BLUE
+            color = getColor(R.color.pink_f5b8c2)
             isAntiAlias = true
         }
     }
@@ -122,7 +123,8 @@ class TideRippleView2(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
         canvas.save()
         canvas.rotate(sweepProgress.toFloat(), width.div(2f), height.div(2f))
 
-        backPaint.setShader(SweepGradient(width.div(2).toFloat(), height.div(2).toFloat(), Color.RED, Color.BLUE))
+        val colors = intArrayOf(getColor(R.color.pink_fa758a), getColor(R.color.pink_f5b8c2), getColor(R.color.top_background_color), getColor(R.color.white))
+        backPaint.setShader(SweepGradient(width.div(2).toFloat(), height.div(2).toFloat(), colors, floatArrayOf(0f, 0.001f, 0.9f, 1f)))
         val rectF = RectF(width.div(2f) - radius
                 , height.div(2f) - radius
                 , width.div(2f) + radius
