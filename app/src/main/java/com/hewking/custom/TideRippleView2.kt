@@ -43,7 +43,7 @@ class TideRippleView2(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
 
     private val backPaint by lazy {
         Paint().apply {
-            style = Paint.Style.FILL_AND_STROKE
+            style = Paint.Style.FILL
             isAntiAlias = true
             strokeWidth = dp2px(0.5f).toFloat()
         }
