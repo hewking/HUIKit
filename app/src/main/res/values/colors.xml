@@ -122,4 +122,6 @@
     <color name="filter_color_brown">#c8ca34</color>
     <color name="filter_color_brown_light">#ff9933</color>
 
+    <color name="bantouming">#99000000</color>
+
 </resources>
