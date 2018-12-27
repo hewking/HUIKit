@@ -99,6 +99,13 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ssearchView" />
 
+        <com.hewking.custom.loading.DyLineLoadingView
+            android:id="@+id/dyLoading"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/bitshader" />
+
         <com.hewking.hencoder.HaloProgressView
             android:layout_width="300dp"
             android:layout_height="200dp"
@@ -107,7 +114,8 @@
             android:scaleType="centerCrop"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bitshader" />
+            app:layout_constraintTop_toBottomOf="@id/dyLoading"
+            android:layout_marginBottom="20dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

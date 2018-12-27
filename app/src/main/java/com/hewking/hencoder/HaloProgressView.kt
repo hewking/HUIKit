@@ -12,7 +12,10 @@ import android.view.animation.BounceInterpolator
 import android.widget.ImageView
 import com.hewking.custom.BuildConfig
 import com.hewking.custom.R
-import com.hewking.custom.util.*
+import com.hewking.custom.util.UiUtil
+import com.hewking.custom.util.dp2px
+import com.hewking.custom.util.getColor
+import com.hewking.custom.util.textHeight
 
 /**
  * Created by test on 2017/11/26.
@@ -46,14 +49,19 @@ class HaloProgressView(context: Context?, attrs: AttributeSet?) : ImageView(cont
             isAntiAlias = true
             style = Paint.Style.STROKE
             textSize = dp2px(16f).toFloat()
-            color = getColor(R.color.main_text_color)
+            color = getColor(R.color.main_gray)
         }
     }
 
     init {
         paint.isAntiAlias = true
 
+        debugProgressStart()
+    }
+
+    private fun debugProgressStart() {
         if (BuildConfig.DEBUG) {
+            status = PROGRESS
             ObjectAnimator.ofInt(this, "progress", 0, 100).apply {
                 duration = 3000
                 interpolator = BounceInterpolator()
@@ -78,7 +86,12 @@ class HaloProgressView(context: Context?, attrs: AttributeSet?) : ImageView(cont
                 postInvalidateOnAnimation()
             }
             addListener(object : AnimatorListenerAdapter() {
-
+                override fun onAnimationEnd(animation: Animator?) {
+                    super.onAnimationEnd(animation)
+                    if (BuildConfig.DEBUG) {
+                        debugProgressStart()
+                    }
+                }
             })
             start()
         }
@@ -128,8 +141,8 @@ class HaloProgressView(context: Context?, attrs: AttributeSet?) : ImageView(cont
                 paint.style = Paint.Style.FILL
                 paint.color = Color.WHITE
                 paint.setShader(RadialGradient(0f, 0f, outRadius
-                        , intArrayOf(Color.TRANSPARENT, Color.WHITE, ResUtil.getTranColor(Color.WHITE, 160), Color.TRANSPARENT)
-                        , floatArrayOf(0.1f, 0.4f, 0.5f, 1f), Shader.TileMode.CLAMP))
+                        , intArrayOf(Color.TRANSPARENT, Color.WHITE, Color.WHITE, Color.TRANSPARENT)
+                        , floatArrayOf(0.1f, 0.4f, 0.8f, 1f), Shader.TileMode.CLAMP))
                 paint.alpha = (animatorValue * 255).toInt()
                 canvas.drawCircle(0f, 0f, innRaduus + (outRadius - innRaduus) * animatorValue, paint)
                 paint.setXfermode(PorterDuffXfermode(PorterDuff.Mode.DST_OUT))
