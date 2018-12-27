@@ -91,6 +91,7 @@ class MainActivity : LanguageActivity() {
         list.add(Item(18,"FlexBoxLayout Demo",FlexBoxLayoutFragment::class.java))
         list.add(Item(19, "ImageView ScaleType Demo", ImageScaleTypeFragment::class.java))
         list.add(Item(20, "XfermodeSampleView Demo", XfermodeFragment::class.java))
+        list.add(Item(21, "CustomDrawable Demo", CustomDrawableFragment::class.java))
         return list
     }
 

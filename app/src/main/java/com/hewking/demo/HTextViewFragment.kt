@@ -1,25 +1,22 @@
 package com.hewking.demo
 
-import android.app.Activity
 import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.core.widget.TextViewCompat
 import android.text.*
-import android.text.style.DynamicDrawableSpan
 import android.text.style.URLSpan
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
-import com.hewking.androidview.chronomoter.T
+import android.widget.EditText
+import android.widget.Magnifier
+import android.widget.Toast
+import androidx.core.widget.TextViewCompat
 import com.hewking.base.L
 import com.hewking.custom.R
 import com.hewking.custom.textview.AutoLinkSpan
 import kotlinx.android.synthetic.main.fragment_htextview.*
-import kotlinx.android.synthetic.main.item_text.*
 
 /**
  * 类的描述：
@@ -38,13 +35,33 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.v<EditText>(R.id.et_input).addTextChangedListener(HexInputFilter(view.v<EditText>(R.id.et_input)))
+        et_input.addTextChangedListener(HexInputFilter(view.v<EditText>(R.id.et_input)))
+
+        /*  et_input.clearFocus()
+          et_text.clearFocus()*/
+
+        et_input.isFocusable = false
+        et_text.isFocusable = false
+
+        val focused = et_input.isFocusable
 
         tv_image_span.text = SpannableStringUtils.getBuilder("xxxx")
                 .setResourceId(R.mipmap.img_coindrop_icon)
                 .setAlign(Layout.Alignment.ALIGN_CENTER)
                 .append("span image testfsdffffffffffffffffffffffff")
                 .create()
+
+        tv_image_span.setOnClickListener {
+            et_input.isFocusable = true
+            et_input.isFocusableInTouchMode = true
+            et_text.isFocusable = true
+            et_text.isFocusableInTouchMode = true
+            T("focus changed")
+            et_input.requestFocus()
+
+            L.d("HTextViewFragment", "et_input focus : ${et_input.isFocusable}  et_text focus ${et_text.isFocusable}")
+            L.d("HTextViewFragment", "et_input focus : ${et_input.isFocused}  et_text focus ${et_text.isFocused}")
+        }
 
         tv_click_span.apply {
             text = "gggggddgfddddddddddddddddddddddddddddddddddwww.baidu.com"

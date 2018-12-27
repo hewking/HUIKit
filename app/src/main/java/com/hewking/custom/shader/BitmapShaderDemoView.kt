@@ -44,12 +44,12 @@ class BitmapShaderDemoView(ctx : Context,attr: AttributeSet) : View(ctx,attr){
         var wSize = MeasureSpec.getSize(widthMeasureSpec)
         var hSize = MeasureSpec.getSize(heightMeasureSpec)
 
-        L.d("BitmapShaderDemoView","wsize : $wSize  hSize : $hSize")
-        if (wMode == MeasureSpec.AT_MOST) {
+        L.d("BitmapShaderDemoView", "wsize : $wSize  hSize : $hSize  wMode :$wMode hMode :$hMode")
+        if (wMode != MeasureSpec.EXACTLY) {
             wSize = dp2px(200f)
         }
 
-        if (hMode == MeasureSpec.AT_MOST) {
+        if (hMode != MeasureSpec.EXACTLY) {
             hSize = dp2px(200f)
         }
 
