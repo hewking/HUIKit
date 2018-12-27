@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
+import com.hewking.base.L
 import com.hewking.custom.R
 import com.hewking.custom.util.dp2px
 
@@ -22,9 +23,14 @@ class BitmapShaderDemoView(ctx : Context,attr: AttributeSet) : View(ctx,attr){
     private val mPaint by lazy {
         Paint().apply {
             isAntiAlias = true
-            style = Paint.Style.STROKE
-            val bitmap = BitmapFactory.decodeResource(resources, R.mipmap.jiantou)
-            shader = BitmapShader(bitmap, Shader.TileMode.CLAMP,Shader.TileMode.CLAMP)
+            style = Paint.Style.FILL
+            val bitmap = BitmapFactory.decodeResource(resources, R.drawable.asm_logo)
+            val bs = BitmapShader(bitmap, Shader.TileMode.REPEAT,Shader.TileMode.REPEAT)
+            val matrix = Matrix()
+            matrix.setScale(0.1f,0.1f)
+            bs.setLocalMatrix(matrix)
+            shader = bs
+
         }
     }
 
@@ -33,13 +39,28 @@ class BitmapShaderDemoView(ctx : Context,attr: AttributeSet) : View(ctx,attr){
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        val wMode = MeasureSpec.getMode(widthMeasureSpec)
+        val hMode = MeasureSpec.getMode(heightMeasureSpec)
+        var wSize = MeasureSpec.getSize(widthMeasureSpec)
+        var hSize = MeasureSpec.getSize(heightMeasureSpec)
+
+        L.d("BitmapShaderDemoView","wsize : $wSize  hSize : $hSize")
+        if (wMode == MeasureSpec.AT_MOST) {
+            wSize = dp2px(200f)
+        }
+
+        if (hMode == MeasureSpec.AT_MOST) {
+            hSize = dp2px(200f)
+        }
+
+        setMeasuredDimension(wSize,hSize)
     }
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         canvas?:return
-        canvas.drawRect(0f,0f,dp2px(100f).toFloat(),dp2px(100f).toFloat(),mPaint)
+        canvas.translate(width.div(2f),height.div(2f))
+        canvas.drawCircle(0f,0f,width.div(2f),mPaint)
     }
 
 }
