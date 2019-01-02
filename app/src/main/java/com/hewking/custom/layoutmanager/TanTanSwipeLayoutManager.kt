@@ -1,6 +1,5 @@
 package com.hewking.custom.layoutmanager
 
-import android.graphics.PointF
 import android.view.View
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -16,17 +15,30 @@ import androidx.recyclerview.widget.RecyclerView
  * Version: 1.0.0
  */
 class TanTanSwipeLayoutManager : RecyclerView.LayoutManager()
-        , ItemTouchHelper.ViewDropHandler, RecyclerView.SmoothScroller.ScrollVectorProvider {
-    override fun prepareForDrop(view: View, target: View, x: Int, y: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+        , ItemTouchHelper.ViewDropHandler {
 
-    override fun computeScrollVectorForPosition(targetPosition: Int): PointF? {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun prepareForDrop(view: View, target: View, x: Int, y: Int) {
+
     }
 
     override fun generateDefaultLayoutParams(): RecyclerView.LayoutParams {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return LayoutParams(-2, -2)
+    }
+
+    override fun onLayoutChildren(recycler: RecyclerView.Recycler?, state: RecyclerView.State?) {
+        super.onLayoutChildren(recycler, state)
+    }
+
+    class LayoutParams(width: Int, height: Int) : RecyclerView.LayoutParams(width, height) {
+
+    }
+
+    override fun canScrollVertically(): Boolean {
+        return super.canScrollVertically()
+    }
+
+    override fun scrollVerticallyBy(dy: Int, recycler: RecyclerView.Recycler?, state: RecyclerView.State?): Int {
+        return super.scrollVerticallyBy(dy, recycler, state)
     }
 
 }
