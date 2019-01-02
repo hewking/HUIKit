@@ -30,7 +30,7 @@ class DyLineLoadingView(ctx: Context, attr: AttributeSet) : View(ctx, attr) {
         Paint().apply {
             isAntiAlias = true
             style = Paint.Style.FILL
-            color = getColor(R.color.yellow_ffe2b1)
+            color = getColor(R.color.pink_fa758a)
         }
     }
 
