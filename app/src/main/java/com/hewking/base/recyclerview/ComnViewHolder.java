@@ -1,7 +1,8 @@
 package com.hewking.base.recyclerview;
 
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * 项目名称：FlowChat
@@ -17,5 +18,15 @@ public class ComnViewHolder extends RecyclerView.ViewHolder {
 
     public ComnViewHolder(View itemView) {
         super(itemView);
+    }
+
+    public ComnViewHolder(){
+        super(null);
+
+    }
+
+    public void bind(){
+
+
     }
 }

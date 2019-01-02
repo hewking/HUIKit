@@ -93,6 +93,7 @@ class MainActivity : LanguageActivity() {
         list.add(Item(20, "XfermodeSampleView Demo", XfermodeFragment::class.java))
         list.add(Item(21, "ConstrainLayout Demo", ConstrainDemoFragment::class.java))
         list.add(Item(22, "CustomDrawable Demo", CustomDrawableFragment::class.java))
+        list.add(Item(23, "MultiTypeRecyclerViewFragment Demo", MultiTypeRecyclerFragment::class.java))
         return list
     }
 

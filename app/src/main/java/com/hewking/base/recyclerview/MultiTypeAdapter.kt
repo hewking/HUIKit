@@ -13,20 +13,22 @@ import androidx.recyclerview.widget.RecyclerView
  * 修改备注：
  * Version: 1.0.0
  */
-class MultiTypeAdapter : RecyclerView.Adapter<ComnViewHolder>() {
+open class MultiTypeAdapter : RecyclerView.Adapter<ComnViewHolder>() {
 
     private var mDatas = mutableListOf<Any>()
     private val viewTypes = mutableMapOf<Class<out Any>, Int>()
-    private val itemTypes = mutableMapOf<Any, Class<ComnViewHolder>>()
+    private val itemTypes = mutableMapOf<Any, Class<out ComnViewHolder>>()
 
     init {
-
-        register(String::class.java, ComnViewHolder::class.java)
     }
 
+    open fun append(value : Any){
+        mDatas.add(value)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComnViewHolder {
-
+        val holderClazz = getVH(viewType)
+        return holderClazz?.getConstructor()?.newInstance()!!
     }
 
     override fun getItemCount(): Int {
@@ -34,18 +36,27 @@ class MultiTypeAdapter : RecyclerView.Adapter<ComnViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ComnViewHolder, position: Int) {
-
+        holder.bind()
     }
 
     override fun getItemViewType(position: Int): Int {
         val clazz = mDatas[position]::class.java
-        return viewTypes[clazz]
+        return viewTypes[clazz]!!
     }
 
-    private fun register(clazz: Class<out Any>, holder: Class<ComnViewHolder>) {
+    protected open fun register(clazz: Class<out Any>, holder: Class<out ComnViewHolder>) {
         itemTypes[clazz] = holder
         viewTypes[clazz] = viewTypes.size + 1
     }
 
+    fun getVH(viewType : Int) : Class<out ComnViewHolder>? {
+        val entries = viewTypes.entries
+        for (entry in entries) {
+            if (entry.value == viewType) {
+                return itemTypes[entry.key]
+            }
+        }
+        return null
+    }
 
 }
