@@ -1,8 +1,13 @@
 package com.hewking.base.recyclerview;
 
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.hewking.base.DelayClickListener;
 
 import androidx.recyclerview.widget.RecyclerView;
+
 
 /**
  * 项目名称：FlowChat
@@ -20,13 +25,41 @@ public class ComnViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
     }
 
-    public ComnViewHolder(){
-        super(null);
+    public void bind(){
 
     }
 
-    public void bind(){
+    public TextView tv(int resId) {
+        return itemView.findViewById(resId);
+    }
 
+    public ImageView iv(int resId) {
+        return itemView.findViewById(resId);
+    }
 
+    public <T extends View> T v(int resId) {
+        return itemView.findViewById(resId);
+    }
+
+    public void click(int res, View.OnClickListener listener) {
+        if (res == -1) {
+            return;
+        }
+        v(res).setOnClickListener(new DelayClickListener(listener));
+    }
+
+    public void click(View.OnClickListener listener) {
+        itemView.setOnClickListener(new DelayClickListener(listener));
+    }
+
+    public void longClick(View.OnLongClickListener listener) {
+        itemView.setOnLongClickListener(listener);
+    }
+
+    public void longClick(int res, View.OnLongClickListener listener) {
+        if (res == -1) {
+            return;
+        }
+        v(res).setOnLongClickListener(listener);
     }
 }

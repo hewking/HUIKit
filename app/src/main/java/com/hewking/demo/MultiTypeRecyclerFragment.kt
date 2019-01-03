@@ -46,20 +46,20 @@ class MultiTypeRecyclerFragment : Fragment(){
     class DemoAdapter : MultiTypeAdapter(){
         init {
             register(String::class.java,VH1::class.java)
-            register(Int::class.java,VH2::class.java)
+            register(Integer::class.java, VH2::class.java)
         }
     }
 
-    inner class VH1 : ComnViewHolder{
-        constructor(): super(XfermodeSampleView2(context!!,null).apply {
+    class VH1 : ComnViewHolder {
+        constructor() : super(XfermodeSampleView2(DemoApplication.context!!, null).apply {
             layoutParams = ViewGroup.LayoutParams(-2,-2)
         }) {
 
         }
     }
 
-    inner  class  VH2 : ComnViewHolder{
-        constructor(): super(TextView(context!!,null).apply {
+    class VH2 : ComnViewHolder {
+        constructor() : super(TextView(DemoApplication.context!!, null).apply {
             layoutParams = ViewGroup.LayoutParams(-2,-2)
             text = "hahaha"
             textSize = 30f
