@@ -1,7 +1,9 @@
 package com.hewking.custom
 
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
@@ -18,7 +20,7 @@ import androidx.core.content.ContextCompat
 
 class WaterRippleView(ctx : Context,attrs : AttributeSet) : View(ctx,attrs) {
 
-    private var progress : Int = 20
+    private var progress : Int = 50
     set(value) {
         field = value
         invalidate()
@@ -56,18 +58,33 @@ class WaterRippleView(ctx : Context,attrs : AttributeSet) : View(ctx,attrs) {
         canvas?:return
         canvas.save()
         canvas.clipPath(path)
-        canvas.drawPaint(mPaint)
         canvas.save()
         canvas.translate(width.div(2f),height.div(2f))
 
         val lowheight = progress.div(100f).times(2).times(radius)
-        val start = Math.sqrt(Math.pow(radius.toDouble(),2.toDouble()) + Math.pow(radius.toDouble() - lowheight,2.toDouble()))
-        val end = - start
+//        val start = Math.sqrt(Math.pow(radius.toDouble(),2.toDouble()) + Math.pow(radius.toDouble() - lowheight,2.toDouble()))
+//        val end = - start
 
-        mPaint.setColor(Color.RED)
-        bizerPath.lineTo(start.toFloat(),radius-lowheight)
-        bizerPath.quadTo(0f,0f,end.toFloat(),radius-lowheight)
+//        val sc = canvas.saveLayer(-radius,-radius,radius,radius,mPaint,Canvas.ALL_SAVE_FLAG)
+//        canvas.drawPaint(mPaint)
+//        mPaint.setXfermode(PorterDuffXfermode(PorterDuff.Mode.SRC))
+        bizerPath.reset()
+        bizerPath.moveTo(-radius,radius - lowheight)
+        val waveHeight = radius.div(4)
+        val waveWidth = radius
+        for(i in 0 until 2) {
+            bizerPath.quadTo(waveWidth.times(i*2) + waveWidth.div(2)
+                    ,radius - lowheight + waveHeight,waveWidth .times(1 + i*2),radius - lowheight)
+            bizerPath.quadTo(waveWidth.times(i*2 + 1) + waveWidth.div(2)
+                    ,radius - lowheight - waveHeight
+                    ,waveWidth .times(2 + i*2),radius - lowheight)
+        }
+        bizerPath.lineTo(radius,radius)
+        bizerPath.lineTo(-radius,radius)
+        bizerPath.close()
         canvas.drawPath(bizerPath,mPaint)
+//        mPaint.xfermode = null
+//        canvas.restoreToCount(sc)
 
         canvas.restore()
         canvas.restore()

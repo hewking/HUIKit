@@ -276,11 +276,16 @@
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content" />-->
 
-    <com.hewking.custom.chart.DepthView
-        android:layout_centerInParent="true"
-        app:bg_color="#b61924"
-        android:layout_width="300dp"
-        android:layout_height="250dp" />
+    <!--<com.hewking.custom.chart.DepthView-->
+        <!--android:layout_centerInParent="true"-->
+        <!--app:bg_color="#b61924"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="250dp" />-->
+
+    <com.hewking.custom.bizerdemo.BezierView3
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
 
 
 </RelativeLayout>
