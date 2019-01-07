@@ -12,7 +12,7 @@ import android.view.animation.LinearInterpolator
 /** 可以设置上下左右翻页的view requestlayout()实现
  * Created by test on 2018/1/14.
  */
-class GalleryLayout(context : Context, attributeSet: AttributeSet) : ViewGroup(context,attributeSet) {
+class GalleryLayout(context : Context, attributeSet: AttributeSet?) : ViewGroup(context,attributeSet) {
 
     /**
      * 翻页持续时间

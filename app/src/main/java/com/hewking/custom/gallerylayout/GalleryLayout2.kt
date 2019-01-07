@@ -11,11 +11,13 @@ import android.view.MotionEvent
 import android.view.ViewGroup
 import android.view.animation.LinearInterpolator
 import android.widget.Scroller
+import com.hewking.base.L
 
 /** 可以设置上下左右翻页的view
  * Created by test on 2018/1/14.
  */
-class GalleryLayout2(context : Context, attributeSet: AttributeSet) : ViewGroup(context,attributeSet) {
+class GalleryLayout2(context : Context, attributeSet: AttributeSet?
+) : ViewGroup(context,attributeSet) {
 
     /**
      * 翻页持续时间
@@ -45,7 +47,7 @@ class GalleryLayout2(context : Context, attributeSet: AttributeSet) : ViewGroup(
 
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
         val count = childCount
-        for (i in 0..count - 1) {
+        for (i in 0 until count) {
             val childLeft = measuredWidth * i
             val childTop = t
             val childRight = measuredWidth  + childLeft
@@ -132,34 +134,41 @@ class GalleryLayout2(context : Context, attributeSet: AttributeSet) : ViewGroup(
                 interpolator = LinearInterpolator()
                 addUpdateListener(object : ValueAnimator.AnimatorUpdateListener {
                     override fun onAnimationUpdate(animation: ValueAnimator?) {
-                        offset = animation?.animatedValue as Float
+                        val value = animation?.animatedValue as Float
                         if (!interceptAnimoator) {
-                            scrollTo((offset * measuredWidth).toInt(),0)
+                            L.d("GalleryLayout2","offset : ${value + offset} value : ${(value * measuredWidth).toInt()}" )
+                            scrollTo(((offset + value) * measuredWidth).toInt(),0)
                         }
                     }
                 })
                 addListener(object : AnimatorListenerAdapter(){
                     override fun onAnimationEnd(animation: Animator?) {
+
+                    }
+
+                    override fun onAnimationRepeat(animation: Animator?) {
+                        super.onAnimationRepeat(animation)
                         offset += 1
-                        if (offset >= childCount) {
+                        //无限循环核心在于首尾 的数据必须一样，这样在通过offset = 0,scrollTo到最开始位置才不会有问题。
+                        if (offset >= childCount - 1) {
                             offset = 0f
-                            smoothTo(0,0)
+//                            smoothTo(0,0)
                         }
                     }
                 })
             }
 
-    private fun smoothTo(disX : Int,disY : Int) {
-        val dx = disX - scrollX
-        mScroller.startScroll(scrollX,scrollY,dx,0)
-        invalidate()
-    }
-
-    override fun computeScroll() {
-        if (mScroller.computeScrollOffset()) {
-            scrollTo(mScroller.currX,mScroller.currY)
-            postInvalidate()
-        }
-    }
+//    private fun smoothTo(disX : Int,disY : Int) {
+//        val dx = disX - scrollX
+//        mScroller.startScroll(scrollX,scrollY,dx,0)
+//        invalidate()
+//    }
+//
+//    override fun computeScroll() {
+//        if (mScroller.computeScrollOffset()) {
+//            scrollTo(mScroller.currX,mScroller.currY)
+//            postInvalidate()
+//        }
+//    }
 
 }

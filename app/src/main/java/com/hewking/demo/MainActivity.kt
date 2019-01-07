@@ -95,6 +95,7 @@ class MainActivity : LanguageActivity() {
         list.add(Item(22, "CustomDrawable Demo", CustomDrawableFragment::class.java))
         list.add(Item(23, "MultiTypeRecyclerView Demo", MultiTypeRecyclerFragment::class.java))
         list.add(Item(24, "WaterRippleCiew Demo", WaterRippleFragment::class.java))
+        list.add(Item(25, "GalleryLayout Demo", GalleryLayoutFragment::class.java))
         return list
     }
 

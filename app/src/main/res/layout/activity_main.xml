@@ -208,6 +208,7 @@
                     <!--android:layout_width="300dp"-->
                     <!--android:layout_height="300dp"/>-->
                 <!--<ImageView-->
+
                     <!--android:src="@mipmap/nice_girl"-->
                     <!--android:scaleType="centerCrop"-->
                     <!--android:layout_width="300dp"-->
