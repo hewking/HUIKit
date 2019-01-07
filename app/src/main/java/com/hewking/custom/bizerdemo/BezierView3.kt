@@ -4,11 +4,10 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Paint
-import android.graphics.Path
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
+import android.view.animation.LinearInterpolator
 import com.hewking.custom.BuildConfig
 import com.hewking.custom.R
 import com.hewking.custom.util.DrawHelper
@@ -46,10 +45,16 @@ class BezierView3(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
 
+        paint.shader = LinearGradient(0f, 0f, w.toFloat(), 0f
+                , intArrayOf(getColor(R.color.app_color_theme_4), getColor(R.color.pink_f5b8c2), getColor(R.color.top_background_color))
+                , floatArrayOf(0.1f, 0.8f, 0.9f), Shader.TileMode.CLAMP)
+
+
         ValueAnimator.ofFloat(0f, 1f).apply {
             duration = 1000
             repeatMode = ValueAnimator.RESTART
             repeatCount = ValueAnimator.INFINITE
+            interpolator = LinearInterpolator()
             addUpdateListener {
                 offset = it.animatedValue as Float
                 postInvalidateOnAnimation()
@@ -85,7 +90,7 @@ class BezierView3(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
         val path = Path()
         path.reset()
 
-        val start = -4 * waveWidth + 2 * offset * waveHeight
+        val start = -4 * waveWidth + 2 * offset * waveWidth
         path.moveTo(start, 0f)
 
         // 绘制2段完整波形

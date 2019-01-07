@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
@@ -71,16 +71,19 @@
             android:padding="@dimen/default_text_size10"
             android:text="https://www.flowchat.me/api/groupShare/inner?code=h2w6mA" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_auto_size"
-            android:layout_width="100dp"
+            android:layout_width="130dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
             android:padding="10dp"
             android:textStyle="normal"
             android:fontFamily="@font/my_font"
-            android:text="我是中文啊我  fffffffffffffff大范甘迪"
-            style="@style/TextCompatAutoSize" />
+            android:text="我是中文啊我auto size fffffffffffffff大范甘迪"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="4sp"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeStepGranularity="2sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_test_weburl"
