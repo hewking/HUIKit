@@ -6,7 +6,9 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
+import com.hewking.custom.BuildConfig
 import com.hewking.custom.R
+import com.hewking.custom.util.DrawHelper
 import com.hewking.custom.util.dp2px
 import com.hewking.custom.util.getColor
 
@@ -38,7 +40,7 @@ class BezierView3(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         if (MeasureSpec.getMode(heightMeasureSpec) != MeasureSpec.EXACTLY) {
-            super.onMeasure(widthMeasureSpec,MeasureSpec.makeMeasureSpec(defaultHeight,MeasureSpec.EXACTLY))
+            super.onMeasure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(defaultHeight, MeasureSpec.EXACTLY))
         } else {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         }
@@ -47,19 +49,23 @@ class BezierView3(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         canvas ?: return
+        if (BuildConfig.DEBUG) {
+            DrawHelper.drawCoordinate(canvas, width, height)
+        }
+
         canvas.translate(width.div(2f), height.div(2f))
         val waveWidth = width.div(4f)
         val waveHeight = defaultHeight.div(2f)
 
         val path = Path()
         path.reset()
-        path.moveTo(-width.div(2f),0f)
-        path.quadTo(-1.5f.times(waveWidth),waveHeight,-waveWidth,0f)
-        path.quadTo(-0.5f * waveWidth,-waveHeight,0f,0f)
+        path.moveTo(-width.div(2f), 0f)
+        path.quadTo(-1.5f.times(waveWidth), waveHeight, -waveWidth, 0f)
+        path.quadTo(-0.5f * waveWidth, -waveHeight, 0f, 0f)
 
-        path.quadTo(0.5f * waveWidth,waveHeight,waveWidth,0f)
-        path.quadTo(1.5f * waveWidth,-waveHeight,2 * waveWidth,0f)
-        canvas.drawPath(path,paint)
+        path.quadTo(0.5f * waveWidth, waveHeight, waveWidth, 0f)
+        path.quadTo(1.5f * waveWidth, -waveHeight, 2 * waveWidth, 0f)
+        canvas.drawPath(path, paint)
     }
 
 }
