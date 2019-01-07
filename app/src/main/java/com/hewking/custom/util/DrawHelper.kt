@@ -35,7 +35,7 @@ object DrawHelper {
 
         val step = 20
         val scaleHeight = 5f
-        // 绘制x,y坐标轴上的刻度，刻度大小为10，高度为10
+        // 绘制x,y坐标轴上的刻度
         for (posX in 0..w.div(2) step step) {
             if (posX == 0) {
                 continue
