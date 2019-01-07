@@ -1,4 +1,4 @@
-package com.hewking.custom;
+package com.hewking.custom.bizerdemo;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -13,21 +13,21 @@ import android.view.View;
 /**
  * Created by hewking on 2016/10/21.
  */
-public class BezierView extends View {
+public class Bezier2View extends View {
 
     private Paint mPaint;
-    private PointF start,end,control;
+    private PointF start,end,control1,control2;
     private int width,height;
 
-    public BezierView(Context context, AttributeSet attrs) {
+    public Bezier2View(Context context, AttributeSet attrs) {
         this(context, attrs,0);
     }
 
-    public BezierView(Context context) {
+    public Bezier2View(Context context) {
         this(context,null);
     }
 
-    public BezierView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public Bezier2View(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -42,15 +42,17 @@ public class BezierView extends View {
         start.y = height / 2;
         end.x = width / 2 + 200;
         end.y = height /2 ;
-        control.x = width / 2 ;
-        control.y = height + 100;
+        control1.x = width / 2 - 100;
+        control1.y = height + 100;
+        control2.x = width /2 + 100;
+        control2.y = height / 2 + 100;
 
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        control.x = event.getX();
-        control.y = event.getY();
+        control1.x = event.getX();
+        control2.y = event.getY();
         invalidate();
         return true;
 
@@ -62,7 +64,8 @@ public class BezierView extends View {
         mPaint.setStyle(Paint.Style.STROKE);
 
         start = new PointF();
-        control = new PointF();
+        control1 = new PointF();
+        control2 = new PointF();
         end = new PointF();
     }
 
@@ -73,17 +76,20 @@ public class BezierView extends View {
 
         //初始化数据点和控制点
         mPaint.setColor(Color.GRAY);
-        mPaint.setStrokeWidth(4);
+        mPaint.setStrokeWidth(20);
         canvas.drawPoints(new float[]{
                 start.x,start.y,
-                control.x,control.y,
+                control1.x,control1.y,
+                control2.x,control2.y,
                 end.x,end.y
         },mPaint);
 
         //花辅助线
+        mPaint.setStrokeWidth(4);
         Path contronPath  = new Path();
         contronPath.moveTo(start.x,start.y);
-        contronPath.lineTo(control.x,control.y);
+        contronPath.lineTo(control1.x,control1.y);
+        contronPath.lineTo(control2.x,control2.y);
         contronPath.lineTo(end.x,end.y);
         canvas.drawPath(contronPath,mPaint);
 
@@ -91,7 +97,7 @@ public class BezierView extends View {
 
         Path bezierPath = new Path();
         bezierPath.moveTo(start.x,start.y);
-        bezierPath.quadTo(control.x,control.y,end.x,end.y);
+        bezierPath.cubicTo(control1.x,control1.y,control2.x,control2.y,end.x,end.y);
         canvas.drawPath(bezierPath,mPaint);
     }
 }
