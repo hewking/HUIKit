@@ -120,6 +120,7 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
             cb.text =  if (isChecked) "ischecked" else "nochecked"
         }
 
+        // 放大镜查看文字
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             val magnifier = Magnifier(tv_auto_size)
             magnifier.show(tv_auto_size.width.div(2f),tv_auto_size.height.div(2f))
@@ -139,6 +140,15 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
             }
         }
 
+        // dynamic programing set autosize config
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(tv_auto_size, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM)
+        TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(tv_auto_size, 8, 17, 2, TypedValue.COMPLEX_UNIT_PT)
+        tv_auto_size.text = "wo shi zhognwena  wo daodi xingbuxing a autosize"
+
+        tv_auto_size.viewTreeObserver.addOnGlobalLayoutListener {
+            // 这时候可以获取宽高
+            tv_auto_size.text = "wo shi zhognwena  wo daodi xingbuxing a autosize"
+        }
     }
 
     fun androidx.fragment.app.Fragment.T(msg :String){
