@@ -1,11 +1,13 @@
 package com.hewking.base
 
 import android.app.Activity
+import android.graphics.Color
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Gravity
 import android.widget.FrameLayout
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.hewking.custom.util.ResUtil
 
 class DemoActivity : AppCompatActivity() {
 
@@ -18,6 +20,7 @@ class DemoActivity : AppCompatActivity() {
             layoutParams = FrameLayout.LayoutParams(-2,-2).apply {
                 gravity = Gravity.CENTER
             }
+            background = ResUtil.generateGradientDrawable(dp2px(4f), Color.parseColor("#7d3dcc"), Color.parseColor("#944aee"))
         }
         setContentView(tv)
     }
