@@ -11,7 +11,6 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.animation.LinearInterpolator
 import androidx.core.content.ContextCompat
-import com.hewking.custom.util.DrawHelper
 import com.hewking.custom.util.dp2px
 import com.hewking.custom.util.getColor
 import com.hewking.custom.util.textHeight
@@ -175,9 +174,9 @@ class WaterRippleView(ctx : Context,attrs : AttributeSet) : View(ctx,attrs) {
         canvas.restore()
         canvas.restore()
 
-        if (BuildConfig.DEBUG) {
-            DrawHelper.drawCoordinate(canvas,width,height)
-        }
+//        if (BuildConfig.DEBUG) {
+//            DrawHelper.drawCoordinate(canvas,width,height)
+//        }
     }
 
 }
