@@ -141,9 +141,9 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
         }
 
         // dynamic programing set autosize config
-        TextViewCompat.setAutoSizeTextTypeWithDefaults(tv_auto_size, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM)
-        TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(tv_auto_size, 8, 17, 2, TypedValue.COMPLEX_UNIT_PT)
-        tv_auto_size.text = "wo shi zhognwena  wo daodi xingbuxing a autosize"
+//        TextViewCompat.setAutoSizeTextTypeWithDefaults(tv_auto_size, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM)
+//        TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(tv_auto_size, 8, 17, 2, TypedValue.COMPLEX_UNIT_PT)
+//        tv_auto_size.text = "wo shi zhognwena  wo daodi xingbuxing a autosize"
 
         tv_auto_size.viewTreeObserver.addOnGlobalLayoutListener {
             // 这时候可以获取宽高
