@@ -45,8 +45,8 @@ class BezierView3(ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
 
-        paint.shader = LinearGradient(0f, 0f, w.toFloat(), 0f
-                , intArrayOf(getColor(R.color.app_color_theme_4), getColor(R.color.pink_f5b8c2), getColor(R.color.top_background_color))
+        paint.shader = LinearGradient(0f, 0f, w.toFloat().div(4), 0f
+                , intArrayOf(getColor(R.color.app_color_theme_4), getColor(R.color.pink_f5b8c2), getColor(R.color.app_color_theme_6))
                 , floatArrayOf(0.1f, 0.8f, 0.9f), Shader.TileMode.CLAMP)
 
 

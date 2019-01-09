@@ -7,7 +7,6 @@ import android.graphics.Paint
 import android.text.TextUtils
 import android.util.AttributeSet
 import com.hewking.custom.util.dp2px
-import com.hewking.custom.util.resoloveSize
 import com.hewking.custom.util.textHeight
 
 /**
@@ -58,17 +57,19 @@ class TextLoadView(ctx: Context, attrs: AttributeSet)
             if (heightMode != MeasureSpec.EXACTLY) {
                 height = textHeight.toInt() + paddingBottom + paddingTop
             }
-            setMeasuredDimension(width,height)
+            setMeasuredDimension(width, height)
         }
     }
 
     override fun onDraw(canvas: Canvas?) {
         if (canvas == null) return
-        canvas.drawColor(Color.parseColor("#d6d6d6"))
+        if (BuildConfig.DEBUG) {
+            canvas.drawColor(Color.parseColor("#d6d6d6"))
+        }
         val textWidth = textPaint.measureText(text)
-        canvas.drawText(text,0f,textPaint.textHeight(),textPaint)
+        canvas.drawText(text, 0f, textPaint.textHeight(), textPaint)
         canvas.save()
-        canvas.translate(textWidth,0f)
+        canvas.translate(textWidth, 0f)
         super.onDraw(canvas)
         canvas.restore()
     }

@@ -18,7 +18,6 @@ import com.hewking.custom.util.UiUtil
  */
 class HenCoderRulerView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
 
-
     var mPaint: Paint? = null
     var mTextpaint: Paint? = null
     var mScroller : Scroller? = null
@@ -44,17 +43,17 @@ class HenCoderRulerView(context: Context?, attrs: AttributeSet?) : View(context,
     }
 
     override fun onDraw(canvas: Canvas?) {
-        canvas?.drawLine(0f, 0f, measuredWidth.toFloat(), 0f, mPaint)
-
+        canvas ?: return
+        canvas.drawLine(0f, 0f, measuredWidth.toFloat(), 0f, mPaint)
         val count = measuredWidth / 30
-        canvas?.drawLine(measuredWidth / 2f, 0f, measuredWidth / 2f, 100f, mPaint)
+        canvas.drawLine(measuredWidth / 2f, 0f, measuredWidth / 2f, 100f, mPaint)
         for (i in 0..count) {
             var height = 40f
             if (i % 10 == 0) {
                 height = 80f
-                canvas!!.drawText((i + scrollX / 30).toString(), i * count.toFloat() - 20, height + 40, mTextpaint)
+                canvas.drawText((i + scrollX / 30).toString(), i * count.toFloat() - 20, height + 40, mTextpaint)
             }
-            canvas?.drawLine(i * count.toFloat(), 0f, i * count.toFloat(), height, mPaint)
+            canvas.drawLine(i * count.toFloat(), 0f, i * count.toFloat(), height, mPaint)
 
         }
 

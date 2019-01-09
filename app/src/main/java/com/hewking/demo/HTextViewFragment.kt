@@ -2,9 +2,10 @@ package com.hewking.demo
 
 import android.os.Build
 import android.os.Bundle
-import android.text.*
+import android.text.Layout
+import android.text.Spannable
+import android.text.Spanned
 import android.text.style.URLSpan
-import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -12,7 +13,6 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Magnifier
 import android.widget.Toast
-import androidx.core.widget.TextViewCompat
 import com.hewking.base.L
 import com.hewking.custom.R
 import com.hewking.custom.textview.AutoLinkSpan
@@ -77,20 +77,20 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
 
         smart_tv.text = "tronbet.io sdfsd baidu.com"
 
-        TextViewCompat.setAutoSizeTextTypeWithDefaults(tv_auto_size,TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM)
-        TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(tv_auto_size,14,100,10,TypedValue.COMPLEX_UNIT_SP)
-        et_text.addTextChangedListener(object : TextWatcher{
-            override fun afterTextChanged(s: Editable?) {
-                tv_auto_size.text = s?.toString()
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            }
-
-        })
+//        TextViewCompat.setAutoSizeTextTypeWithDefaults(tv_auto_size,TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM)
+//        TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(tv_auto_size,14,100,10,TypedValue.COMPLEX_UNIT_SP)
+//        et_text.addTextChangedListener(object : TextWatcher{
+//            override fun afterTextChanged(s: Editable?) {
+//                tv_auto_size.text = s?.toString()
+//            }
+//
+//            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+//            }
+//
+//            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+//            }
+//
+//        })
 
         val spannable = tv_text_span.text as Spannable
        val spans = spannable.getSpans(0, spannable.length, URLSpan::class.java)
@@ -141,14 +141,14 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
         }
 
         // dynamic programing set autosize config
-        TextViewCompat.setAutoSizeTextTypeWithDefaults(tv_auto_size, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM)
-        TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(tv_auto_size, 8, 17, 2, TypedValue.COMPLEX_UNIT_PT)
-        tv_auto_size.text = "wo shi zhognwena  wo daodi xingbuxing a autosize"
+//        TextViewCompat.setAutoSizeTextTypeWithDefaults(tv_auto_size, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM)
+//        TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(tv_auto_size, 8, 17, 2, TypedValue.COMPLEX_UNIT_PT)
+//        tv_auto_size.text = "wo shi zhognwena  wo daodi xingbuxing a autosize"
 
-        tv_auto_size.viewTreeObserver.addOnGlobalLayoutListener {
-            // 这时候可以获取宽高
-            tv_auto_size.text = "wo shi zhognwena  wo daodi xingbuxing a autosize"
-        }
+//        tv_auto_size.viewTreeObserver.addOnGlobalLayoutListener {
+//            // 这时候可以获取宽高
+//            tv_auto_size.text = "wo shi zhognwena  wo daodi xingbuxing a autosize"
+//        }
     }
 
     fun androidx.fragment.app.Fragment.T(msg :String){

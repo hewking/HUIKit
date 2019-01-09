@@ -73,13 +73,10 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_auto_size"
-            android:layout_width="130dp"
-            android:layout_height="40dp"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
             android:layout_gravity="center_horizontal"
-            android:padding="10dp"
-            android:textStyle="normal"
-            android:fontFamily="@font/my_font"
-            android:text="我是中文啊我auto size fffffffffffffff大范甘迪"
+            android:text="中英文混合怎wocanefsdd么回事"
             app:autoSizeTextType="uniform"
             app:autoSizeMinTextSize="4sp"
             app:autoSizeMaxTextSize="100sp"

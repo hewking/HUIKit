@@ -54,6 +54,7 @@ class FlowLayoutManager : RecyclerView.LayoutManager() {
         recycler ?: return
         state ?: return
 
+        childCount
 
     }
 
