@@ -8,9 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewOutlineProvider
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
 import com.google.android.material.shadow.ShadowDrawableWrapper
 import com.hewking.custom.R
 import com.hewking.custom.util.ReflectUtil
+import com.hewking.custom.util.dp2px
 import kotlinx.android.synthetic.main.fragment_cardview_demo.*
 
 class CardViewFragment : androidx.fragment.app.Fragment(){
@@ -27,10 +29,8 @@ class CardViewFragment : androidx.fragment.app.Fragment(){
                     override fun getOutline(view: View?, outline: Outline?) {
                         outline?.setRoundRect(0, 0, view?.width ?: 0, view?.height ?: 0, 6f)
                     }
-
                 }
             }
-
         }
 
         // 模拟 FloatActionButtom 实现阴影
@@ -39,5 +39,7 @@ class CardViewFragment : androidx.fragment.app.Fragment(){
         ReflectUtil.setField(shadowDrawable, "shadowStartColor", ContextCompat.getColor(context!!, R.color.app_color_theme_6))
 
         iv_shadow2.background = shadowDrawable
+        ViewCompat.setTranslationZ(iv_shadow3, dp2px(8f).toFloat())
+//        val roundRectShadow = RoundRect
     }
 }
