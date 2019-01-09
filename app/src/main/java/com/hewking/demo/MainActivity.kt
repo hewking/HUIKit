@@ -77,7 +77,7 @@ class MainActivity : LanguageActivity() {
         list.add(Item(4,"拉钩主页", LagouTopFragment::class.java))
         list.add(Item(5,"自定义view Demo", CustomViewFragment::class.java))
         list.add(Item(6,"EditText Demo",EditTextTestFragment::class.java))
-        list.add(Item(7,"CardView shadow Demo",CardViewFragment::class.java))
+        list.add(Item(7, "shadow 阴影 Demo", CardViewFragment::class.java))
         list.add(Item(8,"ProgressDialog Demo",DialogProgressFragment::class.java))
         list.add(Item(9,"GestureDetector Demo",GestureDetectorDemoFragment::class.java))
         list.add(Item(10,"ImageExDemo Demo",ImageExFragment::class.java))

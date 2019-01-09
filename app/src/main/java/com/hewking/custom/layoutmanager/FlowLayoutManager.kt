@@ -54,7 +54,7 @@ class FlowLayoutManager : RecyclerView.LayoutManager() {
         recycler ?: return
         state ?: return
 
-//        measureChildWithMargins()
+        childCount
 
     }
 
