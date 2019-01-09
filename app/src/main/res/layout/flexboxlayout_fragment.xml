@@ -10,6 +10,7 @@
         app:flexWrap="wrap"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -42,11 +43,14 @@
     <com.hewking.custom.flowlayout.FlowLayout
         android:id="@+id/flowlayout"
         android:layout_width="wrap_content"
-        android:background="@color/app_color_theme_4"
+        android:background="@color/bar_divider"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_40dpi"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/flexbox"
-        app:layout_constraintBottom_toBottomOf="parent"></com.hewking.custom.flowlayout.FlowLayout>
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </com.hewking.custom.flowlayout.FlowLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,7 @@ import android.widget.TextView
 import com.hewking.custom.R
 import com.hewking.custom.util.dp2px
 import kotlinx.android.synthetic.main.flexboxlayout_fragment.*
+import java.text.NumberFormat
 
 /**
  * 类的描述：
@@ -28,12 +29,12 @@ class FlexBoxLayoutFragment : androidx.fragment.app.Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         for (i in 0 until 12) {
-            if (i.rem(2) == 0) {
-                //偶数
-                flexbox.addView(createImageView(i))
-            } else {
-                flexbox.addView(createTextView(i))
-            }
+//            if (i.rem(2) == 0) {
+//                //偶数
+//                flowlayout.addView(createImageView(i))
+//            } else {
+            flowlayout.addView(createTextView(i))
+//            }
         }
     }
 
@@ -47,10 +48,14 @@ class FlexBoxLayoutFragment : androidx.fragment.app.Fragment(){
 
     private fun createTextView(i: Int): View? {
         return TextView(activity).apply {
-            text = "text ${(i + 1).div(2)}"
+            //            text = "text ${(i + 1).div(2)}"
+            val format = NumberFormat.getInstance()
+            format.isGroupingUsed = false
+            text = "text ${format.format(Math.pow(10.toDouble(), i.toDouble()))}"
             layoutParams = ViewGroup.LayoutParams(-2, -2)
             setPadding(dp2px(10f), dp2px(10f), dp2px(10f), dp2px(10f))
         }
     }
+
 
 }

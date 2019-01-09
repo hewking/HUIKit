@@ -16,7 +16,6 @@ import android.view.ViewGroup
  */
 class FlowLayout(ctx: Context, attrs: AttributeSet) : ViewGroup(ctx, attrs) {
 
-
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val wSpec = MeasureSpec.getMode(widthMeasureSpec)
         val hSpec = MeasureSpec.getMode(heightMeasureSpec)
@@ -54,7 +53,7 @@ class FlowLayout(ctx: Context, attrs: AttributeSet) : ViewGroup(ctx, attrs) {
             wSize = resolveSize(widthMeasureSpec, rowMaxLen)
         }
 
-        if (hSpec != MeasureSpec.AT_MOST) {
+        if (hSpec != MeasureSpec.EXACTLY) {
             hSize = resolveSize(heightMeasureSpec, columnMaxLen)
         }
 
