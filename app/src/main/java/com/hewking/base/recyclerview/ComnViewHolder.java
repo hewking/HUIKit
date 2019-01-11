@@ -29,6 +29,12 @@ public class ComnViewHolder extends RecyclerView.ViewHolder {
 
     }
 
+    /**
+     * 可以缓存 不用每次都 findViewById
+     *
+     * @param resId
+     * @return
+     */
     public TextView tv(int resId) {
         return itemView.findViewById(resId);
     }

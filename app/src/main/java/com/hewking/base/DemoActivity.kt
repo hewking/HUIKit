@@ -16,12 +16,12 @@ class DemoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val tv = TextView(this).apply {
             text = "center text"
-            textSize = dp2px(14f)
+            textSize = dp2px(14f).toFloat()
             gravity = Gravity.CENTER
             layoutParams = FrameLayout.LayoutParams(-2,-2).apply {
                 gravity = Gravity.CENTER
             }
-            background = ResUtil.generateGradientDrawable(dp2px(4f), Color.parseColor("#7d3dcc"), Color.parseColor("#944aee"))
+            background = ResUtil.generateGradientDrawable(dp2px(4f).toFloat(), Color.parseColor("#7d3dcc"), Color.parseColor("#944aee"))
         }
         setContentView(tv)
     }

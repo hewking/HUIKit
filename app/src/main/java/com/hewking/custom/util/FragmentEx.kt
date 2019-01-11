@@ -1,5 +1,8 @@
 package com.hewking.custom.util
 
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 
 /**
@@ -18,4 +21,9 @@ fun Fragment.dp2px(dp : Float) : Int {
 
 fun Fragment.px2dp(px : Int) : Float{
     return (px.div(activity?.resources?.displayMetrics?.density!!).plus(0.5f)).toFloat()
+}
+
+@ColorInt
+fun Fragment.getColor(@ColorRes res: Int): Int {
+    return ContextCompat.getColor(context!!, res)
 }

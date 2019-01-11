@@ -46,11 +46,14 @@ class FlexBoxLayoutFragment : androidx.fragment.app.Fragment(){
         }
     }
 
+    val format = NumberFormat.getInstance().apply {
+        isGroupingUsed = false
+    }
+
     private fun createTextView(i: Int): View? {
         return TextView(activity).apply {
             //            text = "text ${(i + 1).div(2)}"
-            val format = NumberFormat.getInstance()
-            format.isGroupingUsed = false
+
             text = "text ${format.format(Math.pow(10.toDouble(), i.toDouble()))}"
             layoutParams = ViewGroup.LayoutParams(-2, -2)
             setPadding(dp2px(10f), dp2px(10f), dp2px(10f), dp2px(10f))

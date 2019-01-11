@@ -2,6 +2,7 @@ package com.hewking.custom.layoutmanager
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.hewking.custom.util.L
 
 /**
  * 项目名称：FlowChat
@@ -15,9 +16,11 @@ import androidx.recyclerview.widget.RecyclerView
  */
 class FlowLayoutManager : RecyclerView.LayoutManager() {
 
+    private val TAG = "FlowLayoutManager"
+
     private var mFirstPos = -1
     private var mLastPos = -1
-    private var mMaxLineWidth = -1
+    private var mVerticalOffset = 0
 
     override fun generateDefaultLayoutParams(): RecyclerView.LayoutParams {
         return RecyclerView.LayoutParams(RecyclerView.LayoutParams.WRAP_CONTENT, RecyclerView.LayoutParams.WRAP_CONTENT)
@@ -51,7 +54,40 @@ class FlowLayoutManager : RecyclerView.LayoutManager() {
     }
 
     override fun scrollVerticallyBy(dy: Int, recycler: RecyclerView.Recycler?, state: RecyclerView.State?): Int {
-        return super.scrollVerticallyBy(dy, recycler, state)
+        L.d(TAG, "dy : $dy ")
+        // 不符合滑动条件不滑动
+        if (dy == 0 || childCount == 0) {
+            return 0
+        }
+
+        // 往下滑动为- 往上为+
+        var realOffset = dy
+
+        val absDy = Math.abs(dy)
+
+        // 往上滑动
+        if (mVerticalOffset + dy < 0) {
+            realOffset = -mVerticalOffset
+        } else if (realOffset > 0) {
+            val lastChild = recycler!!.getViewForPosition(childCount - 1)
+            L.d(TAG, "childCount -1 : ${childCount - 1} pos : ${getPosition(lastChild)} itemCount -1 ${itemCount - 1}")
+            if (getPosition(lastChild) == itemCount - 1) {
+                // 说明是向上滑动过偏移的
+                val yOffset = height - paddingBottom - getDecoratedBottom(lastChild)
+                if (yOffset > 0) {
+                    realOffset = -yOffset
+                } else if (yOffset == 0) {
+                    realOffset = 0
+                } else {
+                    realOffset = Math.min(realOffset, -yOffset)
+                }
+            }
+        }
+
+        offsetChildrenVertical(-realOffset)
+        L.d(TAG, "realOffset : ${-realOffset} ")
+        mVerticalOffset += realOffset
+        return realOffset
     }
 
     private fun fill(recycler: RecyclerView.Recycler?, state: RecyclerView.State?) {
@@ -61,8 +97,14 @@ class FlowLayoutManager : RecyclerView.LayoutManager() {
         var rowMaxLen = getHorinzontalSpace()
         var columnMaxLen = getVerticalSpace()
 
+        // 每行的最大行高，因为每行的某个itemView 可能高度不一致，那么每行
+        //行高取决于最大itemVie的高度
+        var columnMaxLineLen = 0
+
         var rowLen = 0
         var columnLen = 0
+
+        L.d(TAG, "mLastPos $mLastPos")
 
         for (i in mFirstPos until mLastPos + 1) {
             // 1.first find a child view
@@ -75,28 +117,33 @@ class FlowLayoutManager : RecyclerView.LayoutManager() {
 
             // 考虑一种情况，如果first childView 的宽度已经大于columnMaxLen，会出现这种情况吗？
             //
-            if (rowLen + getDecoratedWidthWithMargin(child) > columnMaxLen) {
+            val decoratedWidthWithMargin = getDecoratedWidthWithMargin(child)
+            val decoratedHeightWithMargin = getDecoratedHeightWithMargin(child)
+            if (rowLen + decoratedWidthWithMargin > rowMaxLen) {
                 rowLen = 0
-                columnLen += getDecoratedHeightWithMargin(child)
+                columnLen += columnMaxLineLen
+                columnMaxLineLen = decoratedHeightWithMargin
 
                 // 高度已经大于最大高度了，相当于离屏了 不可见了，这时候要回收
-                if (columnLen + getDecoratedHeightWithMargin(child) > columnMaxLen) {
+                if (columnLen + decoratedHeightWithMargin > columnMaxLen) {
                     removeAndRecycleView(child, recycler)
                 } else {
                     layoutDecoratedWithMargins(child, rowLen
                             , columnLen
-                            , rowLen + getDecoratedWidthWithMargin(child)
-                            , columnLen + getDecoratedHeightWithMargin(child))
+                            , rowLen + decoratedWidthWithMargin
+                            , columnLen + decoratedHeightWithMargin)
+                    rowLen += decoratedWidthWithMargin
                 }
             } else {
                 layoutDecoratedWithMargins(child, rowLen
                         , columnLen
-                        , rowLen + getDecoratedWidthWithMargin(child)
-                        , columnLen + getDecoratedHeightWithMargin(child))
-                rowLen += getDecoratedWidthWithMargin(child)
+                        , rowLen + decoratedWidthWithMargin
+                        , columnLen + decoratedHeightWithMargin)
+                rowLen += decoratedWidthWithMargin
+                // 最大值child高度决定行高
+                columnMaxLineLen = Math.max(decoratedHeightWithMargin, columnMaxLineLen)
             }
         }
-
     }
 
     /**

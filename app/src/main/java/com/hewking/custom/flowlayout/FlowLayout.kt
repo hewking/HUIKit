@@ -29,6 +29,9 @@ class FlowLayout(ctx: Context, attrs: AttributeSet) : ViewGroup(ctx, attrs) {
         var rowMaxLen = 0
         var columnMaxLen = 0
 
+        // 每行最大高度
+        var columnMaxLineLen = 0
+
         for (i in 0 until childCount) {
             val child = getChildAt(i)
             measureChild(child, widthMeasureSpec, heightMeasureSpec)
@@ -37,7 +40,8 @@ class FlowLayout(ctx: Context, attrs: AttributeSet) : ViewGroup(ctx, attrs) {
                 // 另起一行
                 rowMaxLen = wSize
                 rowLen = 0
-                columnLen += child.measuredHeight
+                columnLen += columnMaxLineLen
+                columnMaxLineLen = child.measuredHeight
                 if (columnLen > hSize) {
                     columnMaxLen = hSize
                 } else {
@@ -45,6 +49,7 @@ class FlowLayout(ctx: Context, attrs: AttributeSet) : ViewGroup(ctx, attrs) {
                 }
             } else {
                 rowMaxLen = Math.max(rowMaxLen, rowLen)
+                columnMaxLineLen = Math.max(columnMaxLineLen, columnLen)
             }
         }
 
