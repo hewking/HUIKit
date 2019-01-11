@@ -13,12 +13,13 @@ import com.hewking.androidview.constrainlayout.ConstrainDemoFragment
 import com.hewking.androidview.dialog.DialogProgressFragment
 import com.hewking.androidview.flexboxlayout.FlexBoxLayoutFragment
 import com.hewking.base.DemoActivity
-import com.hewking.base.L
 import com.hewking.custom.R
 import com.hewking.custom.dispatch.DispatchFragment
 import com.hewking.custom.gesture.GestureDetectorDemoFragment
 import com.hewking.custom.stickytop.LagouTopFragment
 import com.hewking.custom.stickytop.StickTopFragment
+import com.hewking.custom.util.L
+import com.hewking.custom.util.v
 import com.hewking.language.LangageSwitchFragment
 import com.hewking.language.LanguageActivity
 import com.hewking.third.ImageExFragment

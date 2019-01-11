@@ -8,9 +8,10 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import com.hewking.base.L
 import com.hewking.custom.R
 import com.hewking.custom.gallerylayout.GalleryLayout2
+import com.hewking.custom.util.L
+import com.hewking.custom.util.dp2px
 
 /**
  * 类的描述：

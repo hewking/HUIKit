@@ -1,17 +1,15 @@
 package com.hewking.custom
 
-import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
-import android.icu.util.Measure
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.BounceInterpolator
-import com.hewking.base.L
-import com.hewking.demo.dp2px
+import com.hewking.custom.util.L
+import com.hewking.custom.util.dp2px
 
 /**
  * 项目名称：FlowChat

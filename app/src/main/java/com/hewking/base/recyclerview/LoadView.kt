@@ -2,17 +2,13 @@ package com.livestar.flowchat.wallet.ui.tron
 
 import android.content.Context
 import android.graphics.Color
-import androidx.core.content.ContextCompat.getColor
-import androidx.recyclerview.widget.RecyclerView
-import android.util.AttributeSet
 import android.view.Gravity
 import android.view.View
-import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.hewking.base.recyclerview.LoadState
-import com.hewking.demo.dp2px
+import com.hewking.custom.util.dp2px
 
 /**
  * 项目名称：FlowChat

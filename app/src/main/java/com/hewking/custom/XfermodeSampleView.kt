@@ -5,8 +5,8 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
+import com.hewking.custom.util.dp2px
 import com.hewking.custom.util.textHeight
-import com.hewking.demo.dp2px
 
 /**
  * 类的描述：跟apidemos 里面的 Xfermodes 结果不一样，原因在于paint.darw() 不是paint.drawBitmap 导致。

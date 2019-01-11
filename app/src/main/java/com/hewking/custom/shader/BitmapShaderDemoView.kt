@@ -4,8 +4,8 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
-import com.hewking.base.L
 import com.hewking.custom.R
+import com.hewking.custom.util.L
 import com.hewking.custom.util.dp2px
 
 /**

@@ -2,14 +2,12 @@ package com.hewking.androidview.dialog
 
 import android.app.ProgressDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import com.hewking.custom.R
-import com.hewking.demo.v
-import kotlinx.android.synthetic.main.activity_audiorecorder.view.*
+import com.hewking.custom.util.v
 
 /**
  * 项目名称：FlowChat

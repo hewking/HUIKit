@@ -44,7 +44,7 @@ class FlowLayout(ctx: Context, attrs: AttributeSet) : ViewGroup(ctx, attrs) {
                     columnMaxLen = columnLen
                 }
             } else {
-                rowMaxLen = Math.max(rowMaxLen, rowMaxLen)
+                rowMaxLen = Math.max(rowMaxLen, rowLen)
             }
         }
 

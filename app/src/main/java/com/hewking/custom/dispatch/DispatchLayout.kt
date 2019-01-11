@@ -1,12 +1,15 @@
 package com.hewking.custom.dispatch
 
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.PointF
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.MotionEvent
 import android.widget.FrameLayout
-import com.hewking.base.L
+import com.hewking.custom.util.L
 
 class DispatchLayout : FrameLayout {
 

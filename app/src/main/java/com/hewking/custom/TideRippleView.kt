@@ -8,8 +8,7 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.LinearInterpolator
-import com.hewking.demo.dp2px
-import java.util.*
+import com.hewking.custom.util.dp2px
 import java.util.concurrent.CopyOnWriteArrayList
 
 /**

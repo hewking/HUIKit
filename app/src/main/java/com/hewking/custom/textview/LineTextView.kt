@@ -4,11 +4,11 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
-import androidx.appcompat.widget.AppCompatTextView
 import android.util.AttributeSet
+import androidx.appcompat.widget.AppCompatTextView
 import com.hewking.custom.BuildConfig
 import com.hewking.custom.R
-import com.hewking.demo.dp2px
+import com.hewking.custom.util.dp2px
 
 /**
  * 项目名称：FlowChat

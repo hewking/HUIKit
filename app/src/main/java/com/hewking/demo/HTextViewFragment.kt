@@ -13,9 +13,10 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Magnifier
 import android.widget.Toast
-import com.hewking.base.L
 import com.hewking.custom.R
 import com.hewking.custom.textview.AutoLinkSpan
+import com.hewking.custom.util.L
+import com.hewking.custom.util.v
 import kotlinx.android.synthetic.main.fragment_htextview.*
 
 /**
