@@ -80,7 +80,6 @@ class FlowLayout(ctx: Context, attrs: AttributeSet) : ViewGroup(ctx, attrs) {
             child.layout(rowLen, columnLen, rowLen + child.measuredWidth, columnLen + child.measuredHeight)
             rowLen += child.measuredWidth
         }
-
     }
 
 }
