@@ -98,6 +98,7 @@ class MainActivity : LanguageActivity() {
         list.add(Item(24, "WaterRippleCiew Demo", WaterRippleFragment::class.java))
         list.add(Item(25, "GalleryLayout Demo", GalleryLayoutFragment::class.java))
         list.add(Item(26, "FlowLayoutManager Demo", FlowLayoutManagerFragment::class.java))
+        list.add(Item(27, "HighLightChildFrameLayout Demo", GuideLayoutDemoFragment::class.java))
         return list
     }
 
