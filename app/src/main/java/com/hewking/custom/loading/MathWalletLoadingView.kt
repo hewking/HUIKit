@@ -127,11 +127,11 @@ class MathWalletLoadingView(ctx : Context, attrs : AttributeSet)
         var hSize = MeasureSpec.getSize(heightMeasureSpec)
 
         if (wMode != MeasureSpec.EXACTLY) {
-            wSize = Math.min(wSize,16 * radius.toInt())
+            wSize = 16 * radius.toInt()
         }
 
         if (hMode != MeasureSpec.EXACTLY) {
-            hSize = Math.min(hSize,16 * radius.toInt())
+            hSize = 16 * radius.toInt()
         }
         setMeasuredDimension(wSize,hSize)
     }
