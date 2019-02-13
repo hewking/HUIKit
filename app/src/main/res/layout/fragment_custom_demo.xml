@@ -107,6 +107,7 @@
             app:layout_constraintTop_toBottomOf="@id/bitshader" />
 
         <com.hewking.hencoder.HaloProgressView
+            android:id="@+id/halo"
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:layout_marginTop="20dp"
@@ -117,6 +118,14 @@
             app:layout_constraintTop_toBottomOf="@id/dyLoading"
             android:layout_marginBottom="20dp" />
 
+        <com.hewking.custom.loading.MathWalletLoadingView
+            android:layout_width="@dimen/base_200dpi"
+            android:layout_height="@dimen/base_200dpi"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/halo"
+            android:layout_marginBottom="20dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
