@@ -1,7 +1,6 @@
 package com.hewking.custom.notestick;
 
 import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -11,13 +10,15 @@ import android.widget.RelativeLayout;
 import com.hewking.custom.R;
 import com.hewking.custom.util.UiUtil;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 
 /**
  * Created by Administrator on 2016/11/17.
  * <p>
  * 联系方式：。。。
  */
-public class NoteStickActivity extends Activity {
+public class NoteStickActivity extends AppCompatActivity {
 
     private RelativeLayout parentlayout;
     private View view;

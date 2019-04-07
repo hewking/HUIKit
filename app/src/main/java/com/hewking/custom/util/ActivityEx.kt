@@ -1,11 +1,11 @@
 package com.hewking.custom.util
 
-import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 
 /**
  * Created by test on 2018/1/21.
  */
-fun <T : View> Activity.v(resid : Int) : T {
+fun <T : View> androidx.appcompat.app.AppCompatActivity.v(resid : Int) : T {
     return findViewById(resid) as T
 }

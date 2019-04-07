@@ -1,12 +1,13 @@
 package com.hewking.custom.stepview;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.hewking.custom.R;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-public class StepViewDemoActivity extends Activity {
+
+public class StepViewDemoActivity extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

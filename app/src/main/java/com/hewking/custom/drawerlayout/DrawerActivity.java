@@ -1,9 +1,10 @@
 package com.hewking.custom.drawerlayout;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.hewking.custom.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 /**
@@ -11,7 +12,7 @@ import com.hewking.custom.R;
  * <p>
  * 联系方式：。。。
  */
-public class DrawerActivity extends Activity {
+public class DrawerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

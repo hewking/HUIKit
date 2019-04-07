@@ -1,6 +1,6 @@
 package com.hewking.base
 
-import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
@@ -26,11 +26,11 @@ class DemoActivity : AppCompatActivity() {
     }
 
 
-    fun Activity.dp2px(size : Float) : Float{
+    fun androidx.appcompat.app.AppCompatActivity.dp2px(size : Float) : Float{
         return (resources.displayMetrics.density * size + 0.5).toFloat()
     }
 
-    fun Activity.px2dp(size : Float) : Float{
+    fun androidx.appcompat.app.AppCompatActivity.px2dp(size : Float) : Float{
         return (size.div(resources.displayMetrics.density) + 0.5).toFloat()
     }
 

@@ -1,6 +1,5 @@
 package com.hewking.custom.util;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
@@ -30,6 +29,7 @@ import com.hewking.custom.R;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.ViewCompat;
@@ -515,7 +515,7 @@ public class ResUtil {
      *
      * @see View#SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
      */
-    public static boolean isLayoutFullscreen(Activity activity) {
+    public static boolean isLayoutFullscreen(AppCompatActivity activity) {
         final int visibility = activity.getWindow().getDecorView().getSystemUiVisibility();
         return ((visibility & View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN) == View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     }

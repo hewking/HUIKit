@@ -1,13 +1,12 @@
 package com.hewking.demo
 
-import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import com.hewking.androidview.cardview.CardViewFragment
 import com.hewking.androidview.constrainlayout.ConstrainDemoFragment
 import com.hewking.androidview.dialog.DialogProgressFragment
@@ -152,7 +151,7 @@ class MainActivity : LanguageActivity() {
         val NESTED_SCROLL = 0x0001
     }
 
-    fun Activity.T(msg : String){
+    fun androidx.appcompat.app.AppCompatActivity.T(msg : String){
         Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
     }
 

@@ -1,6 +1,6 @@
 package com.hewking.demo
 
-import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 import androidx.annotation.IdRes
 import android.view.View
 
@@ -14,7 +14,7 @@ import android.view.View
  * Version: 1.0.0
  */
 
-fun <T : View> Activity.v(@IdRes resId : Int) : T{
+fun <T : View> androidx.appcompat.app.AppCompatActivity.v(@IdRes resId : Int) : T{
     return findViewById(resId) as T
 }
 
