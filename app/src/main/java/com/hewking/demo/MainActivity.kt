@@ -14,6 +14,7 @@ import com.hewking.androidview.dialog.DialogProgressFragment
 import com.hewking.androidview.flexboxlayout.FlexBoxLayoutFragment
 import com.hewking.base.DemoActivity
 import com.hewking.custom.R
+import com.hewking.custom.animation.ViewLayoutAnimFragment
 import com.hewking.custom.dispatch.DispatchFragment
 import com.hewking.custom.gesture.GestureDetectorDemoFragment
 import com.hewking.custom.stickytop.LagouTopFragment
@@ -99,6 +100,7 @@ class MainActivity : LanguageActivity() {
         list.add(Item(25, "GalleryLayout Demo", GalleryLayoutFragment::class.java))
         list.add(Item(26, "FlowLayoutManager Demo", FlowLayoutManagerFragment::class.java))
         list.add(Item(27, "HighLightChildFrameLayout Demo", GuideLayoutDemoFragment::class.java))
+        list.add(Item(28,"ViewLayoutanimFragment Demo",ViewLayoutAnimFragment::class.java))
         return list
     }
 
