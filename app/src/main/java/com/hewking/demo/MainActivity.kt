@@ -20,6 +20,7 @@ import com.hewking.custom.gesture.GestureDetectorDemoFragment
 import com.hewking.custom.stickytop.LagouTopFragment
 import com.hewking.custom.stickytop.StickTopFragment
 import com.hewking.custom.util.L
+import com.hewking.custom.util.NotchCompat
 import com.hewking.custom.util.v
 import com.hewking.language.LangageSwitchFragment
 import com.hewking.language.LanguageActivity
@@ -53,7 +54,12 @@ class MainActivity : LanguageActivity() {
         setContentView(R.layout.activity_navi)
 
         initView()
+        debugParams()
 
+    }
+
+    private fun debugParams() {
+        L.d("notch" + NotchCompat.hasNotchInScreen(this).toString())
     }
 
     private fun initView() {
