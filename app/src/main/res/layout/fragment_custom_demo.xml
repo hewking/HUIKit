@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -119,4 +120,136 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.hewking.custom.title.NavTitleBar
+            android:id="@+id/titlebar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+        </com.hewking.custom.title.NavTitleBar>
+
+        <com.hewking.custom.roundimage.RoundImageView
+            android:id="@+id/iv_round"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:src="@mipmap/nice_girl"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titlebar"
+            app:r_show_tag="true"
+            app:r_tag_res="@mipmap/icon_admin" />
+
+        <com.hewking.custom.MaskLinearLayout
+            android:id="@+id/masked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/base_50dpi"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_round"
+            app:mask_drawable="@drawable/mak_shape"
+            app:mask_showmask="true">
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="heheda" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="heheda" />
+
+
+        </com.hewking.custom.MaskLinearLayout>
+
+        <com.hewking.custom.TagRectView
+            android:id="@+id/rectview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/masked" />
+
+        <com.hewking.custom.LoadingView
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rectview" />
+
+        <com.hewking.custom.TextLoadView
+            android:id="@+id/tv_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:h_color="@color/colorAccent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loading" />
+
+        <com.hewking.custom.SearchView
+            android:id="@+id/ssearchView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_loading" />
+
+        <com.hewking.custom.shader.BitmapShaderDemoView
+            android:id="@+id/bitshader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ssearchView" />
+
+        <com.hewking.custom.loading.DyLineLoadingView
+            android:id="@+id/dyLoading"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/bitshader" />
+
+        <com.hewking.hencoder.HaloProgressView
+            android:id="@+id/halo"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/asm_logo"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dyLoading"
+            android:layout_marginBottom="20dp" />
+
+        <com.hewking.custom.loading.MathWalletLoadingView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/halo"
+            android:layout_marginBottom="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> 29db5ff72117652c79e56c13f91005b1bfdcfd24
 </androidx.core.widget.NestedScrollView>
