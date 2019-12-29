@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-package com.hewking.custom.util
-
-import android.util.Log
-
-/**
- * Created by test on 2018/1/21.
- */
-fun Log.d(tag : String,content : String) {
-    Log.d(tag,content)
-=======
 package com.hewking.custom.util
 
 import android.util.Log
@@ -41,5 +30,4 @@ object L {
     fun w(msg: String, tag: String = "HUILibrary") {
         Log.w(tag, msg)
     }
->>>>>>> 29db5ff72117652c79e56c13f91005b1bfdcfd24
 }

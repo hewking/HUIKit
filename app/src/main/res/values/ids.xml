@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="text_test" type="id"/>
-=======
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="text_test" type="id"/>
     <item name="root" type="id" />
->>>>>>> 29db5ff72117652c79e56c13f91005b1bfdcfd24
 </resources>
