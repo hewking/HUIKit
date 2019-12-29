@@ -107,6 +107,7 @@ class MainActivity : LanguageActivity() {
         list.add(Item(26, "FlowLayoutManager Demo", FlowLayoutManagerFragment::class.java))
         list.add(Item(27, "HighLightChildFrameLayout Demo", GuideLayoutDemoFragment::class.java))
         list.add(Item(28,"ViewLayoutanimFragment Demo",ViewLayoutAnimFragment::class.java))
+        list.add(Item(29,"PointerPanelFragment Demo",PointerPanelFragment::class.java))
         return list
     }
 

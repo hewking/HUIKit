@@ -4,11 +4,17 @@
         <attr name="selected_color" format="color"/>
         <attr name="unselected_color" format="color"/>
     </declare-styleable>
-
+`
     <declare-styleable name="TagRectView">
         <attr name="tag_color" format="color"/>
         <attr name="tag_type" format="enum">
             <enum name="rect" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="BlockView">
+        <attr name="border_color" format="color"/>
+        <attr name="border_width" format="dimension">
         </attr>
     </declare-styleable>
 </resources>
