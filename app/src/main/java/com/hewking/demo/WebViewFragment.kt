@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hewking.custom.R
+import kotlinx.android.synthetic.main.fragment_webview.*
 
 /**
  * 项目名称：FlowChat
@@ -23,7 +24,7 @@ class WebViewFragment : androidx.fragment.app.Fragment() {
         return inflater?.inflate(R.layout.fragment_webview,container,false)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         webview.loadUrl("tronbet.io")
     }

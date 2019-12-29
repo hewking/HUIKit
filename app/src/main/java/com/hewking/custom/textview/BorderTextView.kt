@@ -7,6 +7,8 @@ import android.util.AttributeSet
 import android.view.DragEvent
 import android.widget.TextView
 import androidx.core.graphics.toColorInt
+import com.hewking.custom.R
+import com.hewking.pointerpanel.toDp
 
 /**
  * @program: PointerPanelViewDemo

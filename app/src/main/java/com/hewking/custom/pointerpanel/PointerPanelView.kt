@@ -10,6 +10,7 @@ import android.view.MotionEvent
 import android.view.View
 import androidx.core.graphics.toColorInt
 import androidx.core.math.MathUtils
+import com.hewking.custom.R
 import kotlin.math.min
 
 /**
