@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/HUILibrary-app.iml" filepath="$PROJECT_DIR$/app/HUILibrary-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-HUILibrary.iml" filepath="$PROJECT_DIR$/android-HUILibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/private_project-HUILibrary.iml" filepath="$PROJECT_DIR$/private_project-HUILibrary.iml" group="HUILibrary" />
+      <module fileurl="file://$PROJECT_DIR$/app/private_project-HUILibrary-app.iml" filepath="$PROJECT_DIR$/app/private_project-HUILibrary-app.iml" group="HUILibrary/app" />
     </modules>
   </component>
 </project>
