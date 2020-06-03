@@ -14,6 +14,7 @@ import com.hewking.androidview.flexboxlayout.FlexBoxLayoutFragment
 import com.hewking.base.DemoActivity
 import com.hewking.custom.R
 import com.hewking.custom.animation.ViewLayoutAnimFragment
+import com.hewking.custom.databinding.ActivityNaviBinding
 import com.hewking.custom.dispatch.DispatchFragment
 import com.hewking.custom.gesture.GestureDetectorDemoFragment
 import com.hewking.custom.stickytop.LagouTopFragment
@@ -28,12 +29,12 @@ import com.hewking.third.ImageExFragment
 
 class MainActivity : LanguageActivity() {
 
-    internal var expand = false
+    private val binding by lazy { ActivityNaviBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_navi)
+        setContentView(binding.root)
 
         initView()
         debugParams()
