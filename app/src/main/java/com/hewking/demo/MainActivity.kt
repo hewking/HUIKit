@@ -46,8 +46,8 @@ class MainActivity : LanguageActivity() {
     }
 
     private fun initView() {
-        val refreshLayout = v<androidx.swiperefreshlayout.widget.SwipeRefreshLayout>(R.id.refreshlayout)
-        val recyclerView = v<androidx.recyclerview.widget.RecyclerView>(R.id.recyclerview)
+        val refreshLayout = binding.refreshlayout
+        val recyclerView = binding.recyclerview
 
         refreshLayout.setOnRefreshListener {
 
