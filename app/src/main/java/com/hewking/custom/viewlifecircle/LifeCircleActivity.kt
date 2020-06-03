@@ -12,17 +12,17 @@ class LifeCircleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_life_circle)
-        v<Button>(R.id.btn).setOnClickListener({
+        v<Button>(R.id.btn).setOnClickListener {
             v<View>(R.id.tv_lifecircle).apply {
 //                setOnClickListener {
-                    if (visibility == View.VISIBLE) {
+                visibility = if (visibility == View.VISIBLE) {
 
-                        visibility = View.GONE
-                    } else {
-                        visibility = View.VISIBLE
-                    }
+                    View.GONE
+                } else {
+                    View.VISIBLE
+                }
 //                }
             }
-        })
+        }
     }
 }
