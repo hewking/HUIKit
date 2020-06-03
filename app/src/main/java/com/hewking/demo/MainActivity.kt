@@ -1,13 +1,12 @@
 package com.hewking.demo
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import com.hewking.androidview.cardview.CardViewFragment
 import com.hewking.androidview.constrainlayout.ConstrainDemoFragment
 import com.hewking.androidview.dialog.DialogProgressFragment
@@ -33,23 +32,6 @@ class MainActivity : LanguageActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val type = NESTED_SCROLL
-        //        if (type == NESTED_SCROLL) {
-        //            setContentView(R.layout.view_nested_view_parent);
-        //        } else {
-//        setContentView(R.layout.activity_main)
-        //        }
-
-        //        DialogFragment dialogFragment = new ImageDialogFragment();
-        //        dialogFragment.show(getSupportFragmentManager(),"mainactivity");
-        //        findViewById(R.id.btn_sure).setOnClickListener(new View.OnClickListener() {
-        //            @Override
-        //            public void onClick(View v) {
-        //                StickyTopLayout topLayout = (StickyTopLayout) findViewById(R.id.sticktop);
-        //                expand = !expand;
-        //                topLayout.top(expand);
-        //            }
-        //        });
 
         setContentView(R.layout.activity_navi)
 
@@ -118,9 +100,8 @@ class MainActivity : LanguageActivity() {
 
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
                 val itemView = LayoutInflater.from(parent?.context).inflate(R.layout.item_text,parent,false)
-                val vh = object : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView){
+                return object : RecyclerView.ViewHolder(itemView){
                 }
-                return vh
             }
 
             override fun getItemCount(): Int {
@@ -128,9 +109,9 @@ class MainActivity : LanguageActivity() {
             }
 
             override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
-                val itemView = holder?.itemView
-                itemView?.v<TextView>(R.id.tv_text)?.text = datas[position].info
-                itemView?.setOnClickListener {
+                val itemView = holder.itemView
+                itemView.v<TextView>(R.id.tv_text)?.text = datas[position].info
+                itemView.setOnClickListener {
                     if (datas[position].type == 1) {
                         val intent = Intent(this@MainActivity, DemoFragmentActivity::class.java)
                         intent.putExtra(DemoFragmentActivity.FRAGMENT, datas[position].clazz.name)
