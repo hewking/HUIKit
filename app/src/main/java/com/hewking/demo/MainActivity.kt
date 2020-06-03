@@ -138,10 +138,6 @@ class MainActivity : LanguageActivity() {
                     } else {
                         val intent = Intent(this@MainActivity,datas[position].clazz)
                         intent.resolveActivity(this@MainActivity.packageManager)
-                        if (intent == null) {
-                            T("${datas[position].clazz.simpleName } 不存在")
-                            return@setOnClickListener
-                        }
                         this@MainActivity.startActivity(intent)
                     }
                 }
@@ -162,10 +158,6 @@ class MainActivity : LanguageActivity() {
 
     companion object {
         val NESTED_SCROLL = 0x0001
-    }
-
-    fun Activity.T(msg : String){
-        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
     }
 
 
