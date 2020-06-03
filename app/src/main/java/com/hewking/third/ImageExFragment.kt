@@ -5,17 +5,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import coil.api.load
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.hewking.custom.R
+import com.hewking.custom.databinding.FragmentImageExLayoutBinding
 import kotlinx.android.synthetic.main.fragment_image_ex_layout.*
 import pl.droidsonroids.gif.GifDrawable
 
 class ImageExFragment : androidx.fragment.app.Fragment(){
 
+    private lateinit var binding : FragmentImageExLayoutBinding
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_image_ex_layout,container,false)
+        binding = FragmentImageExLayoutBinding.inflate(inflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -73,6 +78,9 @@ class ImageExFragment : androidx.fragment.app.Fragment(){
 
         val gifDrawable = GifDrawable(resources,R.drawable.d03)
         iv_gif.setImageDrawable(gifDrawable)
+
+        // 通过coil 加载图片
+        binding.ivImage.load("https://gank.io/images/be3c70b17f364596b25f301a55164882")
 
     }
 
