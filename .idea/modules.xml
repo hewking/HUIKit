@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/private_project-HUILibrary.iml" filepath="$PROJECT_DIR$/private_project-HUILibrary.iml" group="HUILibrary" />
       <module fileurl="file://$PROJECT_DIR$/app/private_project-HUILibrary-app.iml" filepath="$PROJECT_DIR$/app/private_project-HUILibrary-app.iml" group="HUILibrary/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/uikit/uikit.iml" filepath="$PROJECT_DIR$/.idea/modules/uikit/uikit.iml" group="HUILibrary/uikit" />
     </modules>
   </component>
 </project>

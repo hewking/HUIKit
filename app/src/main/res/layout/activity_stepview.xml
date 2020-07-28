@@ -4,7 +4,7 @@
     xmlns:xlh="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <com.hewking.custom.stepview.XLHStepView
+    <com.hewking.demo.stepview.XLHStepView
         android:id="@+id/zidingyi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         xlh:stepCount="5"
         xlh:stepNormalColor="#76BD30"
         xlh:stepSelectedColor="#F66936" >
-    </com.hewking.custom.stepview.XLHStepView>
+    </com.hewking.demo.stepview.XLHStepView>
 
     <LinearLayout
         android:layout_width="match_parent"

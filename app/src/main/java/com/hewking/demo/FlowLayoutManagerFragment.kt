@@ -14,11 +14,10 @@ import com.hewking.base.recyclerview.BaseItemOffsetDecoration
 import com.hewking.base.recyclerview.ComnBaseAdapter
 import com.hewking.base.recyclerview.ComnViewHolder
 import com.hewking.custom.R
-import com.hewking.custom.layoutmanager.FlowLayoutManager
 import com.hewking.custom.layoutmanager.FlowLayoutManager2
-import com.hewking.custom.util.ResUtil
-import com.hewking.custom.util.dp2px
-import com.hewking.custom.util.getColor
+import com.hewking.util.ResUtil
+import com.hewking.util.dp2px
+import com.hewking.util.getColor
 import java.text.NumberFormat
 
 /**

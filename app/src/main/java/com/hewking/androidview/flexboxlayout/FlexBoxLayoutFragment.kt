@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.hewking.custom.R
-import com.hewking.custom.util.dp2px
+import com.hewking.util.dp2px
 import kotlinx.android.synthetic.main.flexboxlayout_fragment.*
 import java.text.NumberFormat
 

@@ -11,8 +11,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import com.google.android.material.shadow.ShadowDrawableWrapper
 import com.hewking.custom.R
-import com.hewking.custom.util.ReflectUtil
-import com.hewking.custom.util.dp2px
+import com.hewking.util.ReflectUtil
+import com.hewking.util.dp2px
 import kotlinx.android.synthetic.main.fragment_cardview_demo.*
 
 class CardViewFragment : androidx.fragment.app.Fragment(){

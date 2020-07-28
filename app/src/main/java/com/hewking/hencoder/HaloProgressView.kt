@@ -12,10 +12,10 @@ import android.view.animation.BounceInterpolator
 import android.widget.ImageView
 import com.hewking.custom.BuildConfig
 import com.hewking.custom.R
-import com.hewking.custom.util.UiUtil
-import com.hewking.custom.util.dp2px
-import com.hewking.custom.util.getColor
-import com.hewking.custom.util.textHeight
+import com.hewking.util.UiUtil
+import com.hewking.util.dp2px
+import com.hewking.util.getColor
+import com.hewking.util.textHeight
 
 /**
  * Created by test on 2017/11/26.

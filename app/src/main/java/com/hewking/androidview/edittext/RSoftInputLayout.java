@@ -15,7 +15,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
 
-import com.hewking.custom.util.UiUtil;
+import com.hewking.util.UiUtil;
 
 import java.util.HashSet;
 import java.util.Iterator;

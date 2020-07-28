@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import com.hewking.custom.R
-import com.hewking.custom.util.v
+import com.hewking.util.v
 import java.io.IOException
 
 

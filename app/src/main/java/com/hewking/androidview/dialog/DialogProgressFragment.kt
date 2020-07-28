@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import com.hewking.custom.R
-import com.hewking.custom.util.v
+import com.hewking.util.v
 
 /**
  * 项目名称：FlowChat

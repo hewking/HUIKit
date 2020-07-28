@@ -13,15 +13,12 @@ import com.hewking.androidview.dialog.DialogProgressFragment
 import com.hewking.androidview.flexboxlayout.FlexBoxLayoutFragment
 import com.hewking.base.DemoActivity
 import com.hewking.custom.R
-import com.hewking.custom.animation.ViewLayoutAnimFragment
+import com.hewking.demo.animation.ViewLayoutAnimFragment
 import com.hewking.custom.databinding.ActivityNaviBinding
-import com.hewking.custom.dispatch.DispatchFragment
-import com.hewking.custom.gesture.GestureDetectorDemoFragment
-import com.hewking.custom.stickytop.LagouTopFragment
-import com.hewking.custom.stickytop.StickTopFragment
-import com.hewking.custom.util.L
-import com.hewking.custom.util.NotchCompat
-import com.hewking.custom.util.v
+import com.hewking.demo.dispatch.DispatchFragment
+import com.hewking.util.L
+import com.hewking.util.NotchCompat
+import com.hewking.util.v
 import com.hewking.language.LangageSwitchFragment
 import com.hewking.language.LanguageActivity
 import com.hewking.third.ImageExFragment
@@ -63,14 +60,14 @@ class MainActivity : LanguageActivity() {
         val list = mutableListOf<Item>()
         list.add(Item(0,getString(R.string.text_home),DemoListFragment::class.java))
         list.add(Item(1,getString(R.string.text_htextview),HTextViewFragment::class.java))
-        list.add(Item(2,getString(R.string.text_stickytop),StickTopFragment::class.java))
+        list.add(Item(2,getString(R.string.text_stickytop), StickTopFragment::class.java))
         list.add(Item(3,getString(R.string.text_language_switch),LangageSwitchFragment::class.java))
         list.add(Item(4,"拉钩主页", LagouTopFragment::class.java))
         list.add(Item(5,"自定义view Demo", CustomViewFragment::class.java))
         list.add(Item(6,"EditText Demo",EditTextTestFragment::class.java))
         list.add(Item(7, "shadow 阴影 Demo", CardViewFragment::class.java))
         list.add(Item(8,"ProgressDialog Demo",DialogProgressFragment::class.java))
-        list.add(Item(9,"GestureDetector Demo",GestureDetectorDemoFragment::class.java))
+        list.add(Item(9,"GestureDetector Demo", GestureDetectorDemoFragment::class.java))
         list.add(Item(10,"ImageExDemo Demo",ImageExFragment::class.java))
         list.add(Item(11,"DemoActivity Demo",DemoActivity::class.java,2))
         list.add(Item(12,"DispatchFragment Demo", DispatchFragment::class.java))

@@ -6,7 +6,7 @@ import android.util.Log
 import android.view.Gravity
 import android.widget.Button
 import android.widget.FrameLayout
-import com.hewking.custom.util.dp2px
+import com.hewking.util.dp2px
 
 /**
  * 类的描述：

@@ -8,8 +8,8 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.LinearInterpolator
-import com.hewking.custom.util.dp2px
-import com.hewking.custom.util.getColor
+import com.hewking.util.dp2px
+import com.hewking.util.getColor
 import java.util.concurrent.CopyOnWriteArrayList
 
 /**

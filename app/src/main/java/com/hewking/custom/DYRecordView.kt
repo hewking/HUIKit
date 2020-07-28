@@ -10,7 +10,7 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 import android.view.animation.DecelerateInterpolator
-import com.hewking.custom.util.UiUtil
+import com.hewking.util.UiUtil
 
 /**
  * 类的描述：模仿抖音

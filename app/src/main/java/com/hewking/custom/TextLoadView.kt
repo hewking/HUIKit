@@ -6,8 +6,8 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.text.TextUtils
 import android.util.AttributeSet
-import com.hewking.custom.util.dp2px
-import com.hewking.custom.util.textHeight
+import com.hewking.util.dp2px
+import com.hewking.util.textHeight
 
 /**
  * 项目名称：FlowChat

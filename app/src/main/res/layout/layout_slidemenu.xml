@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.hewking.custom.slidemenu.MySliceMenu
+    <com.hewking.widget.slidemenu.MySliceMenu
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.hewking.custom.slidemenu.LeftContainter
+        <com.hewking.widget.slidemenu.LeftContainter
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
@@ -29,9 +29,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-        </com.hewking.custom.slidemenu.LeftContainter>
+        </com.hewking.widget.slidemenu.LeftContainter>
 
-        <com.hewking.custom.slidemenu.RightContainter
+        <com.hewking.widget.slidemenu.RightContainter
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-        </com.hewking.custom.slidemenu.RightContainter>
-    </com.hewking.custom.slidemenu.MySliceMenu>
+        </com.hewking.widget.slidemenu.RightContainter>
+    </com.hewking.widget.slidemenu.MySliceMenu>
 
 </LinearLayout>

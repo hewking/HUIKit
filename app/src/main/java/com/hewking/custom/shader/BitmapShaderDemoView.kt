@@ -5,8 +5,8 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import com.hewking.custom.R
-import com.hewking.custom.util.L
-import com.hewking.custom.util.dp2px
+import com.hewking.util.L
+import com.hewking.util.dp2px
 
 /**
  * 项目名称：FlowChat

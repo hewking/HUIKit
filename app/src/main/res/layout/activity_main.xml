@@ -11,7 +11,7 @@
     android:orientation="vertical"
     tools:context="com.hewking.demo.MainActivity">
 
-    <com.hewking.custom.bizerdemo.BezierView3
+    <com.hewking.custom.bizier.BezierView3
         android:layout_width="500dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"/>

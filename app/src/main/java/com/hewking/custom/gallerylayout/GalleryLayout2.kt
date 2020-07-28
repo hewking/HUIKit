@@ -11,7 +11,7 @@ import android.view.MotionEvent
 import android.view.ViewGroup
 import android.view.animation.LinearInterpolator
 import android.widget.Scroller
-import com.hewking.custom.util.L
+import com.hewking.util.L
 
 /** 可以设置上下左右翻页的view
  * Created by test on 2018/1/14.

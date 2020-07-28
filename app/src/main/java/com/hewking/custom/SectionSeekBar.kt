@@ -10,7 +10,7 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
-import com.hewking.custom.util.dp2px
+import com.hewking.util.dp2px
 
 /**
  * 类的描述：

@@ -2,7 +2,7 @@ package com.hewking.custom.layoutmanager
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.hewking.custom.util.L
+import com.hewking.util.L
 
 /**
  * 项目名称：FlowChat

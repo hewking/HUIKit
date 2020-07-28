@@ -15,8 +15,8 @@ import android.widget.Magnifier
 import android.widget.Toast
 import com.hewking.custom.R
 import com.hewking.custom.textview.AutoLinkSpan
-import com.hewking.custom.util.L
-import com.hewking.custom.util.v
+import com.hewking.util.L
+import com.hewking.util.v
 import kotlinx.android.synthetic.main.fragment_htextview.*
 
 /**

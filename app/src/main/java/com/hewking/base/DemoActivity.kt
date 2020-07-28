@@ -7,8 +7,8 @@ import android.view.Gravity
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.hewking.custom.util.ResUtil
-import com.hewking.custom.util.dp2px
+import com.hewking.util.ResUtil
+import com.hewking.util.dp2px
 
 class DemoActivity : AppCompatActivity() {
 

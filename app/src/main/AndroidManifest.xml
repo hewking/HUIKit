@@ -30,13 +30,13 @@
         <activity android:name="com.hewking.demo.RecreateActivityDemo">
 
         </activity>
-        <activity android:name=".notestick.NoteStickActivity" />
-        <activity android:name=".slidemenu.SlideMenuActivity" />
-        <activity android:name=".drawerlayout.DrawerActivity" />
-        <activity android:name=".weixinaudiorecorder.AudiorecorderActivity" />
-        <activity android:name=".softkeyboard.KeyBoardActivity" />
-        <activity android:name=".viewlifecircle.LifeCircleActivity"></activity>
-        <activity android:name=".gesture.GestureCompatActivity" />
+        <activity android:name="com.hewking.demo.notestick.NoteStickActivity" />
+        <activity android:name="com.hewking.widget.slidemenu.SlideMenuActivity" />
+        <activity android:name="com.hewking.widget.drawerlayout.DrawerActivity" />
+        <activity android:name="com.hewking.demo.weixinaudiorecorder.AudiorecorderActivity" />
+        <activity android:name="com.hewking.demo.KeyBoardActivity" />
+        <activity android:name="com.hewking.demo.viewlifecircle.LifeCircleActivity"></activity>
+        <activity android:name="com.hewking.demo.GestureCompatActivity" />
         <activity android:name="com.hewking.androidview.textinput.TextInputDemoActivity">
 
         </activity>
@@ -47,22 +47,22 @@
 
         <activity android:name="com.hewking.demo.DemoFragmentActivity"/>
 
-        <activity android:name=".constrainlayout.ConstrainActivity">
+        <activity android:name="com.hewking.demo.constrainlayout.ConstrainActivity">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->
                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         </activity>
 
-        <activity android:name=".stepview.StepViewDemoActivity">
+        <activity android:name="com.hewking.demo.stepview.StepViewDemoActivity">
 
         </activity>
 
-        <activity android:name=".design.DesignActivity">
+        <activity android:name="com.hewking.demo.design.DesignActivity">
 
         </activity>
 
-        <activity android:name=".refreshlayout.RefreshDemoActivity">
+        <activity android:name="com.hewking.demo.RefreshDemoActivity">
 
         </activity>
 

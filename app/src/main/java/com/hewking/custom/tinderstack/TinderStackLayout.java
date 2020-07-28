@@ -7,8 +7,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.hewking.custom.util.L;
-import com.hewking.custom.util.ViewExKt;
+import com.hewking.util.L;
+import com.hewking.util.ViewExKt;
 
 import androidx.annotation.NonNull;
 import androidx.customview.widget.ViewDragHelper;
