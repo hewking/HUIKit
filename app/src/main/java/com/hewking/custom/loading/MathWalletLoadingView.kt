@@ -10,9 +10,9 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 import com.hewking.custom.R
-import com.hewking.util.L
-import com.hewking.util.dp2px
-import com.hewking.util.getColor
+import com.hewking.utils.L
+import com.hewking.utils.dp2px
+import com.hewking.utils.getColor
 
 /**
  * 仿麦子钱包loadingView

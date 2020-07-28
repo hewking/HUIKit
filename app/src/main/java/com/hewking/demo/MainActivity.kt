@@ -7,21 +7,21 @@ import android.view.MotionEvent
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.hewking.androidview.cardview.CardViewFragment
-import com.hewking.androidview.constrainlayout.ConstrainDemoFragment
-import com.hewking.androidview.dialog.DialogProgressFragment
-import com.hewking.androidview.flexboxlayout.FlexBoxLayoutFragment
+import com.hewking.demo.androidview.cardview.CardViewFragment
+import com.hewking.demo.androidview.constrainlayout.ConstrainDemoFragment
+import com.hewking.demo.androidview.dialog.DialogProgressFragment
+import com.hewking.demo.androidview.flexboxlayout.FlexBoxLayoutFragment
 import com.hewking.base.DemoActivity
 import com.hewking.custom.R
 import com.hewking.demo.animation.ViewLayoutAnimFragment
 import com.hewking.custom.databinding.ActivityNaviBinding
 import com.hewking.demo.dispatch.DispatchFragment
-import com.hewking.util.L
-import com.hewking.util.NotchCompat
-import com.hewking.util.v
-import com.hewking.language.LangageSwitchFragment
-import com.hewking.language.LanguageActivity
-import com.hewking.third.ImageExFragment
+import com.hewking.utils.L
+import com.hewking.utils.NotchCompat
+import com.hewking.utils.v
+import com.hewking.demo.language.LangageSwitchFragment
+import com.hewking.demo.language.LanguageActivity
+import com.hewking.demo.third.ImageExFragment
 
 
 class MainActivity : LanguageActivity() {

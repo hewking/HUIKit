@@ -6,7 +6,7 @@ import android.widget.TextView
 import com.hewking.base.BaseRecyclerFragment
 import com.hewking.base.recyclerview.ComnBaseAdapter
 import com.hewking.base.recyclerview.ComnViewHolder
-import com.hewking.util.v
+import com.hewking.utils.v
 
 /**
  * 项目名称：FlowChat

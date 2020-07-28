@@ -9,7 +9,7 @@ import android.util.AttributeSet
 import android.view.Gravity
 import android.view.MotionEvent
 import android.widget.FrameLayout
-import com.hewking.util.L
+import com.hewking.utils.L
 
 class DispatchLayout : FrameLayout {
 

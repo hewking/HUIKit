@@ -11,7 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 
 import com.hewking.custom.R;
-import com.hewking.util.UiUtil;
+import com.hewking.utils.UiUtil;
 
 
 public class ExpandActivity2 extends AppCompatActivity {

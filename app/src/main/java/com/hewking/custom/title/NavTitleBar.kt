@@ -12,9 +12,9 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.NonNull
 import androidx.annotation.Nullable
 import com.hewking.custom.R
-import com.hewking.util.dp2px
-import com.hewking.util.setPaddingLeft
-import com.hewking.util.setPaddingTop
+import com.hewking.utils.dp2px
+import com.hewking.utils.setPaddingLeft
+import com.hewking.utils.setPaddingTop
 
 class NavTitleBar @JvmOverloads constructor(@NonNull context: Context
                                             , @Nullable attrs: AttributeSet? = null

@@ -10,9 +10,9 @@ import android.view.View
 import android.view.animation.LinearInterpolator
 import com.hewking.custom.BuildConfig
 import com.hewking.custom.R
-import com.hewking.util.DrawHelper
-import com.hewking.util.dp2px
-import com.hewking.util.getColor
+import com.hewking.utils.DrawHelper
+import com.hewking.utils.dp2px
+import com.hewking.utils.getColor
 
 /**
  * 类的描述：

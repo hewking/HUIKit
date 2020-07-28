@@ -5,7 +5,7 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.widget.FrameLayout
 import com.hewking.custom.R
-import com.hewking.util.getColor
+import com.hewking.utils.getColor
 
 class HighLightChildFrameLayout : FrameLayout {
 

@@ -9,8 +9,8 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.animation.BounceInterpolator
 import com.hewking.custom.R
-import com.hewking.util.dp2px
-import com.hewking.util.getColor
+import com.hewking.utils.dp2px
+import com.hewking.utils.getColor
 
 /**
  * 项目名称：FlowChat

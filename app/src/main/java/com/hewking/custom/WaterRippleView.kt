@@ -11,9 +11,9 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.animation.LinearInterpolator
 import androidx.core.content.ContextCompat
-import com.hewking.util.dp2px
-import com.hewking.util.getColor
-import com.hewking.util.textHeight
+import com.hewking.utils.dp2px
+import com.hewking.utils.getColor
+import com.hewking.utils.textHeight
 
 /**
  * 类的描述：

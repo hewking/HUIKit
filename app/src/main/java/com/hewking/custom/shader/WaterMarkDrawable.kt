@@ -2,7 +2,7 @@ package com.hewking.custom.shader
 
 import android.graphics.*
 import android.graphics.drawable.Drawable
-import com.hewking.util.textHeight
+import com.hewking.utils.textHeight
 
 /**
  * 项目名称：FlowChat

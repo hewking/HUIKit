@@ -15,9 +15,9 @@ import com.hewking.base.recyclerview.ComnBaseAdapter
 import com.hewking.base.recyclerview.ComnViewHolder
 import com.hewking.custom.R
 import com.hewking.custom.layoutmanager.FlowLayoutManager2
-import com.hewking.util.ResUtil
-import com.hewking.util.dp2px
-import com.hewking.util.getColor
+import com.hewking.utils.ResUtil
+import com.hewking.utils.dp2px
+import com.hewking.utils.getColor
 import java.text.NumberFormat
 
 /**

@@ -6,7 +6,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.view.MotionEvent
 import android.view.View
-import com.hewking.util.L
+import com.hewking.utils.L
 
 class DispatchView(ctx : Context) : View(ctx) {
 

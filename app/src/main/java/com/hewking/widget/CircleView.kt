@@ -7,7 +7,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 import com.hewking.custom.R
-import com.hewking.util.dp2px
+import com.hewking.utils.dp2px
 
 /**
  * 类的描述：

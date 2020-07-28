@@ -10,8 +10,8 @@ import android.widget.Button
 import android.widget.TextView
 import com.hewking.custom.LagouHomePanelLayout
 import com.hewking.custom.R
-import com.hewking.util.dp2px
-import com.hewking.util.v
+import com.hewking.utils.dp2px
+import com.hewking.utils.v
 
 /**
  * 类的描述：

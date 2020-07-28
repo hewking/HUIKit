@@ -15,8 +15,8 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatTextView
 import com.hewking.custom.BuildConfig
 import com.hewking.custom.R
-import com.hewking.util.dp2px
-import com.hewking.util.textWidth
+import com.hewking.utils.dp2px
+import com.hewking.utils.textWidth
 
 /**
  * 类的描述：多功能疯转的TextView

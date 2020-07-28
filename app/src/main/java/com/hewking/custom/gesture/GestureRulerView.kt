@@ -12,8 +12,8 @@ import android.view.GestureDetector.OnGestureListener
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Scroller
-import com.hewking.util.dp2px
-import com.hewking.util.textHeight
+import com.hewking.utils.dp2px
+import com.hewking.utils.textHeight
 
 /**
  * Created by test on 2018/1/21.

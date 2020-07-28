@@ -1,4 +1,4 @@
-//package com.hewking.customviewtest.stepview;
+//package com.hewking.demo.stepview;
 //
 //import android.content.Context;
 //import android.content.res.TypedArray;
@@ -12,7 +12,7 @@
 //import android.view.MotionEvent;
 //import android.view.View;
 //
-//import com.hewking.customviewtest.R;
+//import com.hewking.custom.R;
 //
 //
 ///**

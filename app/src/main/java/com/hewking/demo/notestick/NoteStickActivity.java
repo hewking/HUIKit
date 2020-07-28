@@ -8,7 +8,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.RelativeLayout;
 
 import com.hewking.custom.R;
-import com.hewking.util.UiUtil;
+import com.hewking.utils.UiUtil;
 
 import androidx.appcompat.app.AppCompatActivity;
 

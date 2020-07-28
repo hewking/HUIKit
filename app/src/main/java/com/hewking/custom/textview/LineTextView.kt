@@ -8,7 +8,7 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 import com.hewking.custom.BuildConfig
 import com.hewking.custom.R
-import com.hewking.util.dp2px
+import com.hewking.utils.dp2px
 
 /**
  * 项目名称：FlowChat

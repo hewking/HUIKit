@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.view.ViewGroup
 import com.hewking.custom.R
-import com.hewking.util.v
+import com.hewking.utils.v
 
 /**
  * 类的描述：

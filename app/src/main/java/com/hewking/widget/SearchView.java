@@ -11,7 +11,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-import com.hewking.util.ViewExKt;
+import com.hewking.utils.ViewExKt;
 
 /**
  * Created by hewking on 2016/10/22.

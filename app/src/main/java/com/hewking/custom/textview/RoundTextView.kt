@@ -8,7 +8,7 @@ import android.graphics.RectF
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.widget.TextView
-import com.hewking.util.dp2px
+import com.hewking.utils.dp2px
 
 /**
  * 项目名称：FlowChat

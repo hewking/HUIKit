@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.hewking.custom.R
-import com.hewking.util.v
+import com.hewking.utils.v
 
 class EditTextTestFragment : androidx.fragment.app.Fragment(){
 

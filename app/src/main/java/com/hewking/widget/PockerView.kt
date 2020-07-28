@@ -7,7 +7,7 @@ import android.os.Build
 import android.util.AttributeSet
 import android.view.View
 import com.hewking.custom.R
-import com.hewking.util.UiUtil
+import com.hewking.utils.UiUtil
 import java.util.*
 
 /**

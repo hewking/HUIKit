@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.hewking.androidview.edittext.RSoftInputLayout android:layout_width="match_parent"
+<com.hewking.demo.androidview.edittext.RSoftInputLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -74,4 +74,4 @@
         app:layout_constraintRight_toRightOf="parent"/>
 
 </LinearLayout>
-</com.hewking.androidview.edittext.RSoftInputLayout>
+</com.hewking.demo.androidview.edittext.RSoftInputLayout>

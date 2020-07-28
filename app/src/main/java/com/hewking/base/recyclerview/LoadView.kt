@@ -8,7 +8,7 @@ import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.hewking.base.recyclerview.LoadState
-import com.hewking.util.dp2px
+import com.hewking.utils.dp2px
 
 /**
  * 项目名称：FlowChat

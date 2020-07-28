@@ -8,8 +8,8 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.BounceInterpolator
-import com.hewking.util.L
-import com.hewking.util.dp2px
+import com.hewking.utils.L
+import com.hewking.utils.dp2px
 
 /**
  * 项目名称：FlowChat

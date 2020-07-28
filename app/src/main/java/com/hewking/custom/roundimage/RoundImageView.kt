@@ -6,7 +6,7 @@ import androidx.core.content.ContextCompat
 import androidx.appcompat.widget.AppCompatImageView
 import android.util.AttributeSet
 import com.hewking.custom.R
-import com.hewking.util.dp2px
+import com.hewking.utils.dp2px
 
 class RoundImageView(ctx: Context, attrs: AttributeSet) : AppCompatImageView(ctx, attrs) {
 

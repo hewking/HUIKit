@@ -37,12 +37,12 @@
         <activity android:name="com.hewking.demo.KeyBoardActivity" />
         <activity android:name="com.hewking.demo.viewlifecircle.LifeCircleActivity"></activity>
         <activity android:name="com.hewking.demo.GestureCompatActivity" />
-        <activity android:name="com.hewking.androidview.textinput.TextInputDemoActivity">
+        <activity android:name="com.hewking.demo.androidview.textinput.TextInputDemoActivity">
 
         </activity>
-        <activity android:name="com.hewking.androidview.creamepreview.CameraPraviewActivity"></activity>
+        <activity android:name="com.hewking.demo.androidview.creamepreview.CameraPraviewActivity"></activity>
 
-        <activity android:name="com.hewking.androidview.edittext.FixSoftInputActivity">
+        <activity android:name="com.hewking.demo.androidview.edittext.FixSoftInputActivity">
         </activity>
 
         <activity android:name="com.hewking.demo.DemoFragmentActivity"/>

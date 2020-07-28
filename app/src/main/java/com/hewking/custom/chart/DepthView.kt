@@ -7,9 +7,9 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import com.hewking.custom.R
-import com.hewking.util.dp2px
-import com.hewking.util.textHeight
-import com.hewking.util.textWidth
+import com.hewking.utils.dp2px
+import com.hewking.utils.textHeight
+import com.hewking.utils.textWidth
 
 
 /**
