@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import com.hewking.custom.LagouHomePanelLayout
+import com.hewking.uikit.LagouHomePanelLayout
 import com.hewking.custom.R
 import com.hewking.utils.dp2px
 import com.hewking.utils.v

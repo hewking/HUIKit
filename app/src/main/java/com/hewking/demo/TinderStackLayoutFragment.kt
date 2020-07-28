@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import com.hewking.custom.R
-import com.hewking.custom.tinderstack.TinderStackLayout
+import com.hewking.uikit.tinderstack.TinderStackLayout
 import com.hewking.utils.dp2px
 import com.hewking.utils.load
 import kotlinx.android.synthetic.main.fragment_tinder.*

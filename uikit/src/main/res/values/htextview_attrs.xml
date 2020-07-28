@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HTextView">
+        <attr name="dot" format="boolean"/>
+        <attr name="dot_color" format="color"/>
+        <attr name="dot_padding" format="dimension"/>
+        <attr name="dot_radius" format="dimension"/>
+    </declare-styleable>
+</resources>

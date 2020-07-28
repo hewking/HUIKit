@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">uikit</string>
+    <string name="chat_button_readMore">Read More</string>
+    <string name="chat_button_readLess">Read Less</string>
+</resources>

@@ -6,7 +6,7 @@ buildscript {
         glide_v = '4.11.0'
         C_V = 28
         B_V = '28.0.3'
-        M_V = 19
+        M_V = 21
         T_V = 28
         V_N = "1.0"
         V_C = 1

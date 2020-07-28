@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.hewking.custom.R;
-import com.hewking.custom.softkeyboard.MentionEditText;
+import com.hewking.uikit.softkeyboard.MentionEditText;
 
 
 public class KeyBoardActivity extends AppCompatActivity {

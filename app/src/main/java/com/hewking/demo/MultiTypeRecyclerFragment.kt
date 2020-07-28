@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.hewking.base.recyclerview.ComnViewHolder
 import com.hewking.base.recyclerview.MultiTypeAdapter
 import com.hewking.custom.R
-import com.hewking.custom.XfermodeSampleView2
+import com.hewking.uikit.XfermodeSampleView2
 import kotlinx.android.synthetic.main.fragment_multi_type.*
 
 /**

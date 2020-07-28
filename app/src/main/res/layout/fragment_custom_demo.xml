@@ -8,14 +8,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.hewking.custom.title.NavTitleBar
+        <com.hewking.uikit.title.NavTitleBar
             android:id="@+id/titlebar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize">
 
-        </com.hewking.custom.title.NavTitleBar>
+        </com.hewking.uikit.title.NavTitleBar>
 
-        <com.hewking.custom.roundimage.RoundImageView
+        <com.hewking.uikit.roundimage.RoundImageView
             android:id="@+id/iv_round"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
             app:r_show_tag="true"
             app:r_tag_res="@mipmap/icon_admin" />
 
-        <com.hewking.custom.MaskLinearLayout
+        <com.hewking.uikit.MaskLinearLayout
             android:id="@+id/masked"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,9 +51,9 @@
                 android:text="heheda" />
 
 
-        </com.hewking.custom.MaskLinearLayout>
+        </com.hewking.uikit.MaskLinearLayout>
 
-        <com.hewking.custom.TagRectView
+        <com.hewking.uikit.TagRectView
             android:id="@+id/rectview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/masked" />
 
-        <com.hewking.custom.LoadingView
+        <com.hewking.uikit.LoadingView
             android:id="@+id/loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/rectview" />
 
-        <com.hewking.custom.TextLoadView
+        <com.hewking.uikit.TextLoadView
             android:id="@+id/tv_loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_loading" />
 
-        <com.hewking.custom.shader.BitmapShaderDemoView
+        <com.hewking.uikit.shader.BitmapShaderDemoView
             android:id="@+id/bitshader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ssearchView" />
 
-        <com.hewking.custom.loading.DyLineLoadingView
+        <com.hewking.uikit.loading.DyLineLoadingView
             android:id="@+id/dyLoading"
             android:layout_margin="20dp"
             android:layout_width="match_parent"
@@ -118,7 +118,7 @@
             app:layout_constraintTop_toBottomOf="@id/dyLoading"
             android:layout_marginBottom="20dp" />
 
-        <com.hewking.custom.loading.MathWalletLoadingView
+        <com.hewking.uikit.loading.MathWalletLoadingView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

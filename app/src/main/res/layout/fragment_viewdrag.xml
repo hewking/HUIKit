@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.hewking.custom.viewdrager.ViewDragLayout
+    <com.hewking.uikit.viewdrager.ViewDragLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -34,6 +34,6 @@
 
             android:background="#FF9FB2C7"/>
 
-    </com.hewking.custom.viewdrager.ViewDragLayout>
+    </com.hewking.uikit.viewdrager.ViewDragLayout>
 
 </FrameLayout>

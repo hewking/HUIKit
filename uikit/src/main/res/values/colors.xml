@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#841e56</color>
+    <color name="background">#d2cdcd</color>
+    <color name="colorAccent">#b61924</color>
+    <color name="white">#ffffffff</color>
+    <color name="cc_white">#ccffffff</color>
+    <!-- common -->
+    <color name="app_color_blue">#00A8E1</color>
+    <color name="app_color_blue_disabled">#8000A8E1</color>
+    <color name="app_color_blue_pressed">#c000A8E1</color>
+
+    <color name="app_color_blue_2">#31BDF3</color>
+    <color name="app_color_blue_2_disabled">#7F31BDF3</color>
+    <color name="app_color_blue_2_pressed">#7F31BDF3</color>
+
+    <color name="app_color_theme_1">#af1c2a</color> <!-- Grapefruit -->
+    <color name="app_color_theme_2">#FE6D4B</color> <!-- Bittersweet -->
+    <color name="app_color_theme_3">#FFCF47</color> <!-- Sunflower -->
+    <color name="app_color_theme_4">#9FD661</color> <!-- Grass -->
+    <color name="app_color_theme_5">#3FD0AD</color> <!-- Mint -->
+    <color name="app_color_theme_6">#2BBDF3</color> <!-- Aqua -->
+    <color name="app_color_theme_7">#5A9AEF</color> <!-- Blue Jeans -->
+    <color name="app_color_theme_8">#AC8FEF</color> <!-- Lavender -->
+    <color name="app_color_theme_9">#EE85C1</color> <!-- Pink Rose -->
+
+    <color name="bar_divider">#D4D6D8</color>
+    <color name="tab_panel_bg">#ffffff</color>
+    <color name="tab_panel_divider">@color/bar_divider</color>
+
+    <!-- Components 组件 -->
+    <color name="radiusImageView_border_color">@color/app_color_theme_2</color>
+    <color name="radiusImageView_selected_border_color">@color/app_color_theme_1</color>
+    <color name="radiusImageView_selected_mask_color">#7FEF5362</color>
+
+    <!-- Helper 系列界面 -->
+
+    <!-- ColorHelper 颜色工具 -->
+    <color name="colorHelper_square_alpha_background">@color/app_color_theme_4</color>
+    <color name="colorHelper_square_from_ratio_background">@color/app_color_blue</color>
+    <color name="colorHelper_square_to_ratio_background">@color/app_color_theme_3</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="dark_gray">#666666</color>
+    <color name="main_gray">#eeeeee</color>
+    <!--<color name="main_text_color">#333333</color>-->
+
+    <color name="colorPrimaryBlack">#383738</color>
+    <color name="colorPrimaryTranBlack">#383738</color>
+    <color name="colorPrimaryDarkBlack">#80FC6B38</color>
+    <color name="colorAccentBlack">#FC6B38</color>
+
+    <color name="colorPrimaryBlue">#2483CB</color>
+    <color name="colorPrimaryTranBlue">#2483CB</color>
+    <color name="colorPrimaryDarkBlue">#2483CB</color>
+    <color name="colorAccentBlue">#2483CB</color>
+
+    <color name="colorPrimaryGreen">#0BD1A0</color>
+    <color name="colorPrimaryTranGreen">#0BD1A0</color>
+    <color name="colorPrimaryDarkGreen">#0BD1A0</color>
+    <color name="colorAccentGreen">#0BD1A0</color>
+
+    <color name="colorDisable">#CBCBCB</color>
+    <color name="colorTranPress">#30000000</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="white_hint">#66ffffff</color>
+
+    <color name="main_text_color_dark">#999999</color>
+    <color name="main_text_color_dark2">#666666</color>
+    <color name="main_text_color_6666666">#666666</color>
+    <color name="main_text_color_cccccc">#cccccc</color>
+    <color name="main_text_color">#333333</color>
+    <color name="orange">#fbb03e</color>
+    <color name="contact_letter_idx_bg">#33000000</color>main_gray
+
+    <!--线的颜色-->
+    <color name="line_color">#E0E0E0</color>
+    <color name="view_bg">#F9F9F9</color>
+    <!--导航栏字体颜色-->
+    <color name="nav_text_color">#ACBCB8</color>
+    <color name="nav_text_color_press">#0BD1A0</color>
+    <!--聊天背景颜色-->
+    <color name="chat_bg_color">#F0F0F5</color>
+    <color name="default_disable_color">#F0F0F0</color>
+    <!--转发动态背景色-->
+    <color name="forward_bg_color">#F9F9F9</color>
+    <color name="top_trans_white">#66ffffff</color>
+
+    <color name="yellow_ffe2b1">#FFE2B1</color>
+    <color name="yellow_fccd82">#FCCD82</color>
+    <color name="yellow_fcdf03">#FCDF03</color>
+
+    <color name="blue_4777af">#4777AF</color>
+    <color name="blue_507daf">#507dAF</color>
+    <color name="black_282a41">#282A31</color>
+    <color name="black_2D2D2E">#2D2D2E</color>
+    <color name="black_323134">#323134</color>
+    <color name="yellow_ffac2d">#ffac2d</color>
+    <color name="yellow_FB9C3E">#FB9C3E</color>
+    <color name="pink_fa758a">#fa758a</color>
+    <color name="pink_f5b8c2">#f5b8c2</color>
+    <color name="top_background_color">#FFF6F6</color>
+    <color name="top_forward_background_color">#F6EDED</color>
+    <color name="yellow_ff174">#FFF174</color>
+    <color name="yellow_EADA50">#EADA50</color>
+    <color name="orange_EADA50">#fc6b38</color>
+    <color name="shop_price_color">#fc6b38</color>
+    <color name="orange_fd5216">#fd5216</color>
+    <color name="blue_005ba0">#005ba0</color>
+    <color name="green_11aa84">#11aa84</color>
+    <color name="yellow_fefaf4">#FEFAF4</color>
+
+    <color name="filter_color_blue">#ff5cbadc</color>
+    <color name="filter_color_blue_dark">#3d5afe</color>
+    <color name="filter_color_blue_dark_dark">#1e3250</color>
+    <color name="filter_color_red">#ff6666</color>
+    <color name="filter_color_red_dark">#b93221</color>
+    <color name="filter_color_pink">#cc99cc</color>
+    <color name="filter_color_grey_light">#c4c4c4</color>
+    <color name="filter_color_green_dark">#568f35</color>
+    <color name="filter_color_brown_dark">#e69138</color>
+    <color name="filter_color_brown">#c8ca34</color>
+    <color name="filter_color_brown_light">#ff9933</color>
+
+    <color name="bantouming">#99000000</color>
+
+</resources>

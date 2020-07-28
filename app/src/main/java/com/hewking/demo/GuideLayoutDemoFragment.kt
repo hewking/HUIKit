@@ -15,7 +15,7 @@ import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayout
 import com.hewking.custom.R
-import com.hewking.custom.guide.HighLightChildFrameLayout
+import com.hewking.uikit.guide.HighLightChildFrameLayout
 import com.hewking.utils.dp2px
 
 class GuideLayoutDemoFragment : Fragment(){

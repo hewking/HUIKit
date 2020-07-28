@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.hewking.custom.R
-import com.hewking.custom.shader.WaterMarkDrawable
+import com.hewking.uikit.shader.WaterMarkDrawable
 
 /**
  * 类的描述：

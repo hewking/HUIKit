@@ -9,7 +9,7 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.hewking.custom.R
-import com.hewking.custom.gallerylayout.GalleryLayout2
+import com.hewking.uikit.gallerylayout.GalleryLayout2
 import com.hewking.utils.L
 import com.hewking.utils.dp2px
 

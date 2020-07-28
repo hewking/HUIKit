@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SectionSeekBar">
+        <attr name="section_unselect_colro" format="color"/>
+        <attr name="section_select_colorr" format="color"/>
+        <attr name="section_cur_position" format="integer"/>
+        <attr name="section_section_count" format="integer"/>
+        <attr name="section_radius" format="dimension"/>
+        <attr name="section_select_radus" format="dimension"/>
+        <attr name="section_line_width" format="dimension"/>
+    </declare-styleable>
+
+</resources>

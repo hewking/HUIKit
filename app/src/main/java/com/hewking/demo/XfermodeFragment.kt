@@ -5,8 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.hewking.custom.XfermodeSampleView
-import com.hewking.custom.XfermodeSampleView2
+import com.hewking.uikit.XfermodeSampleView2
 
 /**
  * 类的描述：
@@ -20,7 +19,7 @@ import com.hewking.custom.XfermodeSampleView2
 
 class XfermodeFragment : Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val xfermodeView = XfermodeSampleView2(context!!,null).apply {
+        val xfermodeView = XfermodeSampleView2(context!!, null).apply {
             layoutParams = ViewGroup.LayoutParams(-2,-2)
         }
         return xfermodeView

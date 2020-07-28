@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hewking.custom.R
-import com.hewking.pointerpanel.dpi
+import com.hewking.utils.dpi
 import kotlinx.android.synthetic.main.fragment_pointerpanel.*
 import kotlinx.android.synthetic.main.fragment_webview.*
 

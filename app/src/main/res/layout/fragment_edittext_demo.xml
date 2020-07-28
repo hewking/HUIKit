@@ -17,7 +17,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.hewking.custom.edittext.FilterSpaceEditText
+    <com.hewking.uikit.edittext.FilterSpaceEditText
         android:id="@+id/et_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

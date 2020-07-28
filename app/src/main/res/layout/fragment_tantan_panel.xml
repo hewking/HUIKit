@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-   <com.hewking.custom.TanTanPaneView
+   <com.hewking.uikit.TanTanPaneView
        android:layout_width="match_parent"
        android:layout_height="match_parent" />
 
