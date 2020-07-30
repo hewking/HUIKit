@@ -1,4 +1,4 @@
-package com.hewking.base
+package com.hewking.demo.res
 
 import android.app.Activity
 import android.graphics.Color

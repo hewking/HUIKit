@@ -37,7 +37,7 @@
         <activity android:name="com.hewking.demo.KeyBoardActivity" />
         <activity android:name="com.hewking.demo.viewlifecircle.LifeCircleActivity"></activity>
         <activity android:name="com.hewking.demo.GestureCompatActivity" />
-        <activity android:name="com.hewking.demo.androidview.textinput.TextInputDemoActivity">
+        <activity android:name="com.hewking.demo.androidview.input.TextInputDemoActivity">
 
         </activity>
         <activity android:name="com.hewking.demo.androidview.creamepreview.CameraPraviewActivity"></activity>
@@ -66,7 +66,7 @@
 
         </activity>
 
-        <activity android:name="com.hewking.base.DemoActivity"/>
+        <activity android:name="com.hewking.demo.res.DemoActivity"/>
 
     </application>
 

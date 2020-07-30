@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.hewking.demo.androidview.textview.TextActivity">
+    tools:context="com.hewking.demo.androidview.text.TextActivity">
 
     <TextView
         android:text="我不想说啥不想说啥不想说啥llllllll(10)"
