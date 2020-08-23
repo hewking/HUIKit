@@ -11,10 +11,11 @@ import com.hewking.demo.androidview.cardview.CardViewFragment
 import com.hewking.demo.androidview.constrainlayout.ConstrainDemoFragment
 import com.hewking.demo.androidview.dialog.DialogProgressFragment
 import com.hewking.demo.androidview.flexboxlayout.FlexBoxLayoutFragment
-import com.hewking.base.DemoActivity
+import com.hewking.demo.res.DemoActivity
 import com.hewking.custom.R
 import com.hewking.demo.animation.ViewLayoutAnimFragment
 import com.hewking.custom.databinding.ActivityNaviBinding
+import com.hewking.demo.androidview.image.ImageDemoFragment
 import com.hewking.demo.dispatch.DispatchFragment
 import com.hewking.utils.L
 import com.hewking.utils.NotchCompat
@@ -69,7 +70,7 @@ class MainActivity : LanguageActivity() {
         list.add(Item(8,"ProgressDialog Demo",DialogProgressFragment::class.java))
         list.add(Item(9,"GestureDetector Demo", GestureDetectorDemoFragment::class.java))
         list.add(Item(10,"ImageExDemo Demo",ImageExFragment::class.java))
-        list.add(Item(11,"DemoActivity Demo",DemoActivity::class.java,2))
+        list.add(Item(11,"DemoActivity Demo", DemoActivity::class.java,2))
         list.add(Item(12,"DispatchFragment Demo", DispatchFragment::class.java))
         list.add(Item(13,"RecyclerTestFragent Demo",LoadRecyclerFragment::class.java))
         list.add(Item(13,"WebView Demo",WebViewFragment::class.java))
@@ -88,15 +89,16 @@ class MainActivity : LanguageActivity() {
         list.add(Item(27, "HighLightChildFrameLayout Demo", GuideLayoutDemoFragment::class.java))
         list.add(Item(28,"ViewLayoutanimFragment Demo",ViewLayoutAnimFragment::class.java))
         list.add(Item(29,"PointerPanelFragment Demo",PointerPanelFragment::class.java))
+        list.add(Item(30,"ImageDemoFragment",ImageDemoFragment::class.java))
         return list
     }
 
-    val mAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder> by lazy {
-        object : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>(){
+    val mAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> by lazy {
+        object : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
             val datas = createItems()
 
-            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
                 val itemView = LayoutInflater.from(parent?.context).inflate(R.layout.item_text,parent,false)
                 return object : RecyclerView.ViewHolder(itemView){
                 }
@@ -106,7 +108,7 @@ class MainActivity : LanguageActivity() {
                 return datas.size
             }
 
-            override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
+            override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
                 val itemView = holder.itemView
                 itemView.v<TextView>(R.id.tv_text)?.text = datas[position].info
                 itemView.setOnClickListener {
