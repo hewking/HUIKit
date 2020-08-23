@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/bitshader" />
 
-        <com.hewking.widget.hencoder.HaloProgressView
+        <com.hewking.uikit.progress.HaloProgressView
             android:id="@+id/halo"
             android:layout_width="300dp"
             android:layout_height="200dp"
