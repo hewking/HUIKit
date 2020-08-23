@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/HUILibrary.iml" filepath="$PROJECT_DIR$/.idea/HUILibrary.iml" group="HUILibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HUILibrary-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HUILibrary-app.iml" group="HUILibrary/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="HUILibrary/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/private_project-HUILibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/private_project-HUILibrary.iml" group="HUILibrary" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/uikit/uikit.iml" filepath="$PROJECT_DIR$/.idea/modules/uikit/uikit.iml" group="HUILibrary/uikit" />
     </modules>
   </component>
