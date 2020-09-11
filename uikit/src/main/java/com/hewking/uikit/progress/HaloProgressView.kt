@@ -1,4 +1,4 @@
-package com.hewking.widget.hencoder
+package com.hewking.uikit.progress
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -10,8 +10,8 @@ import android.util.AttributeSet
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.BounceInterpolator
 import android.widget.ImageView
-import com.hewking.custom.BuildConfig
-import com.hewking.custom.R
+import com.hewking.uikit.BuildConfig
+import com.hewking.uikit.R
 import com.hewking.utils.UiUtil
 import com.hewking.utils.dp2px
 import com.hewking.utils.getColor

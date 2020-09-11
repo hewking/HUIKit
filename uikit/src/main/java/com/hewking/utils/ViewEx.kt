@@ -19,6 +19,10 @@ fun View.getColor(@ColorRes resid: Int): Int {
     return ContextCompat.getColor(context, resid)
 }
 
+fun View.px2dp(px : Int) : Int {
+    return (px.div(context.resources.displayMetrics.density) + 0.5).toInt()
+}
+
 fun View.dp2px(dp: Float): Int {
     return (UiUtil.getScreenDensity(context) * dp + 0.5).toInt()
 }

@@ -12,19 +12,3 @@ import android.view.View
  * 修改备注：
  * Version: 1.0.0
  */
-
-fun <T : View> androidx.appcompat.app.AppCompatActivity.v(@IdRes resId : Int) : T{
-    return findViewById(resId) as T
-}
-
-fun <T : View> View.v(@IdRes resId : Int) : T{
-    return findViewById(resId) as T
-}
-
-fun View.dp2px(dp : Float) : Int{
-    return (context.resources.displayMetrics.density * dp + 0.5).toInt()
-}
-
-fun View.px2dp(px : Int) : Int{
-    return (px.div(context.resources.displayMetrics.density) + 0.5).toInt()
-}
