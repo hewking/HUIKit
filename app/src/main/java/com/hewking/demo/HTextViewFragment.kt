@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.text.Layout
 import android.text.Spannable
 import android.text.Spanned
+import android.text.TextPaint
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.text.style.URLSpan
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -13,9 +16,11 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Magnifier
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.hewking.custom.R
 import com.hewking.uikit.textview.AutoLinkSpan
 import com.hewking.utils.L
+import com.hewking.utils.SpannableStringUtil
 import com.hewking.utils.v
 import kotlinx.android.synthetic.main.fragment_htextview.*
 
@@ -57,7 +62,7 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
             et_input.isFocusableInTouchMode = true
             et_text.isFocusable = true
             et_text.isFocusableInTouchMode = true
-            T("focus changed")
+            toast("focus changed")
             et_input.requestFocus()
 
             L.d("HTextViewFragment", "et_input focus : ${et_input.isFocusable}  et_text focus ${et_text.isFocusable}")
@@ -67,7 +72,7 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
         tv_click_span.apply {
             text = "gggggddgfddddddddddddddddddddddddddddddddddwww.baidu.com"
             setOnLongClickListener {
-                T("LongClickListener")
+                toast("LongClickListener")
                 true
             }
         }
@@ -76,7 +81,7 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
             L.d("HTextViewFragment","onclick")
         })
 
-        smart_tv.text = "tronbet.io sdfsd baidu.com"
+//        smart_tv.text = "tronbet.io sdfsd baidu.com"
 
 //        TextViewCompat.setAutoSizeTextTypeWithDefaults(tv_auto_size,TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM)
 //        TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(tv_auto_size,14,100,10,TypedValue.COMPLEX_UNIT_SP)
@@ -150,9 +155,26 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
 //            // 这时候可以获取宽高
 //            tv_auto_size.text = "wo shi zhognwena  wo daodi xingbuxing a autosize"
 //        }
+
+        tv_need_shadow.movementMethod = LinkMovementMethod.getInstance()
+        tv_need_shadow.text = SpannableStringUtil.getBuilder(requireContext(),"我同意")
+                .append("怎么不行？")
+                .setClickSpan(object : ClickableSpan(){
+                    override fun onClick(widget: View) {
+                        toast("我同意啊")
+                    }
+
+                    override fun updateDrawState(ds: TextPaint) {
+                        super.updateDrawState(ds)
+                        ds.isUnderlineText = false
+                    }
+
+                })
+                .append("丰巢用户协议")
+                .create()
     }
 
-    fun androidx.fragment.app.Fragment.T(msg :String){
+    fun Fragment.toast(msg :String){
         Toast.makeText(DemoApplication.context,msg,Toast.LENGTH_SHORT).show()
     }
 

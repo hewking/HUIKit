@@ -103,13 +103,13 @@
             android:padding="@dimen/base_dpi"
             android:text="sdfsdfhttps://www.baidu.com sdfjlskfdjsf baidu.com tronbet.io" />
 
-        <com.hewking.uikit.textview.SmartLinkTextView
-            android:id="@+id/smart_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:autoLink="web"
-            android:padding="@dimen/base_xxhdpi" />
+<!--        <com.hewking.uikit.textview.SmartLinkTextView-->
+<!--            android:id="@+id/smart_tv"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:autoLink="web"-->
+<!--            android:padding="@dimen/base_xxhdpi" />-->
 
         <com.hewking.uikit.textview.LineTextView
             android:layout_width="wrap_content"
@@ -130,6 +130,7 @@
             android:text="checked" />
 
         <TextView
+            android:id="@+id/tv_need_shadow"
             android:layout_marginTop="20dp"
             android:padding="@dimen/base_xhdpi"
             android:text="我需要阴影"

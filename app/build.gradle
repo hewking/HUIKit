@@ -9,7 +9,7 @@ android {
     buildToolsVersion rootProject.ext.B_V
 
     defaultConfig {
-        applicationId "com.example.administrator.customviewtest"
+        applicationId "com.hewing.uikit.demo"
         minSdkVersion rootProject.ext.M_V
         targetSdkVersion rootProject.ext.T_V
         versionCode rootProject.ext.V_C

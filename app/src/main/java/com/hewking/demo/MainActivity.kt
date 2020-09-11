@@ -35,7 +35,7 @@ class MainActivity : LanguageActivity() {
         setContentView(binding.root)
 
         initView()
-        debugParams()
+//        debugParams()
 
     }
 
