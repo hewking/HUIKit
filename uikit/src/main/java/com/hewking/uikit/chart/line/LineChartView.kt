@@ -64,6 +64,11 @@ class LineChartView(val ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
     super.onMeasure(widthMeasureSpec, heightMeasureSpec)
   }
 
+  override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+    super.onSizeChanged(w, h, oldw, oldh)
+    mShaderPaint.shader = LinearGradient(0f, 0f, 0f, h.toFloat(), intArrayOf(Color.BLUE, Color.WHITE), null, Shader.TileMode.CLAMP)
+  }
+
   override fun onDraw(canvas: Canvas?) {
     super.onDraw(canvas)
     canvas ?: return
@@ -83,7 +88,6 @@ class LineChartView(val ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
     val xInterval = width.div(mValues.size).toFloat()
     val diff = max - min
 
-//    mShaderPath.moveTo(0f,height.toFloat())
     for (i in 0 until mValues.size) {
       val x = xInterval.times(i)
       val y = height - mValues[i].div(diff).times(height)
@@ -100,7 +104,6 @@ class LineChartView(val ctx: Context, attrs: AttributeSet) : View(ctx, attrs) {
         }
       }
     }
-    mShaderPaint.shader = LinearGradient(0f, 0f, 0f, height.toFloat(), intArrayOf(Color.BLUE, Color.WHITE), null, Shader.TileMode.CLAMP)
 
     canvas.drawPath(mShaderPath,mShaderPaint)
     canvas.drawPath(mPath, mPathPaint)

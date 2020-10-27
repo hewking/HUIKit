@@ -1,5 +1,10 @@
 package com.hewking.demo
 
+import android.graphics.Bitmap
+import android.graphics.Color
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
 import android.text.Layout
@@ -16,13 +21,22 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Magnifier
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import coil.target.ViewTarget
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.BitmapImageViewTarget
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.target.CustomViewTarget
+import com.bumptech.glide.request.transition.Transition
 import com.hewking.custom.R
 import com.hewking.uikit.textview.AutoLinkSpan
 import com.hewking.utils.L
 import com.hewking.utils.SpannableStringUtil
 import com.hewking.utils.v
+import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.fragment_htextview.*
+import kotlinx.android.synthetic.main.fragment_htextview.view.*
 
 /**
  * 类的描述：
@@ -42,6 +56,25 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         et_input.addTextChangedListener(HexInputFilter(view.v<EditText>(R.id.et_input)))
+
+        Glide.with(requireContext())
+            .asBitmap()
+            .load(R.drawable.asm_logo)
+            .transform(BlurTransformation())
+            .into(object : CustomTarget<Bitmap>(){
+                override fun onLoadCleared(placeholder: Drawable?) {
+                }
+
+                override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
+                    view.ll_root.background = BitmapDrawable(resource)
+                }
+
+            })
+
+//        Glide.with(requireContext())
+//            .load(ColorDrawable(ContextCompat.getColor(requireContext(),R.color.app_color_blue)))
+//            .into(object : CustomViewTarget<>)
+
 
         /*  et_input.clearFocus()
           et_text.clearFocus()*/
