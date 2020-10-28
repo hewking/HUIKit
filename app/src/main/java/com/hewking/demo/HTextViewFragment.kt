@@ -31,9 +31,8 @@ import com.bumptech.glide.request.target.CustomViewTarget
 import com.bumptech.glide.request.transition.Transition
 import com.hewking.custom.R
 import com.hewking.uikit.textview.AutoLinkSpan
-import com.hewking.utils.L
-import com.hewking.utils.SpannableStringUtil
-import com.hewking.utils.v
+import com.hewking.utils.*
+import com.hewking.utils.setDrawableLeft
 import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.fragment_htextview.*
 import kotlinx.android.synthetic.main.fragment_htextview.view.*
@@ -205,6 +204,9 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
                 })
                 .append("丰巢用户协议")
                 .create()
+
+        tv_need_shadow.setDrawableLeft(R.drawable.icon_grid_rank_down)
+        tv_need_shadow.compoundDrawablePadding = 8.dp
     }
 
     fun Fragment.toast(msg :String){

@@ -130,6 +130,13 @@
             android:button="@null"
             android:text="checked" />
 
+        <CheckBox
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:button="@drawable/selector_grid_rank"
+          android:background="@color/transparent"/>
+
         <TextView
             android:id="@+id/tv_need_shadow"
             android:layout_marginTop="20dp"
