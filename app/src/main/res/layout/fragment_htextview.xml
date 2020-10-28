@@ -1,158 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/asm_logo">
+
 
     <LinearLayout
-        android:id="@+id/ll_root"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
+      android:id="@+id/ll_root"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center_vertical"
+      android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/et_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:ellipsize="end"
-            android:hint="focus test"
-            android:padding="10dp" />
+      <EditText
+        android:id="@+id/et_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:ellipsize="end"
+        android:hint="focus test"
+        android:padding="10dp" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/et_input"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/base_xhdpi"
-            android:hint="仅仅输入十六进制" />
+      <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/base_xhdpi"
+        android:hint="仅仅输入十六进制" />
 
-        <com.hewking.uikit.textview.HTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:width="120dp"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:maxLength="40"
-            android:padding="@dimen/base_xhdpi"
-            android:text="helloworlddgfdgdgffffffffffffffffffffffffffffffffffffffffffffffffffd"
-            android:textStyle="bold"
-            app:dot="true" />
+      <com.hewking.uikit.textview.HTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:width="120dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLength="40"
+        android:padding="@dimen/base_xhdpi"
+        android:text="helloworlddgfdgdgffffffffffffffffffffffffffffffffffffffffffffffffffd"
+        android:textStyle="bold"
+        app:dot="true" />
 
-        <TextView
-            android:id="@+id/tv_image_span"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/round_rect_drawable"
-            android:gravity="top"
-            android:paddingBottom="4dp"
-            android:text="image span 测试" />
+      <TextView
+        android:id="@+id/tv_image_span"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/round_rect_drawable"
+        android:gravity="top"
+        android:paddingBottom="4dp"
+        android:text="image span 测试" />
 
-        <TextView
-            android:id="@+id/tv_click_span"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:autoLink="email|phone|web"
-            android:text="image span 测试" />
+      <TextView
+        android:id="@+id/tv_click_span"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:autoLink="email|phone|web"
+        android:text="image span 测试" />
 
-        <com.hewking.uikit.textview.HTextView
-            android:id="@+id/tv_text_span"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/base_xhdpi"
-            android:autoLink="email|phone|web"
-            android:descendantFocusability="blocksDescendants"
-            android:gravity="center"
-            android:padding="@dimen/default_text_size10"
-            android:text="https://www.flowchat.me/api/groupShare/inner?code=h2w6mA" />
+      <com.hewking.uikit.textview.HTextView
+        android:id="@+id/tv_text_span"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/base_xhdpi"
+        android:autoLink="email|phone|web"
+        android:descendantFocusability="blocksDescendants"
+        android:gravity="center"
+        android:padding="@dimen/default_text_size10"
+        android:text="https://www.flowchat.me/api/groupShare/inner?code=h2w6mA" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_auto_size"
-            android:layout_width="60dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center_horizontal"
-            android:text="中英文混合怎wocanefsdd么回事"
-            app:autoSizeTextType="uniform"
-            app:autoSizeMinTextSize="4sp"
-            app:autoSizeMaxTextSize="100sp"
-            app:autoSizeStepGranularity="2sp" />
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_auto_size"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal"
+        android:text="中英文混合怎wocanefsdd么回事"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeMinTextSize="4sp"
+        app:autoSizeStepGranularity="2sp"
+        app:autoSizeTextType="uniform" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_test_weburl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/base_100dpi"
-            android:layout_marginEnd="@dimen/base_100dpi"
-            android:ellipsize="end"
-            android:maxLines="3"
-            android:padding="@dimen/base_dpi"
-            android:text="https://www.baidu.com/#iact=wiseindex%2Ftabs%2Fnews%2Factivity%2Fnewsdetail%3D%257B%2522linkData%2522%253A%257B%2522name%2522%253A%2522iframe%252Fmib-iframe%2522%252C%2522id%2522%253A%2522feed%2522%252C%2522index%2522%253A0%252C%2522url%2522%253A%2522https%253A%252F%252Fmbd.baidu.com%252Fnewspage%252Fdata%252Flandingpage%253Fs_type%253Dnews%2526dsp%253Dwise%2526context%253D%25257B%252522nid%252522%25253A%252522news_9441325276163769821%252522%25257D%2526pageType%253D1%2526n_type%253D1%2526p_from%253D-1%2526rec_src%253D52%2526innerIframe%253D1%2522%252C%2522isThird%2522%253Afalse%252C%2522title%2522%253Anull%257D%257D" />
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_test_weburl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_100dpi"
+        android:layout_marginEnd="@dimen/base_100dpi"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:padding="@dimen/base_dpi"
+        android:text="https://www.baidu.com/#iact=wiseindex%2Ftabs%2Fnews%2Factivity%2Fnewsdetail%3D%257B%2522linkData%2522%253A%257B%2522name%2522%253A%2522iframe%252Fmib-iframe%2522%252C%2522id%2522%253A%2522feed%2522%252C%2522index%2522%253A0%252C%2522url%2522%253A%2522https%253A%252F%252Fmbd.baidu.com%252Fnewspage%252Fdata%252Flandingpage%253Fs_type%253Dnews%2526dsp%253Dwise%2526context%253D%25257B%252522nid%252522%25253A%252522news_9441325276163769821%252522%25257D%2526pageType%253D1%2526n_type%253D1%2526p_from%253D-1%2526rec_src%253D52%2526innerIframe%253D1%2522%252C%2522isThird%2522%253Afalse%252C%2522title%2522%253Anull%257D%257D" />
 
-        <com.hewking.uikit.textview.GCLinkTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/base_100dpi"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="@dimen/base_100dpi"
-            android:maxLength="100"
-            android:padding="@dimen/base_dpi"
-            android:text="sdfsdfhttps://www.baidu.com sdfjlskfdjsf baidu.com tronbet.io" />
+      <com.hewking.uikit.textview.GCLinkTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_100dpi"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/base_100dpi"
+        android:maxLength="100"
+        android:padding="@dimen/base_dpi"
+        android:text="sdfsdfhttps://www.baidu.com sdfjlskfdjsf baidu.com tronbet.io" />
 
-<!--        <com.hewking.uikit.textview.SmartLinkTextView-->
-<!--            android:id="@+id/smart_tv"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:autoLink="web"-->
-<!--            android:padding="@dimen/base_xxhdpi" />-->
+      <!--        <com.hewking.uikit.textview.SmartLinkTextView-->
+      <!--            android:id="@+id/smart_tv"-->
+      <!--            android:layout_width="match_parent"-->
+      <!--            android:layout_height="wrap_content"-->
+      <!--            android:layout_marginTop="20dp"-->
+      <!--            android:autoLink="web"-->
+      <!--            android:padding="@dimen/base_xxhdpi" />-->
 
-        <com.hewking.uikit.textview.LineTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="sfdkjsdlfjkskjfklsdfjklsdjfkdjlkfksd"
-            app:line_color="@color/colorAccent" />
+      <com.hewking.uikit.textview.LineTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="sfdkjsdlfjkskjfklsdfjklsdjfkdjlkfksd"
+        app:line_color="@color/colorAccent" />
 
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/cb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:padding="@dimen/base_xhdpi"
-            android:background="@drawable/shadow_115442"
-            android:button="@null"
-            android:text="checked" />
+      <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shadow_115442"
+        android:button="@null"
+        android:padding="@dimen/base_xhdpi"
+        android:text="checked" />
 
-        <CheckBox
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          android:button="@drawable/selector_grid_rank"
-          android:background="@color/transparent"/>
+      <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/transparent"
+        android:button="@drawable/selector_grid_rank" />
 
-        <TextView
-            android:id="@+id/tv_need_shadow"
-            android:layout_marginTop="20dp"
-            android:padding="@dimen/base_xhdpi"
-            android:text="我需要阴影"
-            android:elevation="2dp"
-            android:background="@drawable/shadow_rect"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+      <TextView
+        android:id="@+id/tv_need_shadow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shadow_rect"
+        android:elevation="2dp"
+        android:padding="@dimen/base_xhdpi"
+        android:text="我需要阴影" />
 
-        <com.hewking.uikit.textview.RoundTextView
-            android:layout_marginTop="20dp"
-            android:padding="@dimen/base_xhdpi"
-            android:text="我需要阴影"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+      <com.hewking.uikit.textview.RoundTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="@dimen/base_xhdpi"
+        android:text="我需要阴影" />
+
+      <com.hewking.uikit.textview.RoundTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="@dimen/base_xhdpi"
+        android:text="我需要阴影" />
+
+      <com.hewking.uikit.textview.RoundTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="@dimen/base_xhdpi"
+        android:text="我需要阴影" />
+
+      <com.hewking.uikit.textview.RoundTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="@dimen/base_xhdpi"
+        android:text="我需要阴影" />
+
+      <com.hewking.uikit.textview.RoundTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="@dimen/base_xhdpi"
+        android:text="我需要阴影" />
+
+      <com.hewking.uikit.textview.RoundTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="@dimen/base_xhdpi"
+        android:text="我需要阴影" />
+
+      <com.hewking.uikit.textview.RoundTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="@dimen/base_xhdpi"
+        android:text="我需要阴影" />
+
+      <com.hewking.uikit.textview.RoundTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="@dimen/base_xhdpi"
+        android:text="我需要阴影" />
 
     </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+
+
+  </androidx.core.widget.NestedScrollView>
+
+  <com.hewking.uikit.blur.RealtimeBlurView
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_gravity="top" />
+</FrameLayout>

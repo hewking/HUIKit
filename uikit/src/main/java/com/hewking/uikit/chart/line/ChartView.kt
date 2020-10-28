@@ -10,9 +10,9 @@ import android.view.View
 import android.view.animation.Interpolator
 import android.view.animation.LinearInterpolator
 import com.hewking.utils.DrawHelper
+import com.hewking.utils.toDp
 import java.util.*
 import java.util.Collections.max
-
 
 
 class ChartView @JvmOverloads constructor(
@@ -53,12 +53,18 @@ class ChartView @JvmOverloads constructor(
     set(value) {
       field = value
       mPaintLine.color = value
+      postInvalidate()
+    }
+
+  var fillColor = Color.WHITE
+    set(value) {
+      field = value
       mPaintFillArea.color = value
       postInvalidate()
     }
 
   //折线的宽度
-  var brokenLineSize = 2f
+  var brokenLineSize = 2f.toInt().toDp()
     set(value) {
       field = value
       postInvalidate()
@@ -79,9 +85,11 @@ class ChartView @JvmOverloads constructor(
       invalidate()
     }
 
-  val fillPath = Path()
-  val path = Path()
-  val zeroPoint = Point()
+  private lateinit var mShader: LinearGradient
+
+  private val fillPath = Path()
+  private val path = Path()
+  private val zeroPoint = Point()
 
 
   init {
@@ -100,6 +108,8 @@ class ChartView @JvmOverloads constructor(
     mPaintLine.style = Paint.Style.STROKE
     mPaintLine.strokeWidth = brokenLineSize
     mPaintLine.color = brokenLineColor
+    mPaintLine.strokeCap = Paint.Cap.ROUND
+    mPaintLine.strokeJoin = Paint.Join.ROUND
 
   }
 
@@ -107,7 +117,6 @@ class ChartView @JvmOverloads constructor(
     super.onMeasure(widthMeasureSpec, heightMeasureSpec)
   }
 
-  private lateinit var mShader: LinearGradient
 
   override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
     super.onSizeChanged(w, h, oldw, oldh)
@@ -125,7 +134,7 @@ class ChartView @JvmOverloads constructor(
     //  设置动画
     setAnim(canvas)
 
-    DrawHelper.drawCoordinate(canvas,mViewWidth,mViewHeight.toInt())
+    DrawHelper.drawCoordinate(canvas, mViewWidth, mViewHeight.toInt())
   }
 
   private fun getWidthAndHeight() {
@@ -208,7 +217,8 @@ class ChartView @JvmOverloads constructor(
   }
 
   private lateinit var valueAnimator: ValueAnimator
-//  private var mAnimatorValue: Int = 0
+
+  //  private var mAnimatorValue: Int = 0
   private lateinit var mUpdateListener: ValueAnimator.AnimatorUpdateListener
   private val defaultDuration = 2000L
   private var mProgress = 0f
@@ -239,7 +249,7 @@ class ChartView @JvmOverloads constructor(
     val pathLength = measure.length
     val effect: PathEffect = DashPathEffect(floatArrayOf(pathLength,
         pathLength), pathLength - pathLength * mProgress)
-    Log.d("setAnim","progress: $mProgress")
+    Log.d("setAnim", "progress: $mProgress")
     mPaintLine.pathEffect = effect
     mPaintFillArea.pathEffect = effect
     canvas.drawPath(path, mPaintLine)

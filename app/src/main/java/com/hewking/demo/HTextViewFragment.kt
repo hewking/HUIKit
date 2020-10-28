@@ -56,19 +56,19 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
         super.onViewCreated(view, savedInstanceState)
         et_input.addTextChangedListener(HexInputFilter(view.v<EditText>(R.id.et_input)))
 
-        Glide.with(requireContext())
-            .asBitmap()
-            .load(R.drawable.asm_logo)
-            .transform(BlurTransformation())
-            .into(object : CustomTarget<Bitmap>(){
-                override fun onLoadCleared(placeholder: Drawable?) {
-                }
-
-                override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
-                    view.ll_root.background = BitmapDrawable(resource)
-                }
-
-            })
+//        Glide.with(requireContext())
+//            .asBitmap()
+//            .load(R.drawable.asm_logo)
+//            .transform(BlurTransformation())
+//            .into(object : CustomTarget<Bitmap>(){
+//                override fun onLoadCleared(placeholder: Drawable?) {
+//                }
+//
+//                override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
+//                    view.ll_root.background = BitmapDrawable(resource)
+//                }
+//
+//            })
 
 //        Glide.with(requireContext())
 //            .load(ColorDrawable(ContextCompat.getColor(requireContext(),R.color.app_color_blue)))

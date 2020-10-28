@@ -20,25 +20,26 @@ import kotlin.math.max
  * 修改备注：
  * Version: 1.0.0
  */
-class DemoListFragment : androidx.fragment.app.Fragment(){
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater?.inflate(R.layout.activity_main,container,false)
+class DemoListFragment : androidx.fragment.app.Fragment() {
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                            savedInstanceState: Bundle?): View? {
+    return inflater?.inflate(R.layout.activity_main, container, false)
+  }
+
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+
+    val random = Random()
+    val pointList = ArrayList<Int>()
+    for (i in 0..20) {
+      val nextInt = 15 + random.nextInt(15)
+      pointList.add(nextInt)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val random = Random()
-        val pointList = ArrayList<Int>()
-        for (i in 0..20) {
-            val nextInt = 15 + random.nextInt(15)
-            pointList.add(nextInt)
-        }
-
-        chartView.brokenLineColor = Color.BLUE
-        chartView.maxY=pointList.reduce { acc, i -> max(acc,i) } + 10
-        chartView.setChartPoints(pointList)
-    }
+    chartView.brokenLineColor = Color.parseColor("#FF6782F7")
+      chartView.fillColor = Color.parseColor("#80FF8F02")
+    chartView.maxY = pointList.reduce { acc, i -> max(acc, i) } + 10
+    chartView.setChartPoints(pointList)
+  }
 
 }
