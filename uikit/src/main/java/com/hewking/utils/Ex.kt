@@ -18,7 +18,7 @@ val dp: Float = Resources.getSystem()?.displayMetrics?.density ?: 0f
 val dpi: Int = Resources.getSystem()?.displayMetrics?.density?.toInt() ?: 0
 
 fun Int.toDp(): Float {
-    return this * dp
+    return this * dp.toFloat()
 }
 
 fun Int.toDpi(): Int {
