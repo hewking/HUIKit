@@ -37,7 +37,7 @@ class DemoListFragment : androidx.fragment.app.Fragment() {
     }
 
     chartView.brokenLineColor = Color.parseColor("#FF6782F7")
-      chartView.fillColor = Color.parseColor("#80FF8F02")
+//      chartView.fillColor = Color.parseColor("#80FF8F02")
     chartView.maxY = pointList.reduce { acc, i -> max(acc, i) } + 10
     chartView.setChartPoints(pointList)
   }
