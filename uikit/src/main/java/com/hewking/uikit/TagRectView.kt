@@ -31,7 +31,7 @@ class TagRectView(ctx : Context,attrs : AttributeSet) : View(ctx,attrs) {
     }
 
     init {
-        val typedArray = ctx.obtainStyledAttributes(attrs, R.styleable.CalendarView)
+        val typedArray = ctx.obtainStyledAttributes(attrs, R.styleable.TagRectView)
         typedArray.recycle()
     }
 
