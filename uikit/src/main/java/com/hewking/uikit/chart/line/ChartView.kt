@@ -12,6 +12,7 @@ import android.view.animation.LinearInterpolator
 import com.hewking.utils.DrawHelper
 import com.hewking.utils.toDp
 import java.util.*
+import java.util.Collections.fill
 import java.util.Collections.max
 
 
@@ -104,6 +105,7 @@ class ChartView @JvmOverloads constructor(
 
     mPaintFillArea.color = brokenLineColor
     mPaintFillArea.style = Paint.Style.FILL
+//    mPaintFillArea.style = Paint.Style.STROKE
 
     mPaintLine.style = Paint.Style.STROKE
     mPaintLine.strokeWidth = brokenLineSize
@@ -134,7 +136,7 @@ class ChartView @JvmOverloads constructor(
     //  设置动画
     setAnim(canvas)
 
-    DrawHelper.drawCoordinate(canvas, mViewWidth, mViewHeight.toInt())
+//    DrawHelper.drawCoordinate(canvas, mViewWidth, mViewHeight.toInt())
   }
 
   private fun getWidthAndHeight() {
@@ -185,7 +187,6 @@ class ChartView @JvmOverloads constructor(
           fillPath.lineTo(endPx, mViewHeight.toFloat() - margin.toFloat())
           fillPath.close()
           mPaintFillArea.shader = mShader
-//          canvas.drawPath(fillPath, mPaintFillArea)
         }
       }
 //      canvas.drawPath(path, mPaintLine)
@@ -209,7 +210,7 @@ class ChartView @JvmOverloads constructor(
       maxY = max(yPointArray)
     }
     maxX = points.size
-    //默认x有10格，y5格，这里你可以修改
+    //默认x有10格，y5格，这里可以修改
     xScale = maxX / 10
     yScale = maxY / 5
     initAnimator(maxX)
@@ -249,11 +250,20 @@ class ChartView @JvmOverloads constructor(
     val pathLength = measure.length
     val effect: PathEffect = DashPathEffect(floatArrayOf(pathLength,
         pathLength), pathLength - pathLength * mProgress)
+
     Log.d("setAnim", "progress: $mProgress")
+
     mPaintLine.pathEffect = effect
-    mPaintFillArea.pathEffect = effect
     canvas.drawPath(path, mPaintLine)
+
+    val coords = FloatArray(2)
+    measure.getPosTan(pathLength * mProgress, coords, null)
+
+    canvas.save()
+    canvas.clipRect(margin.toFloat(), 0f, coords[0], mViewHeight.toFloat())
     canvas.drawPath(fillPath, mPaintFillArea)
+    canvas.restore()
+
   }
 
   /**
