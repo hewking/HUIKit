@@ -31,7 +31,7 @@ class DemoListFragment : androidx.fragment.app.Fragment() {
 
     val random = Random()
     val pointList = ArrayList<Int>()
-    for (i in 0..20) {
+    for (i in 0..1) {
       val nextInt = 15 + random.nextInt(15)
       pointList.add(nextInt)
     }

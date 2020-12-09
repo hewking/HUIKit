@@ -29,13 +29,31 @@ class ChartView @JvmOverloads constructor(
   //绘制折线的画笔
   private var mPaintLine: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
+  // 绘制折线上的点的画笔
+  private var mPaintLinePoint: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+  //折线小圆点的颜色
+  var brokenLinePointColor = Color.parseColor("#00EE00")
+    set(value) {
+      field = value
+      mPaintLinePoint.color = brokenLinePointColor
+      postInvalidate()
+    }
+
+  //点的半径
+  var brokenLinePointRadius = 6f
+    set(value) {
+      field = value
+      postInvalidate()
+    }
+
   //绘制覆盖区域
   private var mPaintFillArea: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
   private lateinit var pointList: ArrayList<Point>
 
   //x，y坐标轴每多少一个刻度
-  private var xScale = 2
-  private var yScale = 10
+  private var xScale = 2f
+  private var yScale = 10f
   private var everyXwidth: Float = 0.0f
   private var everyYheight: Float = 0.0f
 
@@ -113,6 +131,9 @@ class ChartView @JvmOverloads constructor(
     mPaintLine.strokeCap = Paint.Cap.ROUND
     mPaintLine.strokeJoin = Paint.Join.ROUND
 
+    mPaintLinePoint.style = Paint.Style.FILL
+    mPaintLinePoint.color = brokenLinePointColor
+
   }
 
   override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -136,18 +157,18 @@ class ChartView @JvmOverloads constructor(
     //  设置动画
     setAnim(canvas)
 
-//    DrawHelper.drawCoordinate(canvas, mViewWidth, mViewHeight.toInt())
+    DrawHelper.drawCoordinate(canvas, mViewWidth, mViewHeight.toInt())
   }
 
   private fun getWidthAndHeight() {
     //x轴上需要绘制的刻度的个数
     val numX = maxX / xScale
     //每格的宽度
-    everyXwidth = (mViewWidth - margin * 2) / (numX * 1f)
+    everyXwidth = (mViewWidth - margin * 2) / (numX - 1f)
     //y轴上需要绘制的刻度的个数
     val numY = maxY / yScale
     //每格的高度
-    everyYheight = (mViewHeight - margin * 2) / (numY * 1f)
+    everyYheight = (mViewHeight - margin * 2) / (numY - 1f)
   }
 
   /**
@@ -190,6 +211,11 @@ class ChartView @JvmOverloads constructor(
         }
       }
 //      canvas.drawPath(path, mPaintLine)
+      //这里绘制两次是为了把线盖住，效果更好
+      if (i != 1) {
+        canvas.drawCircle(startPx, startPy, brokenLinePointRadius, mPaintLinePoint)
+      }
+      canvas.drawCircle(endPx, endPy, brokenLinePointRadius, mPaintLinePoint)
     }
   }
 
@@ -211,8 +237,8 @@ class ChartView @JvmOverloads constructor(
     }
     maxX = points.size
     //默认x有10格，y5格，这里可以修改
-    xScale = maxX / 10
-    yScale = maxY / 5
+    xScale = 1f
+    yScale = 1f
     initAnimator(maxX)
     invalidate()
   }
@@ -221,7 +247,7 @@ class ChartView @JvmOverloads constructor(
 
   //  private var mAnimatorValue: Int = 0
   private lateinit var mUpdateListener: ValueAnimator.AnimatorUpdateListener
-  private val defaultDuration = 2000L
+  private val defaultDuration = 600L
   private var mProgress = 0f
   private var interpolator: Interpolator? = null
 

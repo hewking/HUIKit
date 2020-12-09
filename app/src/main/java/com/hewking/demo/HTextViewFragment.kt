@@ -203,6 +203,8 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
 
                 })
                 .append("丰巢用户协议")
+            .setTextSize(14.dp)
+            .setBoldItalic()
                 .create()
 
         tv_need_shadow.setDrawableLeft(R.drawable.icon_grid_rank_down)

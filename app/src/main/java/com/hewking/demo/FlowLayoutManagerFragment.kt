@@ -14,6 +14,7 @@ import com.hewking.base.recyclerview.BaseItemOffsetDecoration
 import com.hewking.base.recyclerview.ComnBaseAdapter
 import com.hewking.base.recyclerview.ComnViewHolder
 import com.hewking.custom.R
+import com.hewking.uikit.layoutmanager.FlowLayoutManager
 import com.hewking.uikit.layoutmanager.FlowLayoutManager2
 import com.hewking.utils.ResUtil
 import com.hewking.utils.dp2px
@@ -55,7 +56,7 @@ class FlowLayoutManagerFragment : Fragment() {
             })
 
             itemAnimator = DefaultItemAnimator()
-            layoutManager = FlowLayoutManager2()
+            layoutManager = FlowLayoutManager()
             val textAdapter = buildAdapter()
             adapter = textAdapter
             textAdapter.setData(buildDatas())
