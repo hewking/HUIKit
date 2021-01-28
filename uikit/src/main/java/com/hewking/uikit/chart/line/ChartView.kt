@@ -152,6 +152,10 @@ class ChartView @JvmOverloads constructor(
 
   override fun onDraw(canvas: Canvas) {
     super.onDraw(canvas)
+//    if (pointList.isEmpty()) {
+//      return
+//    }
+
     getWidthAndHeight()
     drawCurve(canvas)
     //  设置动画
@@ -163,12 +167,17 @@ class ChartView @JvmOverloads constructor(
   private fun getWidthAndHeight() {
     //x轴上需要绘制的刻度的个数
     val numX = maxX / xScale
-    //每格的宽度
-    everyXwidth = (mViewWidth - margin * 2) / (numX - 1f)
+    if (numX - 1f > 0f) {
+      //每格的宽度
+      everyXwidth = (mViewWidth - margin * 2) / (numX - 1f)
+    }
+
     //y轴上需要绘制的刻度的个数
     val numY = maxY / yScale
     //每格的高度
-    everyYheight = (mViewHeight - margin * 2) / (numY - 1f)
+    if (numY - 1f > 0f) {
+      everyYheight = (mViewHeight - margin * 2) / (numY - 1f)
+    }
   }
 
   /**
@@ -237,6 +246,7 @@ class ChartView @JvmOverloads constructor(
     }
     maxX = points.size
     //默认x有10格，y5格，这里可以修改
+    // xScale = maxX / 10f
     xScale = 1f
     yScale = 1f
     initAnimator(maxX)
