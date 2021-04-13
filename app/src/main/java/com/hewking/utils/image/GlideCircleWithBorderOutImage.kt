@@ -1,14 +1,8 @@
-package com.hewking.uikit.image
+package com.hewking.utils.image
 
-import android.content.Context
-import android.content.res.Resources
 import android.graphics.*
-import androidx.core.content.ContextCompat
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
-import com.fcbox.hiveconsumer.common.R
-import kt.com.fcbox.hiveconsumer.common.extension.toDp
-import kt.com.fcbox.hiveconsumer.common.extension.toDpi
 import java.nio.charset.Charset
 import java.security.MessageDigest
 

@@ -1,10 +1,6 @@
 package com.hewking.demo
 
-import android.graphics.Bitmap
-import android.graphics.Color
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.text.Layout
@@ -14,6 +10,7 @@ import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.URLSpan
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -21,21 +18,11 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Magnifier
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import coil.target.ViewTarget
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.BitmapImageViewTarget
-import com.bumptech.glide.request.target.CustomTarget
-import com.bumptech.glide.request.target.CustomViewTarget
-import com.bumptech.glide.request.transition.Transition
 import com.hewking.custom.R
 import com.hewking.uikit.textview.AutoLinkSpan
 import com.hewking.utils.*
-import com.hewking.utils.setDrawableLeft
-import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.fragment_htextview.*
-import kotlinx.android.synthetic.main.fragment_htextview.view.*
 
 /**
  * 类的描述：
@@ -49,7 +36,7 @@ import kotlinx.android.synthetic.main.fragment_htextview.view.*
 class HTextViewFragment : androidx.fragment.app.Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater?.inflate(R.layout.fragment_htextview,container,false)
+        return inflater?.inflate(R.layout.fragment_htextview, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -110,7 +97,7 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
         }
 
         tv_text_span.setOnClickListener({
-            L.d("HTextViewFragment","onclick")
+            L.d("HTextViewFragment", "onclick")
         })
 
 //        smart_tv.text = "tronbet.io sdfsd baidu.com"
@@ -149,8 +136,7 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
             }
             if (index != -1) {
                 spannable.removeSpan(spans[i]);
-                spannable.setSpan(AutoLinkSpan(spans[i].getURL()), index
-                        , end, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+                spannable.setSpan(AutoLinkSpan(spans[i].getURL()), index, end, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
             }
         }
 
@@ -161,16 +147,16 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
         // 放大镜查看文字
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             val magnifier = Magnifier(tv_auto_size)
-            magnifier.show(tv_auto_size.width.div(2f),tv_auto_size.height.div(2f))
+            magnifier.show(tv_auto_size.width.div(2f), tv_auto_size.height.div(2f))
             tv_auto_size.setOnTouchListener { v, event ->
                 when(event.actionMasked){
-                    MotionEvent.ACTION_DOWN,MotionEvent.ACTION_MOVE -> {
+                    MotionEvent.ACTION_DOWN, MotionEvent.ACTION_MOVE -> {
                         val array = IntArray(2)
                         v.getLocationOnScreen(array)
-                        magnifier.show(event.rawX - array[0],event.rawY - array[1])
+                        magnifier.show(event.rawX - array[0], event.rawY - array[1])
                     }
 
-                    MotionEvent.ACTION_UP ,MotionEvent.ACTION_CANCEL -> {
+                    MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                         magnifier.dismiss()
                     }
                 }
@@ -189,9 +175,9 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
 //        }
 
         tv_need_shadow.movementMethod = LinkMovementMethod.getInstance()
-        tv_need_shadow.text = SpannableStringUtil.getBuilder(requireContext(),"我同意")
+        tv_need_shadow.text = SpannableStringUtil.getBuilder(requireContext(), "我同意")
                 .append("怎么不行？")
-                .setClickSpan(object : ClickableSpan(){
+                .setClickSpan(object : ClickableSpan() {
                     override fun onClick(widget: View) {
                         toast("我同意啊")
                     }
@@ -209,10 +195,24 @@ class HTextViewFragment : androidx.fragment.app.Fragment() {
 
         tv_need_shadow.setDrawableLeft(R.drawable.icon_grid_rank_down)
         tv_need_shadow.compoundDrawablePadding = 8.dp
+
+        Log.d(TAG, "8.dp: ${8.dp} dp2px:${dip2px(context!!, 8f)}")
     }
 
-    fun Fragment.toast(msg :String){
-        Toast.makeText(DemoApplication.context,msg,Toast.LENGTH_SHORT).show()
+    fun Fragment.toast(msg: String){
+        Toast.makeText(DemoApplication.context, msg, Toast.LENGTH_SHORT).show()
+    }
+
+    companion object {
+        const val TAG = "HTextViewFragment"
+
+        /**
+         * 将dip或dp值转换为px值，保证尺寸大小不变
+         */
+        fun dip2px(context: Context, dipValue: Float): Int {
+            val scale = context.resources.displayMetrics.density
+            return (dipValue * scale + 0.5f).toInt()
+        }
     }
 
 }
