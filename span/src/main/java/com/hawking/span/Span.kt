@@ -1,4 +1,4 @@
-package com.fcbox.screw.span
+package com.hawking.span
 
 import android.graphics.BlurMaskFilter
 import android.graphics.BlurMaskFilter.Blur
@@ -18,6 +18,7 @@ import androidx.annotation.ColorInt
 import androidx.annotation.FloatRange
 import androidx.annotation.IntDef
 import androidx.annotation.IntRange
+import com.fcbox.screw.span.*
 
 /**
  * @Description:

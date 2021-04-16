@@ -1,4 +1,4 @@
-package com.fcbox.screw.span
+package com.hawking.span
 
 import android.text.TextPaint
 import android.text.style.CharacterStyle

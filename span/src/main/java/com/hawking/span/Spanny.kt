@@ -17,12 +17,6 @@ import androidx.annotation.FloatRange
 import androidx.annotation.IntDef
 import androidx.annotation.IntRange
 import com.fcbox.screw.span.*
-import com.fcbox.screw.span.CustomLineHeightSpan
-import com.fcbox.screw.span.CustomQuoteSpan
-import com.fcbox.screw.span.CustomTypefaceSpan
-import com.fcbox.screw.span.ShaderSpan
-import com.fcbox.screw.span.ShadowSpan
-import com.fcbox.screw.span.SpaceSpan
 import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
 
