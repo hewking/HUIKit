@@ -106,8 +106,6 @@ open class DefaultAnimatorListener : Animator.AnimatorListener {
     }
 
   override fun onAnimationRepeat(animation: Animator) {
-  }
-
   override fun onAnimationEnd(animation: Animator) {
     if (isCancel) {
       //当动画被取消的时候, 系统会回调onAnimationCancel, 然后 onAnimationEnd

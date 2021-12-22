@@ -125,4 +125,9 @@
 
     <color name="bantouming">#99000000</color>
 
+    <color name="default_base_bg_press">#40000000</color>
+    <color name="default_base_bg_disable">#999999</color>
+    <color name="default_base_white">#ffffff</color>
+    <color name="base_chat_bg_color">#F0F0F5</color>
+
 </resources>
