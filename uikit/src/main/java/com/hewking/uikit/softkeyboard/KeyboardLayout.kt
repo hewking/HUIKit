@@ -30,7 +30,7 @@ class KeyboardLayout(context: Context, attributeSet: AttributeSet? = null) :
   ViewGroup(context, attributeSet), View.OnClickListener {
 
   /*可以决定按键的显示位置, 个数必须对*/
-  var keys = arrayOf("1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", "-1")
+  var keys = arrayOf("1", "2", "3", "4", "5", "6", "7", "8", "9", "x", "0", "-1")
 
   /*单独按键的高度, wrap_content的时候使用*/
   var keyViewHeight: Int = (45 * density).toInt()
@@ -242,7 +242,7 @@ class KeyboardLayout(context: Context, attributeSet: AttributeSet? = null) :
   }
 
   fun setupEditText(editText: EditText) {
-    onKeyboardInputListener = object : KeyboardLayout.OnKeyboardInputListener {
+    onKeyboardInputListener = object : OnKeyboardInputListener {
       override fun onKeyboardInput(key: String, isDel: Boolean) {
         if (isDel) {
           val newText = editText.text.toString()
