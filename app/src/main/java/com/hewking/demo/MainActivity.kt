@@ -90,6 +90,7 @@ class MainActivity : LanguageActivity() {
         list.add(Item(28,"ViewLayoutanimFragment Demo",ViewLayoutAnimFragment::class.java))
         list.add(Item(29,"PointerPanelFragment Demo",PointerPanelFragment::class.java))
         list.add(Item(30,"ImageDemoFragment",ImageDemoFragment::class.java))
+        list.add(Item(31,"自定义键盘Demo",CustomKeyboardFragment::class.java))
         return list
     }
 

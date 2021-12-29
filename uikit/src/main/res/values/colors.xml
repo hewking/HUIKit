@@ -130,4 +130,6 @@
     <color name="default_base_white">#ffffff</color>
     <color name="base_chat_bg_color">#F0F0F5</color>
 
+    <drawable name="drawable_keyboard_green">#92d115</drawable>
+
 </resources>

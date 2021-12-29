@@ -124,5 +124,6 @@
     <color name="filter_color_brown_light">#ff9933</color>
 
     <color name="bantouming">#99000000</color>
+    <color name="standard_divider_color">#F5F5F5</color>
 
 </resources>
