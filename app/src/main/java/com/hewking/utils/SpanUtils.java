@@ -52,7 +52,6 @@ import androidx.annotation.IntRange;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
-import coil.util.Utils;
 import java.io.InputStream;
 import java.io.Serializable;
 import java.lang.annotation.Retention;
@@ -964,19 +963,19 @@ public final class SpanUtils {
     }
 
     private void updateImage() {
-        int start = mBuilder.length();
-        mText = "<img>";
-        updateCharCharSequence();
-        int end = mBuilder.length();
-        if (imageBitmap != null) {
-            mBuilder.setSpan(new CustomImageSpan(imageBitmap, alignImage), start, end, flag);
-        } else if (imageDrawable != null) {
-            mBuilder.setSpan(new CustomImageSpan(imageDrawable, alignImage), start, end, flag);
-        } else if (imageUri != null) {
-            mBuilder.setSpan(new CustomImageSpan(imageUri, alignImage), start, end, flag);
-        } else if (imageResourceId != -1) {
-            mBuilder.setSpan(new CustomImageSpan(imageResourceId, alignImage), start, end, flag);
-        }
+//        int start = mBuilder.length();
+//        mText = "<img>";
+//        updateCharCharSequence();
+//        int end = mBuilder.length();
+//        if (imageBitmap != null) {
+//            mBuilder.setSpan(new CustomImageSpan(imageBitmap, alignImage), start, end, flag);
+//        } else if (imageDrawable != null) {
+//            mBuilder.setSpan(new CustomImageSpan(imageDrawable, alignImage), start, end, flag);
+//        } else if (imageUri != null) {
+//            mBuilder.setSpan(new CustomImageSpan(imageUri, alignImage), start, end, flag);
+//        } else if (imageResourceId != -1) {
+//            mBuilder.setSpan(new CustomImageSpan(imageResourceId, alignImage), start, end, flag);
+//        }
     }
 
     private void updateSpace() {
@@ -1256,71 +1255,71 @@ public final class SpanUtils {
         }
     }
 
-    static class CustomImageSpan extends CustomDynamicDrawableSpan {
-        private Drawable mDrawable;
-        private Uri      mContentUri;
-        private int      mResourceId;
-
-        private CustomImageSpan(final Bitmap b, final int verticalAlignment) {
-            super(verticalAlignment);
-            mDrawable = new BitmapDrawable(Utils.getApp().getResources(), b);
-            mDrawable.setBounds(
-                    0, 0, mDrawable.getIntrinsicWidth(), mDrawable.getIntrinsicHeight()
-            );
-        }
-
-        private CustomImageSpan(final Drawable d, final int verticalAlignment) {
-            super(verticalAlignment);
-            mDrawable = d;
-            mDrawable.setBounds(
-                    0, 0, mDrawable.getIntrinsicWidth(), mDrawable.getIntrinsicHeight()
-            );
-        }
-
-        private CustomImageSpan(final Uri uri, final int verticalAlignment) {
-            super(verticalAlignment);
-            mContentUri = uri;
-        }
-
-        private CustomImageSpan(@DrawableRes final int resourceId, final int verticalAlignment) {
-            super(verticalAlignment);
-            mResourceId = resourceId;
-        }
-
-        @Override
-        public Drawable getDrawable() {
-            Drawable drawable = null;
-            if (mDrawable != null) {
-                drawable = mDrawable;
-            } else if (mContentUri != null) {
-                Bitmap bitmap;
-                try {
-                    InputStream is =
-                            Utils.getApp().getContentResolver().openInputStream(mContentUri);
-                    bitmap = BitmapFactory.decodeStream(is);
-                    drawable = new BitmapDrawable(Utils.getApp().getResources(), bitmap);
-                    drawable.setBounds(
-                            0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight()
-                    );
-                    if (is != null) {
-                        is.close();
-                    }
-                } catch (Exception e) {
-                    Log.e("sms", "Failed to loaded content " + mContentUri, e);
-                }
-            } else {
-                try {
-                    drawable = ContextCompat.getDrawable(Utils.getApp(), mResourceId);
-                    drawable.setBounds(
-                            0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight()
-                    );
-                } catch (Exception e) {
-                    Log.e("sms", "Unable to find resource: " + mResourceId);
-                }
-            }
-            return drawable;
-        }
-    }
+//    static class CustomImageSpan extends CustomDynamicDrawableSpan {
+//        private Drawable mDrawable;
+//        private Uri      mContentUri;
+//        private int      mResourceId;
+//
+//        private CustomImageSpan(final Bitmap b, final int verticalAlignment) {
+//            super(verticalAlignment);
+//            mDrawable = new BitmapDrawable(Utils.getApp().getResources(), b);
+//            mDrawable.setBounds(
+//                    0, 0, mDrawable.getIntrinsicWidth(), mDrawable.getIntrinsicHeight()
+//            );
+//        }
+//
+//        private CustomImageSpan(final Drawable d, final int verticalAlignment) {
+//            super(verticalAlignment);
+//            mDrawable = d;
+//            mDrawable.setBounds(
+//                    0, 0, mDrawable.getIntrinsicWidth(), mDrawable.getIntrinsicHeight()
+//            );
+//        }
+//
+//        private CustomImageSpan(final Uri uri, final int verticalAlignment) {
+//            super(verticalAlignment);
+//            mContentUri = uri;
+//        }
+//
+//        private CustomImageSpan(@DrawableRes final int resourceId, final int verticalAlignment) {
+//            super(verticalAlignment);
+//            mResourceId = resourceId;
+//        }
+//
+//        @Override
+//        public Drawable getDrawable() {
+//            Drawable drawable = null;
+//            if (mDrawable != null) {
+//                drawable = mDrawable;
+//            } else if (mContentUri != null) {
+//                Bitmap bitmap;
+//                try {
+//                    InputStream is =
+//                            Utils.getApp().getContentResolver().openInputStream(mContentUri);
+//                    bitmap = BitmapFactory.decodeStream(is);
+//                    drawable = new BitmapDrawable(Utils.getApp().getResources(), bitmap);
+//                    drawable.setBounds(
+//                            0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight()
+//                    );
+//                    if (is != null) {
+//                        is.close();
+//                    }
+//                } catch (Exception e) {
+//                    Log.e("sms", "Failed to loaded content " + mContentUri, e);
+//                }
+//            } else {
+//                try {
+//                    drawable = ContextCompat.getDrawable(Utils.getApp(), mResourceId);
+//                    drawable.setBounds(
+//                            0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight()
+//                    );
+//                } catch (Exception e) {
+//                    Log.e("sms", "Unable to find resource: " + mResourceId);
+//                }
+//            }
+//            return drawable;
+//        }
+//    }
 
     static abstract class CustomDynamicDrawableSpan extends ReplacementSpan {
 
