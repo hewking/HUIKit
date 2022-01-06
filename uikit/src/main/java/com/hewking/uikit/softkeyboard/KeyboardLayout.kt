@@ -15,6 +15,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.hewking.uikit.R
+import com.hewking.utils.ResUtil
 
 /**
  * 项目名称：
@@ -137,7 +138,7 @@ class KeyboardLayout(context: Context, attributeSet: AttributeSet? = null) :
         setImageResource(res)
       } else {
         setImageResource(res)
-        //setImageDrawable(ResUtil.selector(getDrawable(res), getDrawable(pressRes)))
+        setImageDrawable(ResUtil.selector(getDrawable(res), getDrawable(pressRes)))
       }
 
       scaleType = ImageView.ScaleType.CENTER

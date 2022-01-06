@@ -1,5 +1,6 @@
 package com.hewking.demo
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -36,8 +37,10 @@ class CustomKeyboardFragment: Fragment() {
     super.onViewCreated(view, savedInstanceState)
 
     activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
-    val keyboardHelper = CustomKeyboard(activity, binding.keyboardView.keyboardView, R.xml.keyboardnumber)
+    val keyboardHelper = CustomKeyboard(activity!!, binding.keyboardView.keyboardView, R.xml.keyboardnumber)
     keyboardHelper.setupEditText(binding.etInput)
+
+    binding.etInput.setRawInputType(Configuration.KEYBOARD_QWERTY)
   }
 
 }
