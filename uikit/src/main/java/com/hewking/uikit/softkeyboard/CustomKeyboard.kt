@@ -4,10 +4,13 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.inputmethodservice.Keyboard
 import android.inputmethodservice.KeyboardView
+import android.os.Build
 import android.text.InputType
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import java.lang.reflect.Method
 
 /**
  * @author: jianhao
@@ -90,6 +93,7 @@ class CustomKeyboard(
   @SuppressLint("ClickableViewAccessibility")
   fun setupEditText(editText: EditText) {
     // Make the custom keyboard appear
+    disableShowSoftInput(editText)
     editText.onFocusChangeListener = View.OnFocusChangeListener { v: View?, hasFocus: Boolean ->
       if (hasFocus) {
         showCustomKeyboard(v)
@@ -98,16 +102,16 @@ class CustomKeyboard(
       }
     }
 
-    with(editText) {
-      setOnTouchListener { v, event ->
-        val inType = editText.inputType
-        inputType = InputType.TYPE_NULL
-        onTouchEvent(event)
-        inputType = inType
-        setSelection(text.length)
-        true
-      }
-    }
+//    with(editText) {
+//      setOnTouchListener { v, event ->
+//        val inType = editText.inputType
+//        inputType = InputType.TYPE_NULL
+//        onTouchEvent(event)
+//        inputType = inType
+////        setSelection(text.length)
+//        true
+//      }
+//    }
 
     editText.setOnClickListener { v: View? -> showCustomKeyboard(v) }
     editText.isLongClickable = false
@@ -124,6 +128,28 @@ class CustomKeyboard(
     if (v != null) {
       (mActivity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager)
         .hideSoftInputFromWindow(v.windowToken, 0)
+    }
+  }
+
+  /**
+   * 禁止Edittext弹出软件盘，光标依然正常显示。
+   */
+  fun disableShowSoftInput(editText: EditText) {
+    val cls = EditText::class.java
+    var method: Method
+    try {
+      method = cls.getMethod("setShowSoftInputOnFocus", Boolean::class.javaPrimitiveType)
+      method.isAccessible = true
+      method.invoke(editText, false)
+    } catch (e: Exception) {
+      Log.e("CustomKeyBoard", e.message.orEmpty())
+    }
+    try {
+      method = cls.getMethod("setSoftInputShownOnFocus", Boolean::class.javaPrimitiveType)
+      method.isAccessible = true
+      method.invoke(editText, false)
+    } catch (e: Exception) {
+      Log.e("CustomKeyBoard", e.message.orEmpty())
     }
   }
 
