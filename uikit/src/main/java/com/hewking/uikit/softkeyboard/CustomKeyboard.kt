@@ -135,21 +135,25 @@ class CustomKeyboard(
    * 禁止Edittext弹出软件盘，光标依然正常显示。
    */
   fun disableShowSoftInput(editText: EditText) {
-    val cls = EditText::class.java
-    var method: Method
-    try {
-      method = cls.getMethod("setShowSoftInputOnFocus", Boolean::class.javaPrimitiveType)
-      method.isAccessible = true
-      method.invoke(editText, false)
-    } catch (e: Exception) {
-      Log.e("CustomKeyBoard", e.message.orEmpty())
-    }
-    try {
-      method = cls.getMethod("setSoftInputShownOnFocus", Boolean::class.javaPrimitiveType)
-      method.isAccessible = true
-      method.invoke(editText, false)
-    } catch (e: Exception) {
-      Log.e("CustomKeyBoard", e.message.orEmpty())
+    if (android.os.Build.VERSION.SDK_INT > android.os.Build.VERSION_CODES.LOLLIPOP) {
+      editText.showSoftInputOnFocus = false
+    } else {
+      val cls = EditText::class.java
+      var method: Method
+      try {
+        method = cls.getMethod("setShowSoftInputOnFocus", Boolean::class.javaPrimitiveType)
+        method.isAccessible = true
+        method.invoke(editText, false)
+      } catch (e: Exception) {
+        Log.e("CustomKeyBoard", e.message.orEmpty())
+      }
+      try {
+        method = cls.getMethod("setSoftInputShownOnFocus", Boolean::class.javaPrimitiveType)
+        method.isAccessible = true
+        method.invoke(editText, false)
+      } catch (e: Exception) {
+        Log.e("CustomKeyBoard", e.message.orEmpty())
+      }
     }
   }
 

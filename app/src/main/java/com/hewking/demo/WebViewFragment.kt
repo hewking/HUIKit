@@ -26,7 +26,7 @@ class WebViewFragment : androidx.fragment.app.Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        webview.loadUrl("tronbet.io")
+        webview.loadUrl("bdapp://map/navi?query=%E6%95%85%E5%AE%AB&src=andr.baidu.openAPIdemo")
     }
 
 }
